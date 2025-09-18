@@ -15,6 +15,7 @@ public partial class LoginPage : ContentPage
         switch (await acceso.Validacion())
 		{
 			case LoginSQL.estadoLogin.Exito:
+                //Si el login fue exitoso la aplicación avanzará a la página principal
                 await Shell.Current.GoToAsync("//PrincipalPage");
 				break;
 			case LoginSQL.estadoLogin.CredencialesIncorrectas:
@@ -25,6 +26,7 @@ public partial class LoginPage : ContentPage
         }
     }
 
+    //Sí alguno de los cuadros de texto se queda vacío, la aplicación no permitirá continuar con el login
     private void txtCorreo_TextChanged(object sender, TextChangedEventArgs e)
     {
         if (string.IsNullOrWhiteSpace(this.txtCorreo.Text) || string.IsNullOrWhiteSpace(this.txtContrasenia.Text))
@@ -37,6 +39,7 @@ public partial class LoginPage : ContentPage
         }
     }
 
+    //Sí alguno de los cuadros de texto se queda vacío, la aplicación no permitirá continuar con el login
     private void txtContrasenia_TextChanged(object sender, TextChangedEventArgs e)
     {
         if (string.IsNullOrWhiteSpace(this.txtCorreo.Text) || string.IsNullOrWhiteSpace(this.txtContrasenia.Text))
@@ -49,6 +52,7 @@ public partial class LoginPage : ContentPage
         }
     }
 
+    //Al pulsar el botón, la contraseña se mostrará o se ocultará
     private void btnMostrarContrasenia_Clicked(object sender, EventArgs e)
     {
         this.txtContrasenia.IsPassword = !this.txtContrasenia.IsPassword;

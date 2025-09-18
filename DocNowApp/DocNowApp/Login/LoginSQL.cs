@@ -29,22 +29,31 @@ namespace DocNowApp.Login
             
         }
 
+        /*enum es utilizado para definir un conjunto de constantes con nombres bajo un
+        mismo tipo. En este caso se utiliza para representar el conjunto de estados posibles
+        para un inicio de sesión. Internamente, cada estado es répresentado con un número, que
+        empieza en 0 y va aumentando de uno en uno (de manera similar a un arreglo con los índices)*/
         public enum estadoLogin
         {
-            Exito, CredencialesIncorrectas, Error
+            Exito,
+            CredencialesIncorrectas,
+            Error
         }
 
-        //Método con el que se valida que el correo y contrasenña introducidos son correctos
         /*async se coloca antes de la definición de un método
         para indicar que el método puede contener operaciones que se
         ejecutan de forma asíncrona, es decir, no bloquean el hilo principal
         mientras esperan que algo termine.
         
         await se utiliza dentro de métodos async,
-        le indican al programa que debe esperar a que termine una tera asíncrona
-        antes de continuarm, mientras espera, el hilo no queda bloqueado, lo que
+        le indican al programa que debe esperar a que termine una tarea asíncrona
+        antes de continuar, mientras espera, el hilo no queda bloqueado, lo que
         evita que la UI se congele*/
-        
+
+        /*Cuando se trata de un método asíncrono se utiliza Task<tipo_de_dato_a_retornar>
+        a menos que sea un método void que no devuelve nada*/
+
+        //Método con el que se valida que el correo y contrasenña introducidos son correctos
         public async Task<estadoLogin> Validacion()
         {
             //Instrucción SQL
