@@ -15,22 +15,44 @@
             x:Name="txtCorreo"
             FontSize="12"
             Placeholder="Correo electrónico"
+            MaxLength="100"
+            TextChanged="txtCorreo_TextChanged"
             WidthRequest="500"
             VerticalOptions="Center"
             HorizontalOptions="Center"
             Margin="0,20,0,0"/>
-        <Entry
-            x:Name="txtContrasenia"
-            FontSize="12"
-            Placeholder="Contraseña"
-            IsPassword="True"
-            WidthRequest="500"
-            Margin="0,20,0,0"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"/>
+        <Grid WidthRequest="500"
+              HorizontalOptions="Center"
+              Margin="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+        
+            <Entry
+                x:Name="txtContrasenia"
+                FontSize="12"
+                Placeholder="Contraseña"
+                MaxLength="255"
+                IsPassword="True"
+                TextChanged="txtContrasenia_TextChanged"
+                VerticalOptions="Center"
+                Grid.Column="0"/>
+            <ImageButton
+                x:Name="btnMostrarContrasenia"
+                Padding="0"
+                Source="mostrar_contrasenia.png"
+                WidthRequest="40"
+                HeightRequest="40"
+                Clicked="btnMostrarContrasenia_Clicked"
+                Grid.Column="1"
+                VerticalOptions="Center"
+                HorizontalOptions="End"/>
+        </Grid>
         <Button
             x:Name="btnLogin"
             Text="Inciar sesión"
+            IsEnabled="False"
             Clicked="btnLogin_Clicked"
             VerticalOptions="Center" 
             HorizontalOptions="Center"

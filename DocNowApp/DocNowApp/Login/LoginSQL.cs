@@ -24,8 +24,8 @@ namespace DocNowApp.Login
         //Constructor
         public LoginSQL(string correo, string contrasenia)
         {
-            this.correo = correo;
-            this.contrasenia = contrasenia;
+            this.correo = correo.Trim();
+            this.contrasenia = contrasenia.Trim();
             
         }
 

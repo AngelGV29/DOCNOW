@@ -214,6 +214,12 @@
     <AppxPackagedFile Include="C:\Users\joaqu\OneDrive\Documentos\Ingeniería de Software II\DocNow\Versionamiento\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\joaqu\OneDrive\Documentos\Ingeniería de Software II\DocNow\Versionamiento\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\mostrar_contrasenia.scale-100.png">
+      <PackagePath>mostrar_contrasenia.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\joaqu\OneDrive\Documentos\Ingeniería de Software II\DocNow\Versionamiento\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\ocultar_contrasenia.scale-100.png">
+      <PackagePath>ocultar_contrasenia.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\joaqu\OneDrive\Documentos\Ingeniería de Software II\DocNow\Versionamiento\DOCNOW\DocNowApp\DocNowApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DocNowApp.deps.json">
       <PackagePath>DocNowApp.deps.json</PackagePath>
     </AppxPackagedFile>

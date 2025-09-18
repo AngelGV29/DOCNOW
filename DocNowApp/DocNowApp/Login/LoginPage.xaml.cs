@@ -23,15 +23,36 @@ public partial class LoginPage : ContentPage
 			case LoginSQL.estadoLogin.Error:
 				break;
         }
+    }
 
-		//Validación por medio de un dato booleano
-		/*if (await acceso.Validacion())
-		{
-            await Shell.Current.GoToAsync("//PrincipalPage");
+    private void txtCorreo_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        if (string.IsNullOrWhiteSpace(this.txtCorreo.Text) || string.IsNullOrWhiteSpace(this.txtContrasenia.Text))
+        {
+            this.btnLogin.IsEnabled = false;
         }
         else
-		{
-			await DisplayAlert("Error", "Correo o contraseña incorrectos", "Aceptar");
-		}*/
+        {
+            this.btnLogin.IsEnabled = true;
+        }
+    }
+
+    private void txtContrasenia_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        if (string.IsNullOrWhiteSpace(this.txtCorreo.Text) || string.IsNullOrWhiteSpace(this.txtContrasenia.Text))
+        {
+            this.btnLogin.IsEnabled = false;
+        }
+        else
+        {
+            this.btnLogin.IsEnabled = true;
+        }
+    }
+
+    private void btnMostrarContrasenia_Clicked(object sender, EventArgs e)
+    {
+        this.txtContrasenia.IsPassword = !this.txtContrasenia.IsPassword;
+
+        this.btnMostrarContrasenia.Source = this.txtContrasenia.IsPassword ? "mostrar_contrasenia.png" : "ocultar_contrasenia.png";
     }
 }

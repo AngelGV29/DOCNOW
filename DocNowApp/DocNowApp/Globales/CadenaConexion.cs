@@ -14,6 +14,7 @@ namespace DocNowApp.Globales
         static public string seguridad = "Integrated Security=True";
         static public string usuario = "sa";
 
+        //Cadena de conexión a la base de datos
         static public string miConexion = $"Data Source={server};Initial Catalog={dbNombre};{seguridad};Encrypt=True;TrustServerCertificate=True";
 
     }
