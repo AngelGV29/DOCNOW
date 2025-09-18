@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DocNowApp.NuevoUsuario.NuevoUsuarioPage"
+             Title="NuevoUsuarioPage">
+
+    <VerticalStackLayout>
+        <Label 
+         Margin="0,0,0,5"
+         Text="Registrate en Doc Now"
+         FontSize="24"
+         FontFamily="Arial"
+         VerticalOptions="Center" 
+         HorizontalOptions="Center" />
+        <Entry
+            x:Name="txtName"
+            FontSize="12"
+            Placeholder="Nombre"
+            MaxLength="100"
+            TextChanged="txtCorreo_TextChanged"
+            WidthRequest="500"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,15,0,0"/>
+        <Entry
+            x:Name="txtApellp"
+            FontSize="12"
+            Placeholder="Apellido Paterno"
+            MaxLength="100"
+            WidthRequest="500"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,15,0,0"/>
+        <Entry
+            x:Name="txtApellm"
+            FontSize="12"
+            Placeholder="Apellido Materno"
+            MaxLength="100"
+            WidthRequest="500"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,15,0,0"/>
+        <Entry
+            x:Name="txtCorreo"
+            FontSize="12"
+            Placeholder="Correo"
+            MaxLength="100"
+            WidthRequest="500"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,15,0,0"/>
+        <Entry
+            x:Name="txtContrasenia"
+            FontSize="12"
+            Placeholder="Contraseña"
+            MaxLength="100"
+            WidthRequest="500"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,15,0,0"/>
+        <Entry
+            x:Name="txtTelefono"
+            FontSize="12"
+            Placeholder="Telefono"
+            MaxLength="100"
+            WidthRequest="500"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,15,0,0"/>
+        <Entry
+            x:Name="txtFechaNac"
+            FontSize="12"
+            Placeholder="Fecha de Nacimiento"
+            MaxLength="100"
+            WidthRequest="500"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,15,0,0"/>
+        <Entry
+            x:Name="txtSex"
+            FontSize="12"
+            Placeholder="Sexo"
+            MaxLength="100"
+            WidthRequest="500"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,15,0,0"/>
+    </VerticalStackLayout>
+</ContentPage>

@@ -6,7 +6,7 @@
     <VerticalStackLayout>
         <Label 
             Margin="0,100,0,50"
-            Text="Inicio de sesión"
+            Text="Inicio de sesion"
             FontSize="40"
             FontFamily="Arial"
             VerticalOptions="Center" 

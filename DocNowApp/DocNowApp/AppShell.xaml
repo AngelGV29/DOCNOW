@@ -5,12 +5,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:login="clr-namespace:DocNowApp.Login"
     xmlns:principal="clr-namespace:DocNowApp.Pantalla_principal"
+    xmlns:nuevoUsuario="clr-namespace:DocNowApp.NuevoUsuario"
     Shell.FlyoutBehavior="Disabled"
     Title="DocNowApp">
 
     <!--En este archivo se define la estructura de navegación entre páginas.
     Los shell content representan páginas, y configuran una ruta que se
     utilizará cuando se desee mostrar dicha página-->
+    <ShellContent
+        Title="Registro"
+        ContentTemplate="{DataTemplate nuevoUsuario:NuevoUsuarioPage}"
+        Route="NuevoUsuarioPage"/>
     <ShellContent
         Title="Login"
         ContentTemplate="{DataTemplate login:LoginPage}"
@@ -19,5 +24,5 @@
         Title="Principal"
         ContentTemplate="{DataTemplate principal:PrincipalPage}"
         Route="PrincipalPage"/>
-
+    
 </Shell>
