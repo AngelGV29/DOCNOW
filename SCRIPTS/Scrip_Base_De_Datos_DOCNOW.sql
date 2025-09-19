@@ -70,3 +70,39 @@ SELECT * FROM NuevoUsuario;
 SELECT * FROM Paciente;
 SELECT * FROM Medico;
 SELECT * FROM Consultorio;
+
+
+--18/09/2025
+--Se le agregaron 3 tabla más a la base de datos y se hicieron las relaciones del usuario con paciente y doctor
+ALTER TABLE Medico
+ADD idUsuario INT;
+
+
+ALTER TABLE Medico
+ADD CONSTRAINT FK_Medico_NuevoUsuario
+FOREIGN KEY (idUsuario)
+REFERENCES NuevoUsuario (idUsuario);
+
+
+SELECT * FROM Medico;
+SELECT * FROM NuevoUsuario;
+SELECT * FROM Paciente;
+
+
+UPDATE Medico
+SET idUsuario = 3
+WHERE idMedico = 1; -- Asocia el médico con numCedula '1234567890' a Carlos Gómez
+INSERT INTO NuevoUsuario (nombre, apellidoPaterno, apellidoMaterno, correo, contrasenia, telefono, fechaNac, sexo, rol, ultimaModSesion)
+VALUES ('Pedro', 'Ramírez', 'González', 'pedro.ramirez@gmail.com', 'passPedro123', '687-555-7890', '1982-09-10', 'M', 'Médico', NULL);
+
+UPDATE Medico
+SET idUsuario = (SELECT idUsuario FROM NuevoUsuario WHERE correo = 'pedro.ramirez@gmail.com')
+WHERE idMedico = 2; -- Asocia el segundo médico a este nuevo usuario
+
+ALTER TABLE Medico
+ALTER COLUMN idUsuario INT NOT NULL;
+
+SELECT * FROM NuevoUsuario WHERE idUsuario = 4;
+INSERT INTO Paciente (idUsuario, alergia, medicacion)
+VALUES (4, 'Ninguna alergia conocida', 'Sin medicación regular');
+SELECT * FROM Paciente WHERE idUsuario = 4;
