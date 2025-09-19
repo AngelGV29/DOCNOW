@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DocNowApp.Inicio.InicioPage"
+             Title="InicioPage">
+    <VerticalStackLayout>
+        <Label 
+            Margin="0,100,0,0"
+            Text="Bienvenido a DocNow"
+            FontSize="60"
+            FontFamily="Arial"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            Margin="0,50,0,0"
+            Text="¿Eres nuevo o ya cuentas con un usuario registrado?"
+            FontSize="30"
+            FontFamily="Arial"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        
+        <Grid WidthRequest="500"
+            HorizontalOptions="Center"
+            ColumnSpacing="20"
+            Margin="0,80,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button
+                x:Name="btnNuevo"
+                Text="Registrarse"
+                Grid.Column="0"
+                WidthRequest="150"
+                Clicked="btnNuevo_Clicked"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                Margin="0,0,0,0"/>
+            <Button
+                x:Name="btnLogin"
+                Text="Inciar sesión"
+                Grid.Column="1"
+                WidthRequest="150"
+                Clicked="btnLogin_Clicked"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                Margin="0,0,0,0"/>
+        </Grid>
+        
+    </VerticalStackLayout>
+</ContentPage>

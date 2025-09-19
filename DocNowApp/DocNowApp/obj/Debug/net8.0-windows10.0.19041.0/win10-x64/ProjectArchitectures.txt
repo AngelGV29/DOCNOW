@@ -1,1 +1,1 @@
-C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\DocNowApp.csproj;x64
+C:\Users\joaqu\OneDrive\Documentos\Ingeniería de Software II\DocNow\Versionamiento\DOCNOW\DocNowApp\DocNowApp\DocNowApp.csproj;x64
