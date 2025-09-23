@@ -3,6 +3,14 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+
+DocNowApp/DocNowApp/obj/
+DocNowApp/DocNowApp/bin/
+DocNowApp/.vs/
+
+
+
+
 # User-specific files
 *.rsuser
 *.suo
@@ -39,6 +47,7 @@ bld/
 
 # Visual Studio 2017 auto generated files
 Generated\ Files/
+
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
