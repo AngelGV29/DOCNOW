@@ -89,15 +89,13 @@ SELECT * FROM NuevoUsuario;
 SELECT * FROM Paciente;
 
 
-UPDATE Medico
-SET idUsuario = 3
-WHERE idMedico = 1; -- Asocia el médico con numCedula '1234567890' a Carlos Gómez
+UPDATE NuevoUsuario
+SET idUsuario = 6
+WHERE idUsuario = 1005; -- Asocia el médico con numCedula '1234567890' a Carlos Gómez
 INSERT INTO NuevoUsuario (nombre, apellidoPaterno, apellidoMaterno, correo, contrasenia, telefono, fechaNac, sexo, rol, ultimaModSesion)
 VALUES ('Pedro', 'Ramírez', 'González', 'pedro.ramirez@gmail.com', 'passPedro123', '687-555-7890', '1982-09-10', 'M', 'Médico', NULL);
 
-UPDATE Medico
-SET idUsuario = (SELECT idUsuario FROM NuevoUsuario WHERE correo = 'pedro.ramirez@gmail.com')
-WHERE idMedico = 2; -- Asocia el segundo médico a este nuevo usuario
+
 
 ALTER TABLE Medico
 ALTER COLUMN idUsuario INT NOT NULL;
@@ -106,3 +104,54 @@ SELECT * FROM NuevoUsuario WHERE idUsuario = 4;
 INSERT INTO Paciente (idUsuario, alergia, medicacion)
 VALUES (4, 'Ninguna alergia conocida', 'Sin medicación regular');
 SELECT * FROM Paciente WHERE idUsuario = 4;
+
+INSERT INTO NuevoUsuario (nombre, apellidoPaterno, apellidoMaterno, correo, contrasenia, telefono, fechaNac, sexo, rol, fechaCreacion, ultimaModSesion)
+VALUES 
+    ('Alejandra', 'Parra', 'Leyva', 'alejandraleyva.0805@gmail.com', 'alejandra.08', '687-107-3165', '2005-10-09', 'F', 'Paciente', GETDATE(), NULL);
+
+--crear las tablas restantes 29/09/25
+
+--creacion de la tabla agendaDisponibilidad
+CREATE TABLE AgendaDisponibilidad (
+    idAgenda INT IDENTITY(1,1) PRIMARY KEY,
+    idMedico INT NOT NULL,
+    idConsultorio INT NOT NULL,
+    fechaInicio DATETIME NOT NULL,
+    fechaFin DATETIME NOT NULL,
+    FOREIGN KEY (idMedico) REFERENCES Medico(idMedico),
+    FOREIGN KEY (idConsultorio) REFERENCES Consultorio(idConsultorio)
+);
+
+--creacion de la tabla turno
+CREATE TABLE Turno (
+    idTurno INT IDENTITY(1,1) PRIMARY KEY,
+    idAgenda INT NOT NULL,
+    fecha DATE NOT NULL,
+    horaInicio TIME NOT NULL,
+    horaFinal TIME NOT NULL,
+    estado VARCHAR(20) NOT NULL,
+    FOREIGN KEY (idAgenda) REFERENCES AgendaDisponibilidad(idAgenda)
+)
+
+--creacion de la tabla MotivoConsulta
+CREATE TABLE MotivoConsulta (
+    idMotivo INT IDENTITY(1,1) PRIMARY KEY,
+    descripcion VARCHAR(200) NOT NULL,
+    instruccion NVARCHAR(MAX)
+);
+
+
+--creacion de la tabla cita
+CREATE TABLE Cita (
+    idCita INT IDENTITY(1,1) PRIMARY KEY,
+    idPaciente INT NOT NULL,
+    idMedico INT NOT NULL,
+    idTurno INT NOT NULL,
+    idMotivo INT NOT NULL,
+    estado VARCHAR(20) NOT NULL,
+    fechaCreacion DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (idPaciente) REFERENCES Paciente(idPaciente),
+    FOREIGN KEY (idMedico) REFERENCES Medico(idMedico),
+    FOREIGN KEY (idTurno) REFERENCES Turno(idTurno),
+    FOREIGN KEY (idMotivo) REFERENCES MotivoConsulta(idMotivo)
+);
