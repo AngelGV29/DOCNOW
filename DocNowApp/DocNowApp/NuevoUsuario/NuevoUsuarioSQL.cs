@@ -77,6 +77,9 @@ namespace DocNowApp.NuevoUsuario
         public async Task<int> Creacion()
         {
             this.idUsuario = await GenerarId();
+
+            if (this.idUsuario == 0) { return 0; }
+            if (this.idUsuario == -1) { return -1; }
             //Instrucción SQL
             sentencia = "insert into Usuario (idUsuario, nombre, apellidoPaterno, apellidoMaterno, correo, contrasenia, telefono, fechaNac, sexo, rol, fechaCreacion, ultimoInicioSesion) " +
                 "values (@idUsuario, @nombre, @apellidoPaterno, @apellidoMaterno, @correo, @contrasenia, @telefono, @fechaNac, @sexo, @rol, @fechaCreacion, @ultimoInicioSesion)";
