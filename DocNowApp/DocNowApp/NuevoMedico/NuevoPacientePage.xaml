@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DocNowApp.NuevoPaciente.NuevoPacientePage"
+             Title="NuevoPacientePage">
+
+    <VerticalStackLayout>
+
+        <!-- Mensaje al usuario -->
+        <Label 
+            Margin="0,0,0,0"
+            Text="Está por crear un nuevo paciente"
+            FontSize="24"
+            FontFamily="Arial"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <!-- Nombre -->
+        <Entry
+            x:Name="txtNombre"
+            FontSize="12"
+            Placeholder="Nombre completo"
+            MaxLength="100"
+            WidthRequest="750"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,40,0,0"/>
+
+        <!-- Apellidos lado a lado -->
+        <Grid WidthRequest="750"
+              HorizontalOptions="Center"
+              ColumnSpacing="50"
+              Margin="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Entry
+                x:Name="txtApellP"
+                FontSize="12"
+                Placeholder="Apellido Paterno"
+                MaxLength="100"
+                WidthRequest="350"
+                Grid.Column="0"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+
+            <Entry
+                x:Name="txtApellM"
+                FontSize="12"
+                Placeholder="Apellido Materno"
+                MaxLength="100"
+                WidthRequest="350"
+                Grid.Column="1"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+        </Grid>
+
+        <!-- Fecha de nacimiento y sexo -->
+        <Grid WidthRequest="750"
+              HorizontalOptions="Center"
+              ColumnSpacing="50"
+              Margin="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <DatePicker
+                x:Name="dateFechaNac"
+                FontSize="12"
+                Format="dd/MM/yyyy"
+                WidthRequest="350"
+                MinimumDate="01/01/1900"
+                Grid.Column="0"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+
+            <HorizontalStackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
+                <Label Text="Sexo:" FontSize="15" Margin="0,0,10,0" VerticalOptions="Center"/>
+                <RadioButton Content="Hombre" GroupName="Sexo"/>
+                <RadioButton Content="Mujer" GroupName="Sexo"/>
+            </HorizontalStackLayout>
+        </Grid>
+
+        <!-- Correo y Teléfono -->
+        <Grid WidthRequest="750"
+              HorizontalOptions="Center"
+              ColumnSpacing="50"
+              Margin="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Entry
+                x:Name="txtCorreo"
+                FontSize="12"
+                Placeholder="Correo electrónico"
+                MaxLength="100"
+                WidthRequest="350"
+                Grid.Column="0"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+
+            <Entry
+                x:Name="txtTelefono"
+                FontSize="12"
+                Placeholder="Teléfono"
+                MaxLength="15"
+                WidthRequest="350"
+                Grid.Column="1"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+        </Grid>
+
+        <!-- Alergias y Medicamentos -->
+        <Entry
+            x:Name="txtAlergias"
+            FontSize="12"
+            Placeholder="Alergias"
+            MaxLength="200"
+            WidthRequest="750"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,20,0,0"/>
+
+        <Entry
+            x:Name="txtMedicamentos"
+            FontSize="12"
+            Placeholder="Medicamentos actuales"
+            MaxLength="200"
+            WidthRequest="750"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,10,0,0"/>
+
+        <!-- Contraseña -->
+        <Entry
+            x:Name="txtContrasenia"
+            FontSize="12"
+            Placeholder="Contraseña"
+            MaxLength="100"
+            IsPassword="True"
+            WidthRequest="750"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,20,0,0"/>
+
+        <!-- Botón de registro -->
+        <Button
+            x:Name="btnRegistrar"
+            Text="Registrar paciente"
+            IsEnabled="True"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Margin="0,40,0,0"/>
+
+    </VerticalStackLayout>
+</ContentPage>
