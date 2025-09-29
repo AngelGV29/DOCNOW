@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DocNowApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+fca6e223887c733a0c82b2e1c3d275db012f80b9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+8dd5928b3d44051e3cef3fc61dd3fc3edb320090")]
 [assembly: System.Reflection.AssemblyProductAttribute("DocNowApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DocNowApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

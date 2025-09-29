@@ -30,25 +30,25 @@
     <AppXManifest Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-09-29T02:47:19.338</Modified>
+      <Modified>2025-09-29T17:09:32.898</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-09-18T22:41:40.485</Modified>
+      <Modified>2025-09-29T17:06:25.356</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DocNowApp.runtimeconfig.json">
       <PackagePath>DocNowApp.runtimeconfig.json</PackagePath>
-      <Modified>2025-09-18T22:41:40.179</Modified>
+      <Modified>2025-09-29T17:06:25.195</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DocNowApp.dll">
       <PackagePath>DocNowApp.dll</PackagePath>
-      <Modified>2025-09-29T02:47:18.710</Modified>
+      <Modified>2025-09-29T17:09:32.369</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>DocNowApp.exe</PackagePath>
-      <Modified>2025-09-29T02:47:18.756</Modified>
+      <Modified>2025-09-29T17:09:32.377</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -56,247 +56,247 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
-      <Modified>2025-09-18T21:58:28.831</Modified>
+      <Modified>2025-09-29T17:06:22.829</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
-      <Modified>2025-09-18T21:58:28.832</Modified>
+      <Modified>2025-09-29T17:06:22.874</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
-      <Modified>2025-09-18T21:58:28.832</Modified>
+      <Modified>2025-09-29T17:06:22.895</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
-      <Modified>2025-09-18T21:58:28.833</Modified>
+      <Modified>2025-09-29T17:06:22.924</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
-      <Modified>2025-09-18T21:58:28.833</Modified>
+      <Modified>2025-09-29T17:06:23.049</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
-      <Modified>2025-09-18T21:58:28.808</Modified>
+      <Modified>2025-09-18T21:58:27.287</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf">
       <PackagePath>OpenSans-Semibold.ttf</PackagePath>
-      <Modified>2025-09-18T21:58:28.809</Modified>
+      <Modified>2025-09-18T21:58:27.288</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2025-09-18T22:21:29.168</Modified>
+      <Modified>2025-09-29T17:06:23.914</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.158</Modified>
+      <Modified>2025-09-29T17:06:23.900</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.158</Modified>
+      <Modified>2025-09-29T17:06:23.900</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.158</Modified>
+      <Modified>2025-09-29T17:06:23.900</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.158</Modified>
+      <Modified>2025-09-29T17:06:23.900</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.157</Modified>
+      <Modified>2025-09-29T17:06:23.899</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.164</Modified>
+      <Modified>2025-09-29T17:06:23.909</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.164</Modified>
+      <Modified>2025-09-29T17:06:23.909</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.162</Modified>
+      <Modified>2025-09-29T17:06:23.908</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.163</Modified>
+      <Modified>2025-09-29T17:06:23.909</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.163</Modified>
+      <Modified>2025-09-29T17:06:23.908</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.165</Modified>
+      <Modified>2025-09-29T17:06:23.911</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.165</Modified>
+      <Modified>2025-09-29T17:06:23.911</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.164</Modified>
+      <Modified>2025-09-29T17:06:23.910</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.165</Modified>
+      <Modified>2025-09-29T17:06:23.910</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.164</Modified>
+      <Modified>2025-09-29T17:06:23.910</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.167</Modified>
+      <Modified>2025-09-29T17:06:23.914</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.167</Modified>
+      <Modified>2025-09-29T17:06:23.913</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.167</Modified>
+      <Modified>2025-09-29T17:06:23.913</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.167</Modified>
+      <Modified>2025-09-29T17:06:23.913</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.166</Modified>
+      <Modified>2025-09-29T17:06:23.912</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.166</Modified>
+      <Modified>2025-09-29T17:06:23.912</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.166</Modified>
+      <Modified>2025-09-29T17:06:23.912</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.165</Modified>
+      <Modified>2025-09-29T17:06:23.911</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.166</Modified>
+      <Modified>2025-09-29T17:06:23.912</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.165</Modified>
+      <Modified>2025-09-29T17:06:23.911</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.160</Modified>
+      <Modified>2025-09-29T17:06:23.904</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.160</Modified>
+      <Modified>2025-09-29T17:06:23.904</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.160</Modified>
+      <Modified>2025-09-29T17:06:23.904</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.160</Modified>
+      <Modified>2025-09-29T17:06:23.903</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.160</Modified>
+      <Modified>2025-09-29T17:06:23.903</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.162</Modified>
+      <Modified>2025-09-29T17:06:23.906</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.161</Modified>
+      <Modified>2025-09-29T17:06:23.906</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.161</Modified>
+      <Modified>2025-09-29T17:06:23.905</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.161</Modified>
+      <Modified>2025-09-29T17:06:23.905</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.161</Modified>
+      <Modified>2025-09-29T17:06:23.905</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.162</Modified>
+      <Modified>2025-09-29T17:06:23.907</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.162</Modified>
+      <Modified>2025-09-29T17:06:23.907</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.162</Modified>
+      <Modified>2025-09-29T17:06:23.907</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.162</Modified>
+      <Modified>2025-09-29T17:06:23.906</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.162</Modified>
+      <Modified>2025-09-29T17:06:23.906</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.159</Modified>
+      <Modified>2025-09-29T17:06:23.903</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.159</Modified>
+      <Modified>2025-09-29T17:06:23.902</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.159</Modified>
+      <Modified>2025-09-29T17:06:23.902</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.159</Modified>
+      <Modified>2025-09-29T17:06:23.902</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.159</Modified>
+      <Modified>2025-09-29T17:06:23.901</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.157</Modified>
+      <Modified>2025-09-29T17:06:23.915</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.156</Modified>
+      <Modified>2025-09-29T17:06:23.915</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.156</Modified>
+      <Modified>2025-09-29T17:06:23.915</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.156</Modified>
+      <Modified>2025-09-29T17:06:23.914</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.156</Modified>
+      <Modified>2025-09-29T17:06:23.914</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\mostrar_contrasenia.scale-100.png">
       <PackagePath>mostrar_contrasenia.scale-100.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.157</Modified>
+      <Modified>2025-09-29T17:06:23.898</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\ocultar_contrasenia.scale-100.png">
       <PackagePath>ocultar_contrasenia.scale-100.png</PackagePath>
-      <Modified>2025-09-18T22:21:29.157</Modified>
+      <Modified>2025-09-29T17:06:23.899</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DocNowApp.deps.json">
       <PackagePath>DocNowApp.deps.json</PackagePath>
-      <Modified>2025-09-18T22:41:40.050</Modified>
+      <Modified>2025-09-29T17:06:25.191</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.57\lib\net8.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
