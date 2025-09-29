@@ -30,25 +30,25 @@
     <AppXManifest Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-09-23T04:26:55.000</Modified>
+      <Modified>2025-09-29T17:20:06.854</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-09-23T04:26:54.557</Modified>
+      <Modified>2025-09-29T17:16:09.850</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DocNowApp.runtimeconfig.json">
       <PackagePath>DocNowApp.runtimeconfig.json</PackagePath>
-      <Modified>2025-09-19T14:27:28.082</Modified>
+      <Modified>2025-09-29T17:16:09.593</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DocNowApp.dll">
       <PackagePath>DocNowApp.dll</PackagePath>
-      <Modified>2025-09-23T04:26:51.488</Modified>
+      <Modified>2025-09-29T17:20:05.790</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>DocNowApp.exe</PackagePath>
-      <Modified>2025-09-23T04:26:51.585</Modified>
+      <Modified>2025-09-29T17:20:05.802</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -56,247 +56,247 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
-      <Modified>2025-09-18T15:34:39.064</Modified>
+      <Modified>2025-09-29T17:16:05.777</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
-      <Modified>2025-09-18T15:34:39.065</Modified>
+      <Modified>2025-09-29T17:16:05.802</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
-      <Modified>2025-09-18T15:34:39.066</Modified>
+      <Modified>2025-09-29T17:16:05.839</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
-      <Modified>2025-09-18T15:34:39.067</Modified>
+      <Modified>2025-09-29T17:16:05.886</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
-      <Modified>2025-09-18T15:34:39.068</Modified>
+      <Modified>2025-09-29T17:16:06.070</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
-      <Modified>2025-09-18T15:34:39.020</Modified>
+      <Modified>2025-09-18T15:34:35.790</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf">
       <PackagePath>OpenSans-Semibold.ttf</PackagePath>
-      <Modified>2025-09-18T15:34:39.023</Modified>
+      <Modified>2025-09-18T15:34:35.792</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2025-09-19T14:27:24.235</Modified>
+      <Modified>2025-09-29T17:16:07.573</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.215</Modified>
+      <Modified>2025-09-29T17:16:07.543</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.215</Modified>
+      <Modified>2025-09-29T17:16:07.542</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.214</Modified>
+      <Modified>2025-09-29T17:16:07.541</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.214</Modified>
+      <Modified>2025-09-29T17:16:07.540</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.213</Modified>
+      <Modified>2025-09-29T17:16:07.540</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.226</Modified>
+      <Modified>2025-09-29T17:16:07.562</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.226</Modified>
+      <Modified>2025-09-29T17:16:07.561</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.224</Modified>
+      <Modified>2025-09-29T17:16:07.559</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.225</Modified>
+      <Modified>2025-09-29T17:16:07.560</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.225</Modified>
+      <Modified>2025-09-29T17:16:07.560</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.229</Modified>
+      <Modified>2025-09-29T17:16:07.567</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.228</Modified>
+      <Modified>2025-09-29T17:16:07.567</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.227</Modified>
+      <Modified>2025-09-29T17:16:07.563</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.228</Modified>
+      <Modified>2025-09-29T17:16:07.566</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.227</Modified>
+      <Modified>2025-09-29T17:16:07.565</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.235</Modified>
+      <Modified>2025-09-29T17:16:07.573</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.234</Modified>
+      <Modified>2025-09-29T17:16:07.573</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.234</Modified>
+      <Modified>2025-09-29T17:16:07.572</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.233</Modified>
+      <Modified>2025-09-29T17:16:07.572</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.233</Modified>
+      <Modified>2025-09-29T17:16:07.572</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.232</Modified>
+      <Modified>2025-09-29T17:16:07.571</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.232</Modified>
+      <Modified>2025-09-29T17:16:07.570</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.230</Modified>
+      <Modified>2025-09-29T17:16:07.569</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.231</Modified>
+      <Modified>2025-09-29T17:16:07.570</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.231</Modified>
+      <Modified>2025-09-29T17:16:07.569</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.220</Modified>
+      <Modified>2025-09-29T17:16:07.553</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.219</Modified>
+      <Modified>2025-09-29T17:16:07.552</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.219</Modified>
+      <Modified>2025-09-29T17:16:07.551</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.218</Modified>
+      <Modified>2025-09-29T17:16:07.550</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.218</Modified>
+      <Modified>2025-09-29T17:16:07.549</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.222</Modified>
+      <Modified>2025-09-29T17:16:07.556</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.222</Modified>
+      <Modified>2025-09-29T17:16:07.556</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.221</Modified>
+      <Modified>2025-09-29T17:16:07.555</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.221</Modified>
+      <Modified>2025-09-29T17:16:07.555</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.220</Modified>
+      <Modified>2025-09-29T17:16:07.554</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.224</Modified>
+      <Modified>2025-09-29T17:16:07.559</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.224</Modified>
+      <Modified>2025-09-29T17:16:07.558</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.223</Modified>
+      <Modified>2025-09-29T17:16:07.558</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.223</Modified>
+      <Modified>2025-09-29T17:16:07.557</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.223</Modified>
+      <Modified>2025-09-29T17:16:07.557</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.218</Modified>
+      <Modified>2025-09-29T17:16:07.548</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.217</Modified>
+      <Modified>2025-09-29T17:16:07.548</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.217</Modified>
+      <Modified>2025-09-29T17:16:07.546</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.216</Modified>
+      <Modified>2025-09-29T17:16:07.545</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.216</Modified>
+      <Modified>2025-09-29T17:16:07.544</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.211</Modified>
+      <Modified>2025-09-29T17:16:07.578</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.211</Modified>
+      <Modified>2025-09-29T17:16:07.576</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.210</Modified>
+      <Modified>2025-09-29T17:16:07.576</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.209</Modified>
+      <Modified>2025-09-29T17:16:07.575</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.209</Modified>
+      <Modified>2025-09-29T17:16:07.575</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\mostrar_contrasenia.scale-100.png">
       <PackagePath>mostrar_contrasenia.scale-100.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.212</Modified>
+      <Modified>2025-09-29T17:16:07.539</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\ocultar_contrasenia.scale-100.png">
       <PackagePath>ocultar_contrasenia.scale-100.png</PackagePath>
-      <Modified>2025-09-19T14:27:24.212</Modified>
+      <Modified>2025-09-29T17:16:07.538</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\OneDrive\Desktop\Universidad\TERCER_SEMESTRE\PRIMER_PARCIAL\INGENIERIA_DE_SOFTWARE_II\DocNow_2\DOCNOW\DocNowApp\DocNowApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DocNowApp.deps.json">
       <PackagePath>DocNowApp.deps.json</PackagePath>
-      <Modified>2025-09-23T04:26:53.794</Modified>
+      <Modified>2025-09-29T17:16:09.578</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\aleja\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.57\lib\net8.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
