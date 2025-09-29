@@ -3,16 +3,22 @@
     x:Class="DocNowApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:nuevoMedico="clr-namespace:DocNowApp.NuevoMedico"
     xmlns:inicio="clr-namespace:DocNowApp.Inicio"
     xmlns:login="clr-namespace:DocNowApp.Login"
     xmlns:principal="clr-namespace:DocNowApp.Pantalla_principal"
     xmlns:nuevoUsuario="clr-namespace:DocNowApp.NuevoUsuario"
+    
     Shell.FlyoutBehavior="Disabled"
     Title="DocNowApp">
 
     <!--En este archivo se define la estructura de navegación entre páginas.
     Los shell content representan páginas, y configuran una ruta que se
     utilizará cuando se desee mostrar dicha página-->
+    <ShellContent
+     Title="Nuevo Medico"
+     ContentTemplate="{DataTemplate nuevoMedico:NuevoMedicoPage}"
+     Route="NuevoMedicoPage"/>
     <ShellContent
         Title="Inicio"
         ContentTemplate="{DataTemplate inicio:InicioPage}"
