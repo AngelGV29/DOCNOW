@@ -16,8 +16,9 @@
             x:Name="txtNombre"
             FontSize="12"
             Placeholder="Nombre"
-            MaxLength="100"
+            MaxLength="50"
             WidthRequest="750"
+            TextChanged="Entry_TextChangued"
             VerticalOptions="Center"
             HorizontalOptions="Center"
             Margin="0,40,0,0"/>
@@ -33,9 +34,10 @@
                 x:Name="txtApellP"
                 FontSize="12"
                 Placeholder="Apellido Paterno"
-                MaxLength="100"
+                MaxLength="50"
                 WidthRequest="350"
                 Grid.Column="0"
+                TextChanged="Entry_TextChangued"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
                 Margin="0,0,0,0"/>
@@ -43,9 +45,10 @@
                 x:Name="txtApellM"
                 FontSize="12"
                 Placeholder="Apellido Materno"
-                MaxLength="100"
+                MaxLength="50"
                 WidthRequest="350"
                 Grid.Column="1"
+                TextChanged="Entry_TextChangued"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
                 Margin="0,0,0,0"/>
@@ -76,8 +79,8 @@
                     FontFamily="Arial"
                     VerticalOptions="Center"
                     HorizontalOptions="Center"/>
-                <RadioButton Content="Hombre" GroupName="Sexo" VerticalOptions="End" HorizontalOptions="End"/>
-                <RadioButton Content="Mujer" GroupName="Sexo" VerticalOptions="End" HorizontalOptions="Center"/>
+                <RadioButton x:Name="rbHombre" Content="Hombre" GroupName="Sexo" VerticalOptions="End" HorizontalOptions="End"/>
+                <RadioButton x:Name="rbMujer" Content="Mujer" GroupName="Sexo" VerticalOptions="End" HorizontalOptions="Center"/>
             </HorizontalStackLayout>
             
         </Grid>
@@ -96,6 +99,7 @@
                 MaxLength="100"
                 WidthRequest="350"
                 Grid.Column="0"
+                TextChanged="Entry_TextChangued"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
                 Margin="0,0,0,0"/>
@@ -103,9 +107,10 @@
                 x:Name="txtTelefono"
                 FontSize="12"
                 Placeholder="Telefono"
-                MaxLength="100"
+                MaxLength="10"
                 WidthRequest="350"
                 Grid.Column="1"
+                TextChanged="Entry_TextChangued"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
                 Margin="0,0,0,0"/>
@@ -118,6 +123,7 @@
             MaxLength="100"
             IsPassword="True"
             WidthRequest="750"
+            TextChanged="Entry_TextChangued"
             VerticalOptions="Center"
             HorizontalOptions="Center"
             Margin="0,20,0,0"/>
@@ -125,6 +131,7 @@
             x:Name="btnRegistrarse"
             Text="Registrarse"
             IsEnabled="False"
+            Clicked="btnRegistrarse_Clicked"
             VerticalOptions="Center" 
             HorizontalOptions="Center"
             Margin="0,80,0,0"/>
