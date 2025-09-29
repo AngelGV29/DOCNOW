@@ -6,7 +6,7 @@
 
     <VerticalStackLayout>
         <Label 
-         Margin="0,0,0,5"
+         Margin="0,0,0,4"
          Text="Registrate en Doc Now"
          FontSize="24"
          FontFamily="Arial"
@@ -17,7 +17,6 @@
             FontSize="12"
             Placeholder="Nombre"
             MaxLength="100"
-            TextChanged="txtCorreo_TextChanged"
             WidthRequest="500"
             VerticalOptions="Center"
             HorizontalOptions="Center"
