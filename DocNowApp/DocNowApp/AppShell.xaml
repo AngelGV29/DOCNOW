@@ -16,13 +16,14 @@
     Los shell content representan páginas, y configuran una ruta que se
     utilizará cuando se desee mostrar dicha página-->
     <ShellContent
-     Title="Nuevo Medico"
-     ContentTemplate="{DataTemplate nuevoMedico:NuevoMedicoPage}"
-     Route="NuevoMedicoPage"/>
-    <ShellContent
         Title="Inicio"
         ContentTemplate="{DataTemplate inicio:InicioPage}"
         Route="InicioPage"/>
+    <ShellContent
+     Title="Nuevo Medico"
+     ContentTemplate="{DataTemplate nuevoMedico:NuevoMedicoPage}"
+     Route="NuevoMedicoPage"/>
+    
     <ShellContent
         Title="Registro"
         ContentTemplate="{DataTemplate nuevoUsuario:NuevoUsuarioPage}"
