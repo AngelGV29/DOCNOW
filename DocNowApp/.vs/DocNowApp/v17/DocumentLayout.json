@@ -3,7 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\joaqu\\OneDrive\\Documentos\\Ingenier\u00EDa de Software II\\DocNow\\Versionamiento\\DOCNOW\\DocNowApp\\",
   "Documents": [
     {
-<<<<<<< HEAD
+      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\joaqu\\onedrive\\documentos\\ingenier\u00EDa de software ii\\docnow\\versionamiento\\docnow\\docnowapp\\docnowapp\\login\\loginsql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\login\\loginsql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\joaqu\\onedrive\\documentos\\ingenier\u00EDa de software ii\\docnow\\versionamiento\\docnow\\docnowapp\\docnowapp\\inicio\\iniciopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\inicio\\iniciopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\joaqu\\onedrive\\documentos\\ingenier\u00EDa de software ii\\docnow\\versionamiento\\docnow\\docnowapp\\docnowapp\\nuevousuario\\nuevousuariopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\nuevousuario\\nuevousuariopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\joaqu\\onedrive\\documentos\\ingenier\u00EDa de software ii\\docnow\\versionamiento\\docnow\\docnowapp\\docnowapp\\nuevousuario\\nuevousuariosql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\nuevousuario\\nuevousuariosql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -12,47 +23,8 @@
       "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\login\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\joaqu\\onedrive\\documentos\\ingenier\u00EDa de software ii\\docnow\\versionamiento\\docnow\\docnowapp\\docnowapp\\login\\loginsql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\login\\loginsql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\joaqu\\onedrive\\documentos\\ingenier\u00EDa de software ii\\docnow\\versionamiento\\docnow\\docnowapp\\docnowapp\\login\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\login\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\joaqu\\onedrive\\documentos\\ingenier\u00EDa de software ii\\docnow\\versionamiento\\docnow\\docnowapp\\docnowapp\\inicio\\iniciopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-=======
-      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\aleja\\onedrive\\desktop\\universidad\\tercer_semestre\\primer_parcial\\ingenieria_de_software_ii\\docnow_2\\docnow\\docnowapp\\docnowapp\\login\\loginsql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\login\\loginsql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\aleja\\onedrive\\desktop\\universidad\\tercer_semestre\\primer_parcial\\ingenieria_de_software_ii\\docnow_2\\docnow\\docnowapp\\docnowapp\\globales\\cadenaconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\globales\\cadenaconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\aleja\\onedrive\\desktop\\universidad\\tercer_semestre\\primer_parcial\\ingenieria_de_software_ii\\docnow_2\\docnow\\docnowapp\\docnowapp\\login\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\login\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\aleja\\onedrive\\desktop\\universidad\\tercer_semestre\\primer_parcial\\ingenieria_de_software_ii\\docnow_2\\docnow\\docnowapp\\docnowapp\\login\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\login\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\aleja\\onedrive\\desktop\\universidad\\tercer_semestre\\primer_parcial\\ingenieria_de_software_ii\\docnow_2\\docnow\\docnowapp\\docnowapp\\nuevousuario\\nuevousuariosql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\nuevousuario\\nuevousuariosql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\aleja\\onedrive\\desktop\\universidad\\tercer_semestre\\primer_parcial\\ingenieria_de_software_ii\\docnow_2\\docnow\\docnowapp\\docnowapp\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\aleja\\onedrive\\desktop\\universidad\\tercer_semestre\\primer_parcial\\ingenieria_de_software_ii\\docnow_2\\docnow\\docnowapp\\docnowapp\\inicio\\iniciopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
->>>>>>> origin/main
-      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\inicio\\iniciopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\joaqu\\onedrive\\documentos\\ingenier\u00EDa de software ii\\docnow\\versionamiento\\docnow\\docnowapp\\docnowapp\\nuevousuario\\nuevousuariopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\nuevousuario\\nuevousuariopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\joaqu\\onedrive\\documentos\\ingenier\u00EDa de software ii\\docnow\\versionamiento\\docnow\\docnowapp\\docnowapp\\nuevousuario\\nuevousuariopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -86,11 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< HEAD
-          "SelectedChildIndex": 4,
-=======
-          "SelectedChildIndex": 6,
->>>>>>> origin/main
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -102,7 +70,6 @@
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
               "DocumentIndex": 6,
               "Title": "NuevoUsuarioPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\joaqu\\OneDrive\\Documentos\\Ingenier\u00EDa de Software II\\DocNow\\Versionamiento\\DOCNOW\\DocNowApp\\DocNowApp\\NuevoUsuario\\NuevoUsuarioPage.xaml.cs",
@@ -111,24 +78,11 @@
               "RelativeToolTip": "DocNowApp\\NuevoUsuario\\NuevoUsuarioPage.xaml.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAQwDUAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-19T03:57:01.921Z",
-=======
-              "DocumentIndex": 3,
-              "Title": "LoginPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\aleja\\OneDrive\\Desktop\\Universidad\\TERCER_SEMESTRE\\PRIMER_PARCIAL\\INGENIERIA_DE_SOFTWARE_II\\DocNow_2\\DOCNOW\\DocNowApp\\DocNowApp\\Login\\LoginPage.xaml.cs",
-              "RelativeDocumentMoniker": "DocNowApp\\Login\\LoginPage.xaml.cs",
-              "ToolTip": "C:\\Users\\aleja\\OneDrive\\Desktop\\Universidad\\TERCER_SEMESTRE\\PRIMER_PARCIAL\\INGENIERIA_DE_SOFTWARE_II\\DocNow_2\\DOCNOW\\DocNowApp\\DocNowApp\\Login\\LoginPage.xaml.cs",
-              "RelativeToolTip": "DocNowApp\\Login\\LoginPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T23:49:26.421Z",
->>>>>>> origin/main
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-19T03:57:01.921Z"
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "NuevoUsuarioPage.xaml",
               "DocumentMoniker": "C:\\Users\\joaqu\\OneDrive\\Documentos\\Ingenier\u00EDa de Software II\\DocNow\\Versionamiento\\DOCNOW\\DocNowApp\\DocNowApp\\NuevoUsuario\\NuevoUsuarioPage.xaml",
               "RelativeDocumentMoniker": "DocNowApp\\NuevoUsuario\\NuevoUsuarioPage.xaml",
@@ -137,61 +91,24 @@
               "ViewState": "AgIAABIAAAAAAAAAAAAAAG0AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-09-18T22:23:59.339Z",
-=======
-              "DocumentIndex": 2,
-              "Title": "LoginPage.xaml",
-              "DocumentMoniker": "C:\\Users\\aleja\\OneDrive\\Desktop\\Universidad\\TERCER_SEMESTRE\\PRIMER_PARCIAL\\INGENIERIA_DE_SOFTWARE_II\\DocNow_2\\DOCNOW\\DocNowApp\\DocNowApp\\Login\\LoginPage.xaml",
-              "RelativeDocumentMoniker": "DocNowApp\\Login\\LoginPage.xaml",
-              "ToolTip": "C:\\Users\\aleja\\OneDrive\\Desktop\\Universidad\\TERCER_SEMESTRE\\PRIMER_PARCIAL\\INGENIERIA_DE_SOFTWARE_II\\DocNow_2\\DOCNOW\\DocNowApp\\DocNowApp\\Login\\LoginPage.xaml",
-              "RelativeToolTip": "DocNowApp\\Login\\LoginPage.xaml",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAADQAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-13T23:23:25.738Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "NuevoUsuarioSQL.cs",
-              "DocumentMoniker": "C:\\Users\\aleja\\OneDrive\\Desktop\\Universidad\\TERCER_SEMESTRE\\PRIMER_PARCIAL\\INGENIERIA_DE_SOFTWARE_II\\DocNow_2\\DOCNOW\\DocNowApp\\DocNowApp\\NuevoUsuario\\NuevoUsuarioSQL.cs",
-              "RelativeDocumentMoniker": "DocNowApp\\NuevoUsuario\\NuevoUsuarioSQL.cs",
-              "ToolTip": "C:\\Users\\aleja\\OneDrive\\Desktop\\Universidad\\TERCER_SEMESTRE\\PRIMER_PARCIAL\\INGENIERIA_DE_SOFTWARE_II\\DocNow_2\\DOCNOW\\DocNowApp\\DocNowApp\\NuevoUsuario\\NuevoUsuarioSQL.cs",
-              "RelativeToolTip": "DocNowApp\\NuevoUsuario\\NuevoUsuarioSQL.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAwAwAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T02:18:30.219Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CadenaConexion.cs",
-              "DocumentMoniker": "C:\\Users\\aleja\\OneDrive\\Desktop\\Universidad\\TERCER_SEMESTRE\\PRIMER_PARCIAL\\INGENIERIA_DE_SOFTWARE_II\\DocNow_2\\DOCNOW\\DocNowApp\\DocNowApp\\Globales\\CadenaConexion.cs",
-              "RelativeDocumentMoniker": "DocNowApp\\Globales\\CadenaConexion.cs",
-              "ToolTip": "C:\\Users\\aleja\\OneDrive\\Desktop\\Universidad\\TERCER_SEMESTRE\\PRIMER_PARCIAL\\INGENIERIA_DE_SOFTWARE_II\\DocNow_2\\DOCNOW\\DocNowApp\\DocNowApp\\Globales\\CadenaConexion.cs",
-              "RelativeToolTip": "DocNowApp\\Globales\\CadenaConexion.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T23:57:28.593Z",
->>>>>>> origin/main
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "NuevoUsuarioSQL.cs",
               "DocumentMoniker": "C:\\Users\\joaqu\\OneDrive\\Documentos\\Ingenier\u00EDa de Software II\\DocNow\\Versionamiento\\DOCNOW\\DocNowApp\\DocNowApp\\NuevoUsuario\\NuevoUsuarioSQL.cs",
               "RelativeDocumentMoniker": "DocNowApp\\NuevoUsuario\\NuevoUsuarioSQL.cs",
               "ToolTip": "C:\\Users\\joaqu\\OneDrive\\Documentos\\Ingenier\u00EDa de Software II\\DocNow\\Versionamiento\\DOCNOW\\DocNowApp\\DocNowApp\\NuevoUsuario\\NuevoUsuarioSQL.cs",
               "RelativeToolTip": "DocNowApp\\NuevoUsuario\\NuevoUsuarioSQL.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAkwE4AAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-18T02:18:30.219Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "LoginPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\joaqu\\OneDrive\\Documentos\\Ingenier\u00EDa de Software II\\DocNow\\Versionamiento\\DOCNOW\\DocNowApp\\DocNowApp\\Login\\LoginPage.xaml.cs",
               "RelativeDocumentMoniker": "DocNowApp\\Login\\LoginPage.xaml.cs",
@@ -199,12 +116,11 @@
               "RelativeToolTip": "DocNowApp\\Login\\LoginPage.xaml.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAQwBIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T23:49:26.421Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-13T23:49:26.421Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "LoginPage.xaml",
               "DocumentMoniker": "C:\\Users\\joaqu\\OneDrive\\Documentos\\Ingenier\u00EDa de Software II\\DocNow\\Versionamiento\\DOCNOW\\DocNowApp\\DocNowApp\\Login\\LoginPage.xaml",
               "RelativeDocumentMoniker": "DocNowApp\\Login\\LoginPage.xaml",
@@ -212,29 +128,23 @@
               "RelativeToolTip": "DocNowApp\\Login\\LoginPage.xaml",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAADcAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-13T23:23:25.738Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-13T23:23:25.738Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "LoginSQL.cs",
               "DocumentMoniker": "C:\\Users\\joaqu\\OneDrive\\Documentos\\Ingenier\u00EDa de Software II\\DocNow\\Versionamiento\\DOCNOW\\DocNowApp\\DocNowApp\\Login\\LoginSQL.cs",
               "RelativeDocumentMoniker": "DocNowApp\\Login\\LoginSQL.cs",
               "ToolTip": "C:\\Users\\joaqu\\OneDrive\\Documentos\\Ingenier\u00EDa de Software II\\DocNow\\Versionamiento\\DOCNOW\\DocNowApp\\DocNowApp\\Login\\LoginSQL.cs",
               "RelativeToolTip": "DocNowApp\\Login\\LoginSQL.cs",
-<<<<<<< HEAD
-              "ViewState": "AgIAADYAAAAAAAAAAAAYwEoAAAA8AAAAAAAAAA==",
-=======
-              "ViewState": "AgIAADAAAAAAAAAAAAAYwDsAAAAtAAAAAAAAAA==",
->>>>>>> origin/main
+              "ViewState": "AgIAADYAAAAAAAAAAAAYwDoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-14T00:32:32.82Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
               "DocumentIndex": 8,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Users\\joaqu\\OneDrive\\Documentos\\Ingenier\u00EDa de Software II\\DocNow\\Versionamiento\\DOCNOW\\DocNowApp\\DocNowApp\\MainPage.xaml",
@@ -243,8 +153,7 @@
               "RelativeToolTip": "DocNowApp\\MainPage.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-13T23:20:15.141Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-13T23:20:15.141Z"
             },
             {
               "$type": "Document",
@@ -256,8 +165,7 @@
               "RelativeToolTip": "DocNowApp\\AppShell.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-13T23:20:08.897Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-13T23:20:08.897Z"
             },
             {
               "$type": "Document",
@@ -280,27 +188,6 @@
               "ToolTip": "C:\\Users\\joaqu\\OneDrive\\Documentos\\Ingenier\u00EDa de Software II\\DocNow\\Versionamiento\\DOCNOW\\DocNowApp\\DocNowApp\\Globales\\CadenaConexion.cs",
               "RelativeToolTip": "DocNowApp\\Globales\\CadenaConexion.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAvAAAAAAAAAA==",
-=======
-              "DocumentIndex": 5,
-              "Title": "AppShell.xaml",
-              "DocumentMoniker": "C:\\Users\\aleja\\OneDrive\\Desktop\\Universidad\\TERCER_SEMESTRE\\PRIMER_PARCIAL\\INGENIERIA_DE_SOFTWARE_II\\DocNow_2\\DOCNOW\\DocNowApp\\DocNowApp\\AppShell.xaml",
-              "RelativeDocumentMoniker": "DocNowApp\\AppShell.xaml",
-              "ToolTip": "C:\\Users\\aleja\\OneDrive\\Desktop\\Universidad\\TERCER_SEMESTRE\\PRIMER_PARCIAL\\INGENIERIA_DE_SOFTWARE_II\\DocNow_2\\DOCNOW\\DocNowApp\\DocNowApp\\AppShell.xaml",
-              "RelativeToolTip": "DocNowApp\\AppShell.xaml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-13T23:20:08.897Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "InicioPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\aleja\\OneDrive\\Desktop\\Universidad\\TERCER_SEMESTRE\\PRIMER_PARCIAL\\INGENIERIA_DE_SOFTWARE_II\\DocNow_2\\DOCNOW\\DocNowApp\\DocNowApp\\Inicio\\InicioPage.xaml.cs",
-              "RelativeDocumentMoniker": "DocNowApp\\Inicio\\InicioPage.xaml.cs",
-              "ToolTip": "C:\\Users\\aleja\\OneDrive\\Desktop\\Universidad\\TERCER_SEMESTRE\\PRIMER_PARCIAL\\INGENIERIA_DE_SOFTWARE_II\\DocNow_2\\DOCNOW\\DocNowApp\\DocNowApp\\Inicio\\InicioPage.xaml.cs",
-              "RelativeToolTip": "DocNowApp\\Inicio\\InicioPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAtAAAAAAAAAA==",
->>>>>>> origin/main
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-13T23:57:28.593Z"
             },
@@ -314,12 +201,11 @@
               "RelativeToolTip": "DocNowApp\\Inicio\\InicioPage.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-19T02:40:50.202Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-19T02:40:50.202Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "InicioPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\joaqu\\OneDrive\\Documentos\\Ingenier\u00EDa de Software II\\DocNow\\Versionamiento\\DOCNOW\\DocNowApp\\DocNowApp\\Inicio\\InicioPage.xaml.cs",
               "RelativeDocumentMoniker": "DocNowApp\\Inicio\\InicioPage.xaml.cs",
