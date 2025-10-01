@@ -30,7 +30,7 @@
     <AppXManifest Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-09-29T17:09:32.898</Modified>
+      <Modified>2025-10-01T22:28:14.901</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DocNowApp.dll">
       <PackagePath>DocNowApp.dll</PackagePath>
-      <Modified>2025-09-29T17:09:32.369</Modified>
+      <Modified>2025-10-01T22:28:13.981</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>DocNowApp.exe</PackagePath>
-      <Modified>2025-09-29T17:09:32.377</Modified>
+      <Modified>2025-10-01T22:28:14.054</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>

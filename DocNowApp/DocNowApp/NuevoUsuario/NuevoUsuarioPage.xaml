@@ -6,12 +6,12 @@
 
     <VerticalStackLayout>
         <Label 
-         Margin="0,0,0,4"
-         Text="Registrate en Doc Now"
-         FontSize="24"
-         FontFamily="Arial"
-         VerticalOptions="Center" 
-         HorizontalOptions="Center" />
+             Margin="0,0,0,4"
+             Text="Registrate en Doc Now"
+             FontSize="24"
+             FontFamily="Arial"
+             VerticalOptions="Center" 
+             HorizontalOptions="Center" />
         <Entry
             x:Name="txtName"
             FontSize="12"
