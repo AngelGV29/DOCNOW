@@ -56,15 +56,11 @@ namespace DocNowApp.Login
         //Método con el que se valida que el correo y contrasenña introducidos son correctos
         public async Task<estadoLogin> Validacion()
         {
-<<<<<<< HEAD
+
 
 
             sentencia = "select * from Usuario where correo = @correo and contrasenia = @contrasenia";
 
-=======
-            //Instrucción SQL
-            sentencia = $"select * from NuevoUsuario where correo = @correo and contrasenia = @contrasenia";
->>>>>>> origin/main
 
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
             using (comando = new SqlCommand(sentencia, conexion))
