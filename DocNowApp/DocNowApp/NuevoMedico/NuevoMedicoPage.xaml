@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DocNowApp.NuevoMedico.NuevoMedicoPage"
+             Title="NuevoMedicoPage">
+
+    <VerticalStackLayout>
+        <Label 
+            Text="Ingrese los datos"
+            Margin="0,50,0,30"
+            FontSize="25"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Entry
+            x:Name="txtCedula"
+            FontSize="12"
+            Placeholder="Cédula Profesional"
+            MaxLength="100"
+            WidthRequest="500"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,20,0,0"/>
+
+        <Entry
+            x:Name="txtespecialidad"
+            FontSize="12"
+            Placeholder="Especialidad"
+            MaxLength="100"
+            WidthRequest="500"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,20,0,20"/>
+
+        <Picker
+            x:Name="pickerConsultorio"
+            Title="Seleccione Consultorio"
+            WidthRequest="500"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,20,0,0">
+            <Picker.Items>
+                <x:String>Farmacia Guadalajara</x:String>
+                <x:String>Farmacia Ahorro</x:String>
+                <x:String>Farmacia Similares</x:String>
+                <x:String>Farmacia Benavides</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Button
+            x:Name="btncontinuar"
+            Text="Continuar"
+            IsEnabled="False"
+           
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Margin="0,20,0,0"/>
+    </VerticalStackLayout>
+</ContentPage>

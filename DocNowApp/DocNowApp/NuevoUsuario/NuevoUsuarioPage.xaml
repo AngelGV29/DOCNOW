@@ -6,83 +6,135 @@
 
     <VerticalStackLayout>
         <Label 
-             Margin="0,0,0,4"
-             Text="Registrate en Doc Now"
-             FontSize="24"
-             FontFamily="Arial"
-             VerticalOptions="Center" 
-             HorizontalOptions="Center" />
+            Margin="0,0,0,0"
+            Text="Registrate en DocNow"
+            FontSize="24"
+            FontFamily="Arial"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
         <Entry
-            x:Name="txtName"
+            x:Name="txtNombre"
             FontSize="12"
             Placeholder="Nombre"
-            MaxLength="100"
-            WidthRequest="500"
+            MaxLength="50"
+            WidthRequest="750"
+            TextChanged="Entry_TextChangued"
             VerticalOptions="Center"
             HorizontalOptions="Center"
-            Margin="0,15,0,0"/>
-        <Entry
-            x:Name="txtApellp"
-            FontSize="12"
-            Placeholder="Apellido Paterno"
-            MaxLength="100"
-            WidthRequest="500"
-            VerticalOptions="Center"
+            Margin="0,40,0,0"/>
+        <Grid WidthRequest="750"
             HorizontalOptions="Center"
-            Margin="0,15,0,0"/>
-        <Entry
-            x:Name="txtApellm"
-            FontSize="12"
-            Placeholder="Apellido Materno"
-            MaxLength="100"
-            WidthRequest="500"
-            VerticalOptions="Center"
+            ColumnSpacing="50"
+            Margin="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Entry
+                x:Name="txtApellP"
+                FontSize="12"
+                Placeholder="Apellido Paterno"
+                MaxLength="50"
+                WidthRequest="350"
+                Grid.Column="0"
+                TextChanged="Entry_TextChangued"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Margin="0,0,0,0"/>
+            <Entry
+                x:Name="txtApellM"
+                FontSize="12"
+                Placeholder="Apellido Materno"
+                MaxLength="50"
+                WidthRequest="350"
+                Grid.Column="1"
+                TextChanged="Entry_TextChangued"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Margin="0,0,0,0"/>
+        </Grid>
+        <Grid WidthRequest="750"
+              HorizontalOptions="Center"
+              ColumnSpacing="50"
+              Margin="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <DatePicker
+                x:Name="dateFechaNac"
+                FontSize="12"
+                Format="dd/mm/yyyy"
+                WidthRequest="350"
+                MinimumDate="01/01/1900"
+                Grid.Column="0"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Margin="0,15,0,0"/>
+            <HorizontalStackLayout Grid.Column="1" VerticalOptions="End" HorizontalOptions="Start">
+                <Label
+                    Margin="10,0,10,0"
+                    Text="Sexo:"
+                    FontSize="15"
+                    FontFamily="Arial"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+                <RadioButton x:Name="rbHombre" Content="Hombre" GroupName="Sexo" VerticalOptions="End" HorizontalOptions="End"/>
+                <RadioButton x:Name="rbMujer" Content="Mujer" GroupName="Sexo" VerticalOptions="End" HorizontalOptions="Center"/>
+            </HorizontalStackLayout>
+            
+        </Grid>
+        <Grid WidthRequest="750"
             HorizontalOptions="Center"
-            Margin="0,15,0,0"/>
-        <Entry
-            x:Name="txtCorreo"
-            FontSize="12"
-            Placeholder="Correo"
-            MaxLength="100"
-            WidthRequest="500"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"
-            Margin="0,15,0,0"/>
+            ColumnSpacing="50"
+            Margin="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Entry
+                x:Name="txtCorreo"
+                FontSize="12"
+                Placeholder="Correo"
+                MaxLength="100"
+                WidthRequest="350"
+                Grid.Column="0"
+                TextChanged="Entry_TextChangued"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Margin="0,0,0,0"/>
+            <Entry
+                x:Name="txtTelefono"
+                FontSize="12"
+                Placeholder="Telefono"
+                MaxLength="10"
+                WidthRequest="350"
+                Grid.Column="1"
+                TextChanged="Entry_TextChangued"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Margin="0,0,0,0"/>
+        </Grid>
+        
         <Entry
             x:Name="txtContrasenia"
             FontSize="12"
             Placeholder="Contraseña"
             MaxLength="100"
-            WidthRequest="500"
+            IsPassword="True"
+            WidthRequest="750"
+            TextChanged="Entry_TextChangued"
             VerticalOptions="Center"
             HorizontalOptions="Center"
-            Margin="0,15,0,0"/>
-        <Entry
-            x:Name="txtTelefono"
-            FontSize="12"
-            Placeholder="Telefono"
-            MaxLength="100"
-            WidthRequest="500"
-            VerticalOptions="Center"
+            Margin="0,20,0,0"/>
+        <Button
+            x:Name="btnRegistrarse"
+            Text="Registrarse"
+            IsEnabled="False"
+            Clicked="btnRegistrarse_Clicked"
+            VerticalOptions="Center" 
             HorizontalOptions="Center"
-            Margin="0,15,0,0"/>
-        <Entry
-            x:Name="txtFechaNac"
-            FontSize="12"
-            Placeholder="Fecha de Nacimiento"
-            MaxLength="100"
-            WidthRequest="500"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"
-            Margin="0,15,0,0"/>
-        <Entry
-            x:Name="txtSex"
-            FontSize="12"
-            Placeholder="Sexo"
-            MaxLength="100"
-            WidthRequest="500"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"
-            Margin="0,15,0,0"/>
+            Margin="0,80,0,0"/>
+
     </VerticalStackLayout>
 </ContentPage>
