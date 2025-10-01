@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DocNowApp.NuevoPaciente.NuevoPacientePage"
+             Title="NuevoPacientePage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Interfaz de Paciente"
+            Margin="0,40,0,50"
+            FontSize="28"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Entry
+            x:Name="txtAlergia"
+            FontSize="14"
+            Placeholder="Alergia:"
+            MaxLength="100"
+            WidthRequest="400"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,15,0,0"/>
+        <Entry
+             x:Name="txtMedicacion"
+             FontSize="14"
+             Placeholder="Medicacion:"
+             MaxLength="100"
+             WidthRequest="400"
+             VerticalOptions="Center"
+             HorizontalOptions="Center"
+             Margin="0,15,0,0"/>
+        <DatePicker
+            x:Name="dpUltimaVisita"
+            WidthRequest="400"
+            FontSize="14"
+            Format="dddd, MMMM d, yyyy"  HorizontalOptions="Center"
+            Margin="0,15,0,0"/>
+        <Label
+            Text="Última Visita Médica"
+            HorizontalOptions="Center"
+            Margin="0,5,0,0"
+            FontSize="12"/>
+    </VerticalStackLayout>
+</ContentPage>

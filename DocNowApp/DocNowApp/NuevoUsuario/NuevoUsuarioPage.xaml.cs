@@ -8,7 +8,6 @@ public partial class NuevoUsuarioPage : ContentPage
 	public NuevoUsuarioPage()
 	{
 		InitializeComponent();
-		this.dateFechaNac.MaximumDate = DateTime.Today;
 	}
 
     private void Entry_TextChangued(object sender, TextChangedEventArgs e)
