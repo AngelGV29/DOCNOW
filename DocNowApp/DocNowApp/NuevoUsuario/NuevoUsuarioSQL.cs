@@ -126,31 +126,32 @@ namespace DocNowApp.NuevoUsuario
             using (comando = new SqlCommand(sentencia, conexion))
             {
                 comando.Parameters.AddWithValue("@idUsuario", this.idUsuario);
-            }
-            try
-            {
-                if (conexion.State != System.Data.ConnectionState.Open)
+                try
                 {
-                    conexion.Open();
+                    if (conexion.State != System.Data.ConnectionState.Open)
+                    {
+                        conexion.Open();
+                    }
+                    DataSet datos = new DataSet();
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    adaptador.Fill(datos, "Tabla");
+                    if (datos.Tables["Tabla"].Rows.Count > 0)
+                    {
+                        return Convert.ToInt32(datos.Tables["Tabla"].Rows[0]["id"].ToString());
+                    }
+                    else
+                    {
+                        return 0;
+                    }
                 }
-                DataSet datos = new DataSet();
-                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                adaptador.Fill(datos, "Tabla");
-                if (datos.Tables["Tabla"].Rows.Count > 0)
+                catch (Exception ex)
                 {
-                    return Convert.ToInt32(datos.Tables["Tabla"].Rows[0]["id"].ToString());
-                }
-                else
-                {
-                    return 0;
+                    //Si surge una excepción, se devolverá un estadoLogin de Error
+                    await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
+                    return -1;
                 }
             }
-            catch (Exception ex)
-            {
-                //Si surge una excepción, se devolverá un estadoLogin de Error
-                await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
-                return -1;
-            }
+            
         }
     }
 }
