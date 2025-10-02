@@ -39,21 +39,22 @@ public partial class NuevoUsuarioPage : ContentPage
             NuevoUsuario.NuevoUsuarioSQL crear = new NuevoUsuario.NuevoUsuarioSQL(this.txtNombre.Text, this.txtApellP.Text, this.txtApellM.Text,
                 this.txtCorreo.Text, this.txtTelefono.Text, this.txtTelefono.Text, this.dateFechaNac.Date, sexo, "ROL PENDIENTE", DateTime.Today, DateTime.Today);
             DataSet datos = await crear.ValidarCorreo();
-            if (datos.Tables["Tabla"].Rows.Count == 0)
+            if (datos.Tables.Count == 0 || datos.Tables["Tabla"].Rows.Count == 0)
             {
-                if (await crear.Creacion() > 0)
+                int resultado = await crear.Creacion();
+                if (resultado > 0)
                 {
                     bool opcion = await DisplayAlert("Exito", "Se ha creado correctamente el usuario. A continuación, elige el rol que deseas tener", "Paciente", "Medico");
                     if (opcion)
                     {
-                        await Shell.Current.GoToAsync("//PrincipalPage");
+                        await Shell.Current.GoToAsync("//NuevoPacientePage");
                     }
                     else
                     {
-                        await Shell.Current.GoToAsync("//PrincipalPage");
+                        await Shell.Current.GoToAsync("//NuevoMedicoPage");
                     }
                 }
-                else
+                else if (resultado == 0)
                 {
                     await DisplayAlert("Error", "Creación de nuevo usuario fallida", "Aceptar");
                 }

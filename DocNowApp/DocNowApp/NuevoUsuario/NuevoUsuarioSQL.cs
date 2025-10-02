@@ -70,7 +70,7 @@ namespace DocNowApp.NuevoUsuario
                 {
                     //Si surge una excepción, se devolverá un estadoLogin de Error
                     await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
-                    return null;
+                    return new DataSet();
                 }
             }
         }
