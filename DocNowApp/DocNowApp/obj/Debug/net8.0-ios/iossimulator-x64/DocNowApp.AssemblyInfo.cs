@@ -14,11 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DocNowApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+88a653aa01bec5a1868c63065ad3efa3fe24088a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+fefb78686255cb89570e1a11170b7b72a599d6f4")]
 [assembly: System.Reflection.AssemblyProductAttribute("DocNowApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DocNowApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
-[assembly: System.Runtime.Versioning.TargetPlatformAttribute("iOS18.0")]
+[assembly: System.Runtime.Versioning.TargetPlatformAttribute("iOS17.5")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("iOS11.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
