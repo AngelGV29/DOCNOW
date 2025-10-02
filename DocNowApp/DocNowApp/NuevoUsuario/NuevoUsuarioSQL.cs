@@ -81,8 +81,8 @@ namespace DocNowApp.NuevoUsuario
             if (this.idUsuario == 0) { return 0; }
             if (this.idUsuario == -1) { return -1; }
             //Instrucción SQL
-            sentencia = "insert into Usuario (idUsuario, nombre, apellidoPaterno, apellidoMaterno, correo, contrasenia, telefono, fechaNac, sexo, rol, fechaCreacion, ultimoInicioSesion) " +
-                "values (@idUsuario, @nombre, @apellidoPaterno, @apellidoMaterno, @correo, @contrasenia, @telefono, @fechaNac, @sexo, @rol, @fechaCreacion, @ultimoInicioSesion)";
+            sentencia = "insert into Usuario (idUsuario, nombre, apellidoPaterno, apellidoMaterno, correo, contrasenia, telefono, fechaNac, sexo, rol, fechaCreacion, ultimoModSesion) " +
+                "values (@idUsuario, @nombre, @apellidoPaterno, @apellidoMaterno, @correo, @contrasenia, @telefono, @fechaNac, @sexo, @rol, @fechaCreacion, @ultimoModSesion)";
 
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
             using (comando = new SqlCommand(sentencia, conexion))
@@ -98,7 +98,7 @@ namespace DocNowApp.NuevoUsuario
                 comando.Parameters.AddWithValue("@sexo", this.sexo);
                 comando.Parameters.AddWithValue("@rol", this.rol);
                 comando.Parameters.AddWithValue("@fechaCreacion", this.fechaCreacion);
-                comando.Parameters.AddWithValue("@ultimoInicioSesion", this.ultimoInicioSesion);
+                comando.Parameters.AddWithValue("@ultimoModSesion", this.ultimoInicioSesion);
 
                 try
                 {
@@ -114,7 +114,7 @@ namespace DocNowApp.NuevoUsuario
                 catch (Exception ex)
                 {
                     //Si surge una excepción, se devolverá un estadoLogin de Error
-                    //await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
+                    await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
                     return -1;
                 }
             }
