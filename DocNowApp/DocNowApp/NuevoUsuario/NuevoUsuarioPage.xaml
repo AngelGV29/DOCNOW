@@ -2,9 +2,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DocNowApp.NuevoUsuario.NuevoUsuarioPage"
-             Title="NuevoUsuarioPage">
+             Title="NuevoUsuarioPage"
+             xmlns:navegacion="clr-namespace:DocNowApp.Navegacion"
+             xmlns:inicio="clr-namespace:DocNowApp.Inicio">
 
     <VerticalStackLayout>
+        <navegacion:BotonRegresar Ruta="InicioPage"/>
         <Label 
             Margin="0,0,0,0"
             Text="Registrate en DocNow"
@@ -14,6 +17,7 @@
             HorizontalOptions="Center" />
         <Entry
             x:Name="txtNombre"
+            ClassId="uppercase"
             FontSize="12"
             Placeholder="Nombre"
             MaxLength="50"
@@ -32,6 +36,7 @@
             </Grid.ColumnDefinitions>
             <Entry
                 x:Name="txtApellP"
+                ClassId="uppercase"
                 FontSize="12"
                 Placeholder="Apellido Paterno"
                 MaxLength="50"
@@ -43,6 +48,7 @@
                 Margin="0,0,0,0"/>
             <Entry
                 x:Name="txtApellM"
+                ClassId="uppercase"
                 FontSize="12"
                 Placeholder="Apellido Materno"
                 MaxLength="50"
@@ -61,16 +67,32 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <DatePicker
-                x:Name="dateFechaNac"
-                FontSize="12"
-                Format="dd/mm/yyyy"
-                WidthRequest="350"
-                MinimumDate="01/01/1900"
-                Grid.Column="0"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"
-                Margin="0,15,0,0"/>
+
+            <HorizontalStackLayout Grid.Column="0" VerticalOptions="End" HorizontalOptions="Start">
+                <Label
+                    Text="Fecha de Nacimiento:"
+                    FontFamily="Arial"
+                    FontSize="15"
+                    WidthRequest="150"
+                    Margin="0,14,0,0"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    TextColor="White"
+                    IsVisible="True"/>
+                <DatePicker
+                    x:Name="dateFechaNac"
+                    FontFamily="Arial"
+                    FontSize="12"
+                    Format="dd/mm/yyyy"
+                    WidthRequest="199"
+                    MinimumDate="01/01/1900"
+                    Grid.Column="0"
+                    VerticalOptions="Center"
+                    HorizontalOptions="EndAndExpand"
+                    Margin="0,15,0,0"/>
+            </HorizontalStackLayout>
+
+            
             <HorizontalStackLayout Grid.Column="1" VerticalOptions="End" HorizontalOptions="Start">
                 <Label
                     Margin="10,0,10,0"
@@ -89,44 +111,101 @@
             ColumnSpacing="50"
             Margin="0,20,0,0">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="150"/>
             </Grid.ColumnDefinitions>
             <Entry
                 x:Name="txtCorreo"
+                ClassId="lowercase"
                 FontSize="12"
                 Placeholder="Correo"
                 MaxLength="100"
-                WidthRequest="350"
+                WidthRequest="300"
                 Grid.Column="0"
                 TextChanged="Entry_TextChangued"
                 VerticalOptions="Center"
-                HorizontalOptions="Center"
+                HorizontalOptions="Start"
                 Margin="0,0,0,0"/>
-            <Entry
-                x:Name="txtTelefono"
+
+            <Grid Grid.Column="1" WidthRequest="230" VerticalOptions="Center" HorizontalOptions="Center">
+                <Picker
+                    x:Name="pickerDominio"
+                    FontSize="12"
+                    WidthRequest="230"
+                    SelectedIndexChanged="PickerDominio_SelectedIndexChanged"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+                <Label
+                    x:Name="lblDominio"
+                    Text="Dominio de correo"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    Margin="10,0,0,0"
+                    TextColor="Gray"
+            InputTransparent="True"/>
+            </Grid>
+
+            <!--<Picker
+                x:Name="pickerDominio"
+                Title="Dominio de correo"
                 FontSize="12"
-                Placeholder="Telefono"
-                MaxLength="10"
-                WidthRequest="350"
+                WidthRequest="230"
                 Grid.Column="1"
-                TextChanged="Entry_TextChangued"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
                 Margin="0,0,0,0"/>
+            -->
+            <Entry
+                x:Name="txtTelefono"
+                ClassId="numero"
+                FontSize="12"
+                Placeholder="Telefono"
+                MaxLength="10"
+                WidthRequest="150"
+                Grid.Column="2"
+                TextChanged="Entry_TextChangued"
+                VerticalOptions="Center"
+                HorizontalOptions="End"
+                Margin="0,0,0,0"/>
         </Grid>
         
-        <Entry
-            x:Name="txtContrasenia"
-            FontSize="12"
-            Placeholder="Contraseña"
-            MaxLength="100"
-            IsPassword="True"
-            WidthRequest="750"
-            TextChanged="Entry_TextChangued"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"
-            Margin="0,20,0,0"/>
+        
+
+        <Grid WidthRequest="750"
+              HorizontalOptions="Center"
+              Margin="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+
+            <Entry
+                x:Name="txtContrasenia"
+                ClassId="contrasenia"
+                Keyboard="Numeric"
+                FontSize="12"
+                Placeholder="Contraseña"
+                MaxLength="100"
+                IsPassword="True"
+                WidthRequest="700"
+                Grid.Column="0"
+                TextChanged="Entry_TextChangued"
+                VerticalOptions="Center"
+                HorizontalOptions="Start"
+                Margin="0,0,0,0"/>
+            <ImageButton
+                x:Name="btnMostrarContrasenia"
+                Padding="0"
+                Source="mostrar_contrasenia.png"
+                WidthRequest="40"
+                HeightRequest="40"
+                Clicked="btnMostrarContrasenia_Clicked"
+                Grid.Column="1"
+                VerticalOptions="Center"
+                HorizontalOptions="End"/>
+        </Grid>
+
         <Button
             x:Name="btnRegistrarse"
             Text="Registrarse"
