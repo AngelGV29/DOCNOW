@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DocNowApp.Navegacion.BotonRegresar">
+    <HorizontalStackLayout>
+        <ImageButton
+            x:Name="btnRegresar"
+            Source="flecha_regresar.png"
+            WidthRequest="30"
+            HeightRequest="30"
+            Margin="10,0,0,0"
+            Clicked="btnRegresar_Clicked"
+            VerticalOptions="Center"
+            HorizontalOptions="Start"/>
+        <Label
+            Text="Regresar"
+            FontFamily="Arial"
+            FontSize="15"
+            FontAttributes="Bold"
+            WidthRequest="150"
+            Margin="10,0,0,0"
+            VerticalOptions="Center"
+            HorizontalOptions="Start"
+            TextColor="MediumPurple"/>
+    </HorizontalStackLayout>
+</ContentView>
