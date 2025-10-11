@@ -74,12 +74,40 @@ namespace DocNowApp.NuevoUsuario
                 }
             }
         }
+
+        public async Task<DataSet> ObtenerIdUsuario()
+        {
+            sentencia = "select * from Usuario where correo = @correo";
+            using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
+            using (comando = new SqlCommand(sentencia, conexion))
+            {
+                comando.Parameters.AddWithValue("@correo", this.correo);
+                try
+                {
+                    if (conexion.State != System.Data.ConnectionState.Open)
+                    {
+                        conexion.Open();
+                    }
+                    DataSet datos = new DataSet();
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    adaptador.Fill(datos, "Tabla");
+                    return datos;
+                }
+                catch (Exception ex)
+                {
+                    //Si surge una excepción, se devolverá un estadoLogin de Error
+                    await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
+                    return new DataSet();
+                }
+            }
+        }
+
         public async Task<int> Creacion()
         {
-            this.idUsuario = await GenerarId();
+            //this.idUsuario = await GenerarId();
 
-            if (this.idUsuario == 0) { return 0; }
-            if (this.idUsuario == -1) { return -1; }
+            //if (this.idUsuario == 0) { return 0; }
+            //if (this.idUsuario == -1) { return -1; }
             //Instrucción SQL
             sentencia = "insert into Usuario (nombre, apellidoPaterno, apellidoMaterno, correo, contrasenia, telefono, fechaNac, sexo, rol, fechaCreacion, ultimaModSesion) " +
                 "values (@nombre, @apellidoPaterno, @apellidoMaterno, @correo, @contrasenia, @telefono, @fechaNac, @sexo, @rol, @fechaCreacion, @ultimaModSesion)";
@@ -119,7 +147,7 @@ namespace DocNowApp.NuevoUsuario
                 }
             }
         }
-        public async Task<int> GenerarId()
+        /*public async Task<int> GenerarId()
         {
             sentencia = "select max(idUsuario) + 1 as id FROM Usuario";
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
@@ -152,6 +180,6 @@ namespace DocNowApp.NuevoUsuario
                 }
             }
             
-        }
+        }*/
     }
 }

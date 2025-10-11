@@ -133,6 +133,8 @@ public partial class NuevoUsuarioPage : ContentPage
                 int resultado = await crear.Creacion();
                 if (resultado > 0)
                 {
+                    datos = await crear.ObtenerIdUsuario();
+                    Globales.AdministradorDeSesion.idUsuario = Convert.ToInt32(datos.Tables["Tabla"].Columns["idUsuario"].ToString());
                     bool opcion = await DisplayAlert("Exito", "Se ha creado correctamente el usuario. A continuación, elige el rol que deseas tener", "Paciente", "Medico");
                     if (opcion)
                     {

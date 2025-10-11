@@ -37,7 +37,7 @@
                 x:Name="txtContrasenia"
                 FontSize="12"
                 Placeholder="Contraseña"
-                MaxLength="255"
+                MaxLength="100"
                 IsPassword="True"
                 TextChanged="txtContrasenia_TextChanged"
                 VerticalOptions="Center"

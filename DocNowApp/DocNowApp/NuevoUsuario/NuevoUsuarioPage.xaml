@@ -120,7 +120,7 @@
                 ClassId="lowercase"
                 FontSize="12"
                 Placeholder="Correo"
-                MaxLength="100"
+                MaxLength="80"
                 WidthRequest="300"
                 Grid.Column="0"
                 TextChanged="Entry_TextChangued"

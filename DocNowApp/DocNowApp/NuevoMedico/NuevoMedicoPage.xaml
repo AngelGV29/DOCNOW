@@ -6,8 +6,8 @@
 
     <VerticalStackLayout>
         <Label 
-            Text="Ingrese los datos"
-            Margin="0,50,0,30"
+            Text="Ingrese sus datos de profesión"
+            Margin="0,50,0,50"
             FontSize="25"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
@@ -16,29 +16,45 @@
             x:Name="txtCedula"
             FontSize="12"
             Placeholder="Cédula Profesional"
-            MaxLength="100"
+            MaxLength="20"
             WidthRequest="500"
             VerticalOptions="Center"
             HorizontalOptions="Center"
-            Margin="0,20,0,0"/>
+            Margin="0,0,0,0"/>
 
         <Entry
-            x:Name="txtespecialidad"
+            x:Name="txtEspecialidad"
             FontSize="12"
             Placeholder="Especialidad"
             MaxLength="100"
             WidthRequest="500"
             VerticalOptions="Center"
             HorizontalOptions="Center"
-            Margin="0,20,0,20"/>
+            Margin="0,40,0,0"/>
+        
+        <Label Text="Selecciona los consultorios donde trabajas:" 
+           FontSize="20" 
+           Margin="0,0,0,10" />
+
+        <CollectionView x:Name="CollectionConsultorios"
+                    SelectionMode="Multiple"
+                    HeightRequest="200">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10" BackgroundColor="{Binding Background}">
+                        <Label Text="{Binding Nombre}" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
         <Picker
             x:Name="pickerConsultorio"
-            Title="Seleccione Consultorio"
+            Title="Seleccione un consultorio"
             WidthRequest="500"
             VerticalOptions="Center"
             HorizontalOptions="Center"
-            Margin="0,20,0,0">
+            Margin="0,40,0,0">
             <Picker.Items>
                 <x:String>Farmacia Guadalajara</x:String>
                 <x:String>Farmacia Ahorro</x:String>
@@ -48,10 +64,9 @@
         </Picker>
 
         <Button
-            x:Name="btncontinuar"
+            x:Name="btnContinuar"
             Text="Continuar"
-            IsEnabled="False"
-           
+            Clicked="btnContinuar_Clicked"
             VerticalOptions="Center" 
             HorizontalOptions="Center"
             Margin="0,20,0,0"/>
