@@ -64,6 +64,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="AgendaDisponibilidad\AgendaDisponibilidadPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Inicio\InicioPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
