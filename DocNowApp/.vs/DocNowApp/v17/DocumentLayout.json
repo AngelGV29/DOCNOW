@@ -1,0 +1,256 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\venta\\documents\\ing\\docnow\\docnowapp\\docnowapp\\agendadisponibilidad\\agendadisponibilidadpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\agendadisponibilidad\\agendadisponibilidadpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\venta\\documents\\ing\\docnow\\docnowapp\\docnowapp\\login\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\login\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\venta\\documents\\ing\\docnow\\docnowapp\\docnowapp\\nuevousuario\\nuevousuariopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\nuevousuario\\nuevousuariopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\venta\\documents\\ing\\docnow\\docnowapp\\docnowapp\\login\\loginsql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\login\\loginsql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\venta\\documents\\ing\\docnow\\docnowapp\\docnowapp\\login\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\login\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\venta\\documents\\ing\\docnow\\docnowapp\\docnowapp\\nuevousuario\\nuevousuariopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\nuevousuario\\nuevousuariopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\venta\\documents\\ing\\docnow\\docnowapp\\docnowapp\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\venta\\documents\\ing\\docnow\\docnowapp\\docnowapp\\inicio\\iniciopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\inicio\\iniciopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\venta\\documents\\ing\\docnow\\docnowapp\\docnowapp\\nuevomedico\\nuevomedicopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\nuevomedico\\nuevomedicopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\venta\\documents\\ing\\docnow\\docnowapp\\docnowapp\\inicio\\iniciopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\inicio\\iniciopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\venta\\documents\\ing\\docnow\\docnowapp\\docnowapp\\nuevousuario\\nuevousuariosql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\nuevousuario\\nuevousuariosql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\venta\\documents\\ing\\docnow\\docnowapp\\docnowapp\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\venta\\documents\\ing\\docnow\\docnowapp\\docnowapp\\globales\\cadenaconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\globales\\cadenaconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|c:\\users\\venta\\documents\\ing\\docnow\\docnowapp\\docnowapp\\pantalla principal\\principalpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{43D67788-0016-407C-8391-2393C08CD3DF}|DocNowApp\\DocNowApp.csproj|solutionrelative:docnowapp\\pantalla principal\\principalpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NuevoUsuarioPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\NuevoUsuario\\NuevoUsuarioPage.xaml.cs",
+              "RelativeDocumentMoniker": "DocNowApp\\NuevoUsuario\\NuevoUsuarioPage.xaml.cs",
+              "ToolTip": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\NuevoUsuario\\NuevoUsuarioPage.xaml.cs",
+              "RelativeToolTip": "DocNowApp\\NuevoUsuario\\NuevoUsuarioPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T03:57:01.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AgendaDisponibilidadPage.xaml",
+              "DocumentMoniker": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\AgendaDisponibilidad\\AgendaDisponibilidadPage.xaml",
+              "RelativeDocumentMoniker": "DocNowApp\\AgendaDisponibilidad\\AgendaDisponibilidadPage.xaml",
+              "ToolTip": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\AgendaDisponibilidad\\AgendaDisponibilidadPage.xaml",
+              "RelativeToolTip": "DocNowApp\\AgendaDisponibilidad\\AgendaDisponibilidadPage.xaml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-12T20:21:12.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\AppShell.xaml",
+              "RelativeDocumentMoniker": "DocNowApp\\AppShell.xaml",
+              "ToolTip": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\AppShell.xaml",
+              "RelativeToolTip": "DocNowApp\\AppShell.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-13T23:20:08.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\Login\\LoginPage.xaml.cs",
+              "RelativeDocumentMoniker": "DocNowApp\\Login\\LoginPage.xaml.cs",
+              "ToolTip": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\Login\\LoginPage.xaml.cs",
+              "RelativeToolTip": "DocNowApp\\Login\\LoginPage.xaml.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAgwBIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T23:49:26.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginSQL.cs",
+              "DocumentMoniker": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\Login\\LoginSQL.cs",
+              "RelativeDocumentMoniker": "DocNowApp\\Login\\LoginSQL.cs",
+              "ToolTip": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\Login\\LoginSQL.cs",
+              "RelativeToolTip": "DocNowApp\\Login\\LoginSQL.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAD0AAABmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T00:32:32.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NuevoUsuarioPage.xaml",
+              "DocumentMoniker": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\NuevoUsuario\\NuevoUsuarioPage.xaml",
+              "RelativeDocumentMoniker": "DocNowApp\\NuevoUsuario\\NuevoUsuarioPage.xaml",
+              "ToolTip": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\NuevoUsuario\\NuevoUsuarioPage.xaml",
+              "RelativeToolTip": "DocNowApp\\NuevoUsuario\\NuevoUsuarioPage.xaml",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAIgAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-18T22:23:59.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "InicioPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\Inicio\\InicioPage.xaml.cs",
+              "RelativeDocumentMoniker": "DocNowApp\\Inicio\\InicioPage.xaml.cs",
+              "ToolTip": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\Inicio\\InicioPage.xaml.cs",
+              "RelativeToolTip": "DocNowApp\\Inicio\\InicioPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T03:00:25.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\Login\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "DocNowApp\\Login\\LoginPage.xaml",
+              "ToolTip": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\Login\\LoginPage.xaml",
+              "RelativeToolTip": "DocNowApp\\Login\\LoginPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-13T23:23:25.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "NuevoMedicoPage.xaml",
+              "DocumentMoniker": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\NuevoMedico\\NuevoMedicoPage.xaml",
+              "RelativeDocumentMoniker": "DocNowApp\\NuevoMedico\\NuevoMedicoPage.xaml",
+              "ToolTip": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\NuevoMedico\\NuevoMedicoPage.xaml",
+              "RelativeToolTip": "DocNowApp\\NuevoMedico\\NuevoMedicoPage.xaml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-29T03:59:50.643Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "InicioPage.xaml",
+              "DocumentMoniker": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\Inicio\\InicioPage.xaml",
+              "RelativeDocumentMoniker": "DocNowApp\\Inicio\\InicioPage.xaml",
+              "ToolTip": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\Inicio\\InicioPage.xaml",
+              "RelativeToolTip": "DocNowApp\\Inicio\\InicioPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-19T02:40:50.202Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "NuevoUsuarioSQL.cs",
+              "DocumentMoniker": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\NuevoUsuario\\NuevoUsuarioSQL.cs",
+              "RelativeDocumentMoniker": "DocNowApp\\NuevoUsuario\\NuevoUsuarioSQL.cs",
+              "ToolTip": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\NuevoUsuario\\NuevoUsuarioSQL.cs",
+              "RelativeToolTip": "DocNowApp\\NuevoUsuario\\NuevoUsuarioSQL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T02:18:30.219Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\MainPage.xaml",
+              "RelativeDocumentMoniker": "DocNowApp\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\MainPage.xaml",
+              "RelativeToolTip": "DocNowApp\\MainPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-13T23:20:15.141Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PrincipalPage.xaml",
+              "DocumentMoniker": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\Pantalla principal\\PrincipalPage.xaml",
+              "RelativeDocumentMoniker": "DocNowApp\\Pantalla principal\\PrincipalPage.xaml",
+              "ToolTip": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\Pantalla principal\\PrincipalPage.xaml",
+              "RelativeToolTip": "DocNowApp\\Pantalla principal\\PrincipalPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-14T01:13:10.445Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CadenaConexion.cs",
+              "DocumentMoniker": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\Globales\\CadenaConexion.cs",
+              "RelativeDocumentMoniker": "DocNowApp\\Globales\\CadenaConexion.cs",
+              "ToolTip": "C:\\Users\\venta\\Documents\\ING\\DOCNOW\\DocNowApp\\DocNowApp\\Globales\\CadenaConexion.cs",
+              "RelativeToolTip": "DocNowApp\\Globales\\CadenaConexion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T23:57:28.593Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
