@@ -3,13 +3,17 @@
     x:Class="DocNowApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:nuevoMedico="clr-namespace:DocNowApp.NuevoMedico"
     xmlns:inicio="clr-namespace:DocNowApp.Inicio"
     xmlns:login="clr-namespace:DocNowApp.Login"
     xmlns:principal="clr-namespace:DocNowApp.Pantalla_principal"
     xmlns:nuevoUsuario="clr-namespace:DocNowApp.NuevoUsuario"
+<<<<<<< HEAD
     xmlns:AgendaDisponibilidad="clr-namespace:DocNowApp.AgendaDisponibilidad"
     
+=======
+    xmlns:nuevoMedico="clr-namespace:DocNowApp.NuevoMedico"
+    xmlns:nuevoPaciente="clr-namespace:DocNowApp.NuevoPaciente"
+>>>>>>> origin/main
     Shell.FlyoutBehavior="Disabled"
     Title="DocNowApp">
 
@@ -25,11 +29,6 @@
         ContentTemplate="{DataTemplate inicio:InicioPage}"
         Route="InicioPage"/>
     <ShellContent
-     Title="Nuevo Medico"
-     ContentTemplate="{DataTemplate nuevoMedico:NuevoMedicoPage}"
-     Route="NuevoMedicoPage"/>
-    
-    <ShellContent
         Title="Registro"
         ContentTemplate="{DataTemplate nuevoUsuario:NuevoUsuarioPage}"
         Route="NuevoUsuarioPage"/>
@@ -41,6 +40,17 @@
         Title="Principal"
         ContentTemplate="{DataTemplate principal:PrincipalPage}"
         Route="PrincipalPage"/>
+<<<<<<< HEAD
     
 
+=======
+    <ShellContent
+         Title="Nuevo Medico"
+         ContentTemplate="{DataTemplate nuevoMedico:NuevoMedicoPage}"
+         Route="NuevoMedicoPage"/>
+    <ShellContent
+         Title="Nuevo Paciente"
+         ContentTemplate="{DataTemplate nuevoPaciente:NuevoPacientePage}"
+         Route="NuevoPacientePage"/>
+>>>>>>> origin/main
 </Shell>

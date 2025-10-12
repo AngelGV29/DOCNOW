@@ -70,7 +70,7 @@ namespace DocNowApp.NuevoUsuario
                 {
                     //Si surge una excepción, se devolverá un estadoLogin de Error
                     await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
-                    return null;
+                    return new DataSet();
                 }
             }
         }
@@ -81,13 +81,13 @@ namespace DocNowApp.NuevoUsuario
             if (this.idUsuario == 0) { return 0; }
             if (this.idUsuario == -1) { return -1; }
             //Instrucción SQL
-            sentencia = "insert into Usuario (idUsuario, nombre, apellidoPaterno, apellidoMaterno, correo, contrasenia, telefono, fechaNac, sexo, rol, fechaCreacion, ultimoInicioSesion) " +
-                "values (@idUsuario, @nombre, @apellidoPaterno, @apellidoMaterno, @correo, @contrasenia, @telefono, @fechaNac, @sexo, @rol, @fechaCreacion, @ultimoInicioSesion)";
+            sentencia = "insert into Usuario (nombre, apellidoPaterno, apellidoMaterno, correo, contrasenia, telefono, fechaNac, sexo, rol, fechaCreacion, ultimaModSesion) " +
+                "values (@nombre, @apellidoPaterno, @apellidoMaterno, @correo, @contrasenia, @telefono, @fechaNac, @sexo, @rol, @fechaCreacion, @ultimaModSesion)";
 
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
             using (comando = new SqlCommand(sentencia, conexion))
             {
-                comando.Parameters.AddWithValue("@idUsuario", this.idUsuario);
+                
                 comando.Parameters.AddWithValue("@nombre", this.nombre);
                 comando.Parameters.AddWithValue("@apellidoPaterno", this.apellidoPaterno);
                 comando.Parameters.AddWithValue("@apellidoMaterno", this.apellidoMaterno);
@@ -98,7 +98,7 @@ namespace DocNowApp.NuevoUsuario
                 comando.Parameters.AddWithValue("@sexo", this.sexo);
                 comando.Parameters.AddWithValue("@rol", this.rol);
                 comando.Parameters.AddWithValue("@fechaCreacion", this.fechaCreacion);
-                comando.Parameters.AddWithValue("@ultimoInicioSesion", this.ultimoInicioSesion);
+                comando.Parameters.AddWithValue("@ultimaModSesion", this.ultimoInicioSesion);
 
                 try
                 {
@@ -114,7 +114,7 @@ namespace DocNowApp.NuevoUsuario
                 catch (Exception ex)
                 {
                     //Si surge una excepción, se devolverá un estadoLogin de Error
-                    //await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
+                    await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
                     return -1;
                 }
             }
@@ -126,31 +126,32 @@ namespace DocNowApp.NuevoUsuario
             using (comando = new SqlCommand(sentencia, conexion))
             {
                 comando.Parameters.AddWithValue("@idUsuario", this.idUsuario);
-            }
-            try
-            {
-                if (conexion.State != System.Data.ConnectionState.Open)
+                try
                 {
-                    conexion.Open();
+                    if (conexion.State != System.Data.ConnectionState.Open)
+                    {
+                        conexion.Open();
+                    }
+                    DataSet datos = new DataSet();
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    adaptador.Fill(datos, "Tabla");
+                    if (datos.Tables["Tabla"].Rows.Count > 0)
+                    {
+                        return Convert.ToInt32(datos.Tables["Tabla"].Rows[0]["id"].ToString());
+                    }
+                    else
+                    {
+                        return 0;
+                    }
                 }
-                DataSet datos = new DataSet();
-                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                adaptador.Fill(datos, "Tabla");
-                if (datos.Tables["Tabla"].Rows.Count > 0)
+                catch (Exception ex)
                 {
-                    return Convert.ToInt32(datos.Tables["Tabla"].Rows[0]["id"].ToString());
-                }
-                else
-                {
-                    return 0;
+                    //Si surge una excepción, se devolverá un estadoLogin de Error
+                    await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
+                    return -1;
                 }
             }
-            catch (Exception ex)
-            {
-                //Si surge una excepción, se devolverá un estadoLogin de Error
-                await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
-                return -1;
-            }
+            
         }
     }
 }
