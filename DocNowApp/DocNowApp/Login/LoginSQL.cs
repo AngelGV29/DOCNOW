@@ -95,5 +95,63 @@ namespace DocNowApp.Login
                 }
             }
         }
+
+        //Método que devuelve el la información del ususario para que el administrador de sesión tenga su ID de usuario y Rol
+        public async Task<DataSet> ObtenerIdUsuario()
+        {
+            sentencia = "select * from Usuario where correo = @correo";
+            using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
+            using (comando = new SqlCommand(sentencia, conexion))
+            {
+                comando.Parameters.AddWithValue("@correo", this.correo);
+                try
+                {
+                    if (conexion.State != System.Data.ConnectionState.Open)
+                    {
+                        conexion.Open();
+                    }
+                    DataSet datos = new DataSet();
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    adaptador.Fill(datos, "Tabla");
+                    return datos;
+                }
+                catch (Exception ex)
+                {
+                    //Si surge una excepción, muestra un mensaje de error
+                    await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
+                    return new DataSet();
+                }
+            }
+        }
+
+        //Actualiza la última decha de inicio de sesión del usuario
+        public async Task<int> ModificarUltimoLogin()
+        {
+            sentencia = "update Usuario set ultimaModSesion=@ultimaModSesion where idUsuario=@idUsuario";
+
+            using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
+            using (comando = new SqlCommand(sentencia, conexion))
+            {
+                comando.Parameters.AddWithValue("@idUsuario", Globales.AdministradorDeSesion.idUsuario);
+                comando.Parameters.AddWithValue("@ultimaModSesion", DateTime.Now);
+
+                try
+                {
+                    //Si la conexión con la BD está cerrada, se abre
+                    if (conexion.State != System.Data.ConnectionState.Open)
+                    {
+                        conexion.Open();
+                    }
+                    //Se ejecuta la instrucción SQL y retorna el número de filas afectadas
+                    return comando.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    //Si surge una excepción, muestra un mensaje de error
+                    await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
+                    return -1;
+                }
+            }
+        }
     }
 }

@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DocNowApp.NuevoUsuario.NuevoUsuarioPage"
-             Title="NuevoUsuarioPage"
+             Title=""
              xmlns:navegacion="clr-namespace:DocNowApp.Navegacion"
              xmlns:inicio="clr-namespace:DocNowApp.Inicio">
 
@@ -119,8 +119,8 @@
                 x:Name="txtCorreo"
                 ClassId="lowercase"
                 FontSize="12"
-                Placeholder="Correo"
-                MaxLength="100"
+                Placeholder="Nombre del Correo"
+                MaxLength="80"
                 WidthRequest="300"
                 Grid.Column="0"
                 TextChanged="Entry_TextChangued"
@@ -145,17 +145,6 @@
                     TextColor="Gray"
             InputTransparent="True"/>
             </Grid>
-
-            <!--<Picker
-                x:Name="pickerDominio"
-                Title="Dominio de correo"
-                FontSize="12"
-                WidthRequest="230"
-                Grid.Column="1"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"
-                Margin="0,0,0,0"/>
-            -->
             <Entry
                 x:Name="txtTelefono"
                 ClassId="numero"

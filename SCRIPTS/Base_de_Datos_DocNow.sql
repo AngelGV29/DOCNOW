@@ -13,6 +13,12 @@ CREATE TABLE Usuario (
     ultimaModSesion DATETIME
 );
 
+--Crear Usuarios experimentales
+INSERT INTO Usuario (nombre, apellidoPaterno, apellidoMaterno, correo, contrasenia, telefono, fechaNac, sexo, rol, ultimaModSesion)
+VALUES 
+('Angel Joaquin', 'García', 'Velázquez', 'angelgarciavelazquez29@gmail.com', '29092006', '6871167363', '2006-09-29', 'M', 'ADMIN', GETDATE()),
+('Pablo', 'Hernandez', 'Gutierrez', 'pablo@hotmail.com', 'pablo123', '0123456789', '2000-01-01', 'M', 'PACIENTE', GETDATE()),
+('Laura', 'Garza', 'Vazquez', 'laura@gmail.com', 'laura456', '9876543210', '2005-06-06', 'F', 'MEDICO', GETDATE());
 
 CREATE TABLE Paciente (
     idPaciente INT IDENTITY(1,1) PRIMARY KEY,
@@ -25,12 +31,22 @@ CREATE TABLE Paciente (
 
 CREATE TABLE Medico (
     idMedico INT IDENTITY(1,1) PRIMARY KEY,
+    idUsuario INT,
     numCedula NVARCHAR(20),
     especialidad NVARCHAR(100),
+    FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario)
+);
+
+
+
+CREATE TABLE Admin (
+    idAdmin INT IDENTITY(1,1) PRIMARY KEY,
     idUsuario INT,
     FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario)
 );
 
+INSERT INTO Admin (idUsuario) Values 
+(1);
 
 CREATE TABLE Consultorio (
     idConsultorio INT IDENTITY(1,1) PRIMARY KEY,
@@ -89,6 +105,10 @@ CREATE TABLE Cita (
 ALTER TABLE Paciente
 ADD ultimaVisita DATE;
 
+--Creación de paciente experimental
+INSERT INTO Paciente (idUsuario, alergia, medicacion, ultimaVisita) VALUES
+(2, 'Ninguna', 'Ninguna', GETDATE());
+
 
 -- Modificación 2: Crear tabla EspecialidadMedico y reemplazar campo especialidad en Medico
 -- Primero, crear la tabla EspecialidadMedico
@@ -104,16 +124,18 @@ ADD idEspecialidad INT;
 ALTER TABLE Medico
 ADD FOREIGN KEY (idEspecialidad) REFERENCES EspecialidadMedico(idEspecialidad);
 
+
+
 -- Finalmente, eliminar la columna especialidad original de Medico
 ALTER TABLE Medico
 DROP COLUMN especialidad;
 
--- Modificación 3: Insertar 3 registros en Consultorio (asumiendo que ya existe, si no, créala primero)
 INSERT INTO Consultorio (nombre, direccion, telefono)
 VALUES 
 ('Consultorio Central', 'Av. Principal #100', '687-855-0601'),
 ('Consultorio Norte', 'Calle Norte #200', '687-335-8902'),
 ('Consultorio Sur', 'Boulevard Sur #300', '687-555-6423');
+
 
 -- Modificación 4: Normalizar Consultorio dividiendo dirección
 -- Primero, agregar nuevas columnas para la normalización
@@ -174,9 +196,9 @@ END;
 IF NOT EXISTS (SELECT 1 FROM sys.tables WHERE name = 'MedicoConsultorio')
 BEGIN
     CREATE TABLE MedicoConsultorio (
+        idMedicoConultorio INT IDENTITY(1,1) PRIMARY KEY,
         idMedico INT NOT NULL,
         idConsultorio INT NOT NULL,
-        PRIMARY KEY (idMedico, idConsultorio),
         FOREIGN KEY (idMedico) REFERENCES Medico(idMedico),
         FOREIGN KEY (idConsultorio) REFERENCES Consultorio(idConsultorio)
     );
@@ -184,18 +206,16 @@ END;
 
 SELECT idMedico FROM Medico;
 
--- Insertar médicos si no existen
-INSERT INTO Medico (numCedula, idUsuario, idEspecialidad)
-VALUES 
-('MED001', 2, 1),  -- María López (idUsuario 2) como Cardiólogo (idEspecialidad 1)
-('MED002', 3, 2);  -- Pedro Ramírez (idUsuario 3, asumido) como Pediatra (idEspecialidad 2)
+--Creación de medico experimental
+INSERT INTO Medico (idUsuario, numCedula, idEspecialidad) VALUES 
+(3, '14789256', 1);
+
 
 -- Verificar los IDs generados
-SELECT idMedico, numCedula, idUsuario, idEspecialidad FROM Medico;
+SELECT idMedico, idUsuario, numCedula, idEspecialidad FROM Medico;
 
 -- Insertar datos de ejemplo en MedicoConsultorio (ajusta IDs según tus datos)
 INSERT INTO MedicoConsultorio (idMedico, idConsultorio)
 VALUES 
 (1, 1),  -- Médico 1 en Consultorio 1
-(1, 2),  -- Médico 1 en Consultorio 2
-(2, 3);  -- Médico 2 en Consultorio 3
+(1, 2);  -- Médico 1 en Consultorio 2
