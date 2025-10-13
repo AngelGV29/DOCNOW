@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DocNowApp.NuevoMedico.NuevoMedicoPage"
-             Title="NuevoMedicoPage">
+             Title="">
 
     <VerticalStackLayout>
         <Label 
@@ -13,62 +13,103 @@
             HorizontalOptions="Center" />
 
         <Entry
-            x:Name="txtCedula"
-            FontSize="12"
-            Placeholder="Cédula Profesional"
-            MaxLength="20"
-            WidthRequest="500"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"
-            Margin="0,0,0,0"/>
+                x:Name="txtNumCedula"
+                FontSize="12"
+                Placeholder="Cédula Profesional"
+                MaxLength="20"
+                WidthRequest="500"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Margin="0,0,0,0"/>
+        <Picker
+                x:Name="pickerEspecialidad"
+                Title="Seleccione su especialidad"
+                WidthRequest="500"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Margin="0,40,0,0"/>
 
-        <Entry
-            x:Name="txtEspecialidad"
-            FontSize="12"
-            Placeholder="Especialidad"
-            MaxLength="100"
-            WidthRequest="500"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"
-            Margin="0,40,0,0"/>
-        
-        <Label Text="Selecciona los consultorios donde trabajas:" 
-           FontSize="20" 
-           Margin="0,0,0,10" />
+
+        <Label Text="Seleccione los consultorios donde trabaja:" 
+               FontSize="20" 
+                   HorizontalOptions="Center"
+               Margin="0,40,0,15" />
+
+        <Grid Padding="0"
+                  WidthRequest="500"
+                  HorizontalOptions="Center"
+                  ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label
+                    Text="NOMBRE"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Margin="0,10,0,0"
+                    FontSize="16"
+                    Grid.Column="0"/>
+            <Label
+                    Text="TELEFONO"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Margin="0,10,0,0"
+                    FontSize="16"
+                    Grid.Column="1"/>
+            <Label
+                    Text="DIRECCION"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Margin="0,10,0,0"
+                    FontSize="16"
+                    Grid.Column="2"/>
+        </Grid>
 
         <CollectionView x:Name="CollectionConsultorios"
-                    SelectionMode="Multiple"
-                    HeightRequest="200">
+                            SelectionMode="Multiple"
+                            WidthRequest="500"
+                            HeightRequest="200">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Padding="10" BackgroundColor="{Binding Background}">
-                        <Label Text="{Binding Nombre}" />
+                    <Grid Padding="10"
+                              WidthRequest="500"
+                              HorizontalOptions="Center"
+                              ColumnSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="{Binding nombre}" 
+                                   TextColor="White"
+                                   Grid.Column="0"/>
+                        <Label Text="{Binding telefono}" 
+                                   TextColor="White"
+                                   Grid.Column="1"/>
+                        <Label Text="{Binding direccion}" 
+                                   TextColor="White"
+                                   Grid.Column="2"/>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <Picker
-            x:Name="pickerConsultorio"
-            Title="Seleccione un consultorio"
-            WidthRequest="500"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"
-            Margin="0,40,0,0">
-            <Picker.Items>
-                <x:String>Farmacia Guadalajara</x:String>
-                <x:String>Farmacia Ahorro</x:String>
-                <x:String>Farmacia Similares</x:String>
-                <x:String>Farmacia Benavides</x:String>
-            </Picker.Items>
-        </Picker>
-
         <Button
-            x:Name="btnContinuar"
-            Text="Continuar"
-            Clicked="btnContinuar_Clicked"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center"
-            Margin="0,20,0,0"/>
+                x:Name="btnContinuar"
+                Text="Continuar"
+                Clicked="btnContinuar_Clicked"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                Margin="0,20,0,0"/>
     </VerticalStackLayout>
+
+
 </ContentPage>
+
