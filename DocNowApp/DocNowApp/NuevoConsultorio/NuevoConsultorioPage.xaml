@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DocNowApp.NuevoConsultorio.NuevoConsultorioPage"
+             Title="NuevoConsultorioPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to DocNowApp!"
+            VerticalOptions="Center" 
+            FontSize="23"
+            HorizontalOptions="Center" 
+            Margin="0,20,0,0"/>
+        
+        <Label 
+           Margin="0,30,0,0"
+           Text="Registra un Consultorio en DocNow"
+           FontSize="30"
+           FontFamily="Arial"
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />
+        <Entry
+            x:Name="txtNomconsultorio"
+            FontSize="14"
+            Placeholder="Nombre del Consultorio"
+            MaxLength="100"
+            WidthRequest="400"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,80,0,0"/>
+        <Entry
+            x:Name="txtTelConsultorio"
+            FontSize="14"
+            Placeholder="Telefono"
+            MaxLength="100"
+            WidthRequest="400"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,20,0,0"/>
+        <Entry
+            x:Name="txtCalleConsultorio"
+            FontSize="14"
+            Placeholder="Calle"
+            MaxLength="100"
+            WidthRequest="400"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,20,0,0"/>
+        <Entry
+            x:Name="txtColoniaConsultorio"
+            FontSize="14"
+            Placeholder="Colonia"
+            MaxLength="100"
+            WidthRequest="400"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,20,0,0"/>
+        <Grid
+            WidthRequest="450"
+            HorizontalOptions="Center"
+            ColumnSpacing="50"
+            Margin="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Entry
+                x:Name="txtNumInterior"
+                FontSize="12"
+                Placeholder="Numero Interior"
+                MaxLength="100"
+                WidthRequest="150"
+                Grid.Column="0"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Margin="0,0,0,0"/>
+            <Entry
+                x:Name="txtNumExterior"
+                FontSize="12"
+                Placeholder="Numero Exterior"
+                MaxLength="10"
+                WidthRequest="150"
+                Grid.Column="1"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Margin="0,0,0,0"/>
+        </Grid>
+        <Entry
+         x:Name="txtCodigoPostal"
+         FontSize="14"
+         Placeholder="Codigo Postal"
+         MaxLength="100"
+         WidthRequest="400"
+         VerticalOptions="Center"
+         HorizontalOptions="Center"
+         Margin="0,20,0,0"/>
+        <Button
+            x:Name="btnRegistrar"
+            Text="Aceptar"
+            IsEnabled="False"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Margin="0,80,0,0"/>
+
+    </VerticalStackLayout>
+</ContentPage>

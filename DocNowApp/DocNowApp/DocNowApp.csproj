@@ -70,6 +70,9 @@
 	  <MauiXaml Update="Login\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="NuevoConsultorio\NuevoConsultorioPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="NuevoMedico\NuevoMedicoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

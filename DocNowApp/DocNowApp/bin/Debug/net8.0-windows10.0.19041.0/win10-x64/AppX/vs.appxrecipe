@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-10-01T22:28:14.901</Modified>
+      <Modified>2025-10-15T16:26:39.405</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-09-29T17:06:25.356</Modified>
+      <Modified>2025-10-15T16:01:12.489</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DocNowApp.runtimeconfig.json">
       <PackagePath>DocNowApp.runtimeconfig.json</PackagePath>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DocNowApp.dll">
       <PackagePath>DocNowApp.dll</PackagePath>
-      <Modified>2025-10-01T22:28:13.981</Modified>
+      <Modified>2025-10-15T16:26:38.211</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>DocNowApp.exe</PackagePath>
-      <Modified>2025-10-01T22:28:14.054</Modified>
+      <Modified>2025-10-15T16:26:38.293</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -296,7 +296,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\Desktop\github\DOCNOW\DocNowApp\DocNowApp\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DocNowApp.deps.json">
       <PackagePath>DocNowApp.deps.json</PackagePath>
-      <Modified>2025-09-29T17:06:25.191</Modified>
+      <Modified>2025-10-15T16:01:12.102</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\venta\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.57\lib\net8.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
