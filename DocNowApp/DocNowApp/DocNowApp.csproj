@@ -73,10 +73,14 @@
 	  <MauiXaml Update="Login\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+<<<<<<< HEAD
+	  <MauiXaml Update="NuevoConsultorio\NuevoConsultorioPage.xaml">
+=======
 	  <MauiXaml Update="MedicoPages\PrincipalPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Navegacion\BotonRegresar.xaml">
+>>>>>>> origin/main
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="NuevoMedico\NuevoMedicoPage.xaml">

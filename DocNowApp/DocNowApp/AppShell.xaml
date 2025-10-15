@@ -6,11 +6,16 @@
     xmlns:inicio="clr-namespace:DocNowApp.Inicio"
     xmlns:login="clr-namespace:DocNowApp.Login"
     xmlns:nuevoUsuario="clr-namespace:DocNowApp.NuevoUsuario"
+<<<<<<< HEAD
+    xmlns:nuevoConsultorio="clr-namespace:DocNowApp.NuevoConsultorio"
+    
+=======
     xmlns:nuevoMedico="clr-namespace:DocNowApp.NuevoMedico"
     xmlns:nuevoPaciente="clr-namespace:DocNowApp.NuevoPaciente"
     xmlns:paciente="clr-namespace:DocNowApp.PacientePages"
     xmlns:medico="clr-namespace:DocNowApp.MedicoPages"
     xmlns:admin="clr-namespace:DocNowApp.AdminPages"
+>>>>>>> origin/main
     Shell.FlyoutBehavior="Disabled"
     Title="DocNowApp">
 
@@ -18,6 +23,10 @@
     Los shell content representan páginas, y configuran una ruta que se
     utilizará cuando se desee mostrar dicha página-->
     
+    <ShellContent
+        Title="Nuevo Consultorio"
+        ContentTemplate="{DataTemplate nuevoConsultorio:NuevoConsultorioPage}"
+        Route="InicioPage"/>
     <ShellContent
         Title="Inicio"
         ContentTemplate="{DataTemplate inicio:InicioPage}"
