@@ -1,4 +1,4 @@
-namespace DocNowApp.Pantalla_principal;
+namespace DocNowApp.MedicoPages;
 
 public partial class PrincipalPage : ContentPage
 {

@@ -2,8 +2,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DocNowApp.Login.LoginPage"
-             Title="LoginPage">
+             Title=""
+             xmlns:navegacion="clr-namespace:DocNowApp.Navegacion"
+             xmlns:inicio="clr-namespace:DocNowApp.Inicio">
+    
     <VerticalStackLayout>
+        <navegacion:BotonRegresar Ruta="InicioPage" />
         <Label 
             Margin="0,100,0,50"
             Text="Inicio de sesion"
@@ -13,10 +17,11 @@
             HorizontalOptions="Center" />
         <Entry
             x:Name="txtCorreo"
+            ClassId="lowercase"
             FontSize="12"
             Placeholder="Correo electrónico"
             MaxLength="100"
-            TextChanged="txtCorreo_TextChanged"
+            TextChanged="Entry_TextChanged"
             WidthRequest="500"
             VerticalOptions="Center"
             HorizontalOptions="Center"
@@ -31,11 +36,12 @@
         
             <Entry
                 x:Name="txtContrasenia"
+                ClassId="contrasenia"
                 FontSize="12"
                 Placeholder="Contraseña"
-                MaxLength="255"
+                MaxLength="100"
                 IsPassword="True"
-                TextChanged="txtContrasenia_TextChanged"
+                TextChanged="Entry_TextChanged"
                 VerticalOptions="Center"
                 Grid.Column="0"/>
             <ImageButton

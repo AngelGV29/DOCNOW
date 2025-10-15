@@ -48,9 +48,13 @@ namespace DocNowApp.NuevoUsuario
             this.ultimoInicioSesion = ultimoInicioSesion;
 
         }
+
+        //Método que valida si el correo ya está registrado
         public async Task<DataSet> ValidarCorreo()
         {
+            //Instrucción SQL
             sentencia = "select * from Usuario where correo = @correo";
+
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
             using (comando = new SqlCommand(sentencia, conexion))
             {
@@ -68,26 +72,53 @@ namespace DocNowApp.NuevoUsuario
                 }
                 catch (Exception ex)
                 {
-                    //Si surge una excepción, se devolverá un estadoLogin de Error
+                    //Si surge una excepción, muestra un mensaje de error
                     await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
-                    return null;
+                    return new DataSet();
                 }
             }
         }
-        public async Task<int> Creacion()
-        {
-            this.idUsuario = await GenerarId();
 
-            if (this.idUsuario == 0) { return 0; }
-            if (this.idUsuario == -1) { return -1; }
+        //Método que devuelve la información del usuario para obtener su ID
+        public async Task<DataSet> ObtenerIdUsuario()
+        {
             //Instrucción SQL
-            sentencia = "insert into Usuario (idUsuario, nombre, apellidoPaterno, apellidoMaterno, correo, contrasenia, telefono, fechaNac, sexo, rol, fechaCreacion, ultimoInicioSesion) " +
-                "values (@idUsuario, @nombre, @apellidoPaterno, @apellidoMaterno, @correo, @contrasenia, @telefono, @fechaNac, @sexo, @rol, @fechaCreacion, @ultimoInicioSesion)";
+            sentencia = "select * from Usuario where correo = @correo";
 
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
             using (comando = new SqlCommand(sentencia, conexion))
             {
-                comando.Parameters.AddWithValue("@idUsuario", this.idUsuario);
+                comando.Parameters.AddWithValue("@correo", this.correo);
+                try
+                {
+                    if (conexion.State != System.Data.ConnectionState.Open)
+                    {
+                        conexion.Open();
+                    }
+                    DataSet datos = new DataSet();
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    adaptador.Fill(datos, "Tabla");
+                    return datos;
+                }
+                catch (Exception ex)
+                {
+                    //Si surge una excepción, muestra un mensaje de error
+                    await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
+                    return new DataSet();
+                }
+            }
+        }
+
+        //Método que crea el usuario en la base de datos
+        public async Task<int> Creacion()
+        {
+            //Instrucción SQL
+            sentencia = "insert into Usuario (nombre, apellidoPaterno, apellidoMaterno, correo, contrasenia, telefono, fechaNac, sexo, rol, fechaCreacion, ultimaModSesion) " +
+                "values (@nombre, @apellidoPaterno, @apellidoMaterno, @correo, @contrasenia, @telefono, @fechaNac, @sexo, @rol, @fechaCreacion, @ultimaModSesion)";
+
+            using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
+            using (comando = new SqlCommand(sentencia, conexion))
+            {
                 comando.Parameters.AddWithValue("@nombre", this.nombre);
                 comando.Parameters.AddWithValue("@apellidoPaterno", this.apellidoPaterno);
                 comando.Parameters.AddWithValue("@apellidoMaterno", this.apellidoMaterno);
@@ -98,7 +129,7 @@ namespace DocNowApp.NuevoUsuario
                 comando.Parameters.AddWithValue("@sexo", this.sexo);
                 comando.Parameters.AddWithValue("@rol", this.rol);
                 comando.Parameters.AddWithValue("@fechaCreacion", this.fechaCreacion);
-                comando.Parameters.AddWithValue("@ultimoInicioSesion", this.ultimoInicioSesion);
+                comando.Parameters.AddWithValue("@ultimaModSesion", this.ultimoInicioSesion);
 
                 try
                 {
@@ -107,49 +138,14 @@ namespace DocNowApp.NuevoUsuario
                     {
                         conexion.Open();
                     }
-                    //Se ejecuta la instrucción SQL para validar si el correo y contraseña son correctos
-                    
                     return comando.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {
-                    //Si surge una excepción, se devolverá un estadoLogin de Error
-                    //await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
+                    //Si surge una excepción, muestra un mensaje de error
+                    await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
                     return -1;
                 }
-            }
-        }
-        public async Task<int> GenerarId()
-        {
-            sentencia = "select max(idUsuario) + 1 as id FROM Usuario";
-            using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
-            using (comando = new SqlCommand(sentencia, conexion))
-            {
-                comando.Parameters.AddWithValue("@idUsuario", this.idUsuario);
-            }
-            try
-            {
-                if (conexion.State != System.Data.ConnectionState.Open)
-                {
-                    conexion.Open();
-                }
-                DataSet datos = new DataSet();
-                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                adaptador.Fill(datos, "Tabla");
-                if (datos.Tables["Tabla"].Rows.Count > 0)
-                {
-                    return Convert.ToInt32(datos.Tables["Tabla"].Rows[0]["id"].ToString());
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                //Si surge una excepción, se devolverá un estadoLogin de Error
-                await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
-                return -1;
             }
         }
     }

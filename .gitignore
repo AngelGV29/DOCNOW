@@ -8,7 +8,12 @@ DocNowApp/DocNowApp/obj/
 DocNowApp/DocNowApp/bin/
 DocNowApp/.vs/
 
+DocNowApp/obj/
+DocNowApp/bin/
+.vs/
 
+obj/
+bin/
 
 
 # User-specific files
