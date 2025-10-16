@@ -6,4 +6,15 @@ public partial class AgendaDisponibilidadPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    List<string> DuracionSlot = new List<string>
+    {
+        "10 min",
+        "15 min",
+        "30 min",
+        "45 min",
+        "50 min",
+        "60 min",
+        "90 min"
+    };
 }

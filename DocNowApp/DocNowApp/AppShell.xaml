@@ -11,17 +11,23 @@
     xmlns:paciente="clr-namespace:DocNowApp.PacientePages"
     xmlns:medico="clr-namespace:DocNowApp.MedicoPages"
     xmlns:admin="clr-namespace:DocNowApp.AdminPages"
+    xmlns:agenda="clr-namespace:DocNowApp.AgendaDisponibilidad"
     Shell.FlyoutBehavior="Disabled"
     Title="DocNowApp">
 
     <!--En este archivo se define la estructura de navegación entre páginas.
     Los shell content representan páginas, y configuran una ruta que se
     utilizará cuando se desee mostrar dicha página-->
+
     
     <ShellContent
         Title="Inicio"
         ContentTemplate="{DataTemplate inicio:InicioPage}"
         Route="InicioPage"/>
+    <ShellContent
+        Title="AgendaDisponibilidad"
+        ContentTemplate="{DataTemplate agenda:AgendaDisponibilidadPage}"
+        Route="AgendaDisponibilidadPage"/>
     <ShellContent
         Title="Registro"
         ContentTemplate="{DataTemplate nuevoUsuario:NuevoUsuarioPage}"
