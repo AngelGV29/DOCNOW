@@ -10,15 +10,15 @@ public partial class NuevoUsuarioPage : ContentPage
     public NuevoUsuarioPage()
     {
         InitializeComponent();
-        //Ajusta la fecha máxima del picker a la actual
-        this.dateFechaNac.MaximumDate = DateTime.Today;
-        //Hace que el picker para seleccionar el dominio de correo utilice la lista de dominios ya definida
-        this.pickerDominio.ItemsSource = dominios;
     }
 
     protected override void OnAppearing()
     {
         base.OnAppearing();
+        //Ajusta la fecha máxima del picker a la actual
+        this.dateFechaNac.MaximumDate = DateTime.Today;
+        //Hace que el picker para seleccionar el dominio de correo utilice la lista de dominios ya definida
+        this.pickerDominio.ItemsSource = dominios;
         //Reinicia los controles de la página
         this.txtNombre.Text = "";
         this.txtApellP.Text = "";

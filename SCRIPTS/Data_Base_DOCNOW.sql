@@ -1,24 +1,33 @@
 -- TABLA: Usuario
 CREATE TABLE Usuario (
     idUsuario INT IDENTITY(1,1) PRIMARY KEY,
-    nombre NVARCHAR(100) NOT NULL,
-    apellPaterno NVARCHAR(100) NOT NULL,
-    apellMaterno NVARCHAR(100),
-    correo NVARCHAR(150) UNIQUE NOT NULL,
-    contrasenia NVARCHAR(255) NOT NULL,
-    telefono NVARCHAR(20),
-    fechaNac DATE,
-    sexo NVARCHAR(10),
-    rol NVARCHAR(20) NOT NULL
+    nombre NVARCHAR(50) NOT NULL,
+    apellPaterno NVARCHAR(50) NOT NULL,
+    apellMaterno NVARCHAR(50) NOT NULL,
+    correo NVARCHAR(100) UNIQUE NOT NULL,
+    contrasenia NVARCHAR(100) NOT NULL,
+    telefono NVARCHAR(10) NOT NULL,
+    fechaNac DATE NOT NULL,
+    sexo NCHAR(1),
+    rol NVARCHAR(20) NOT NULL,
+    fechaCreacion DATETIME NOT NULL DEFAULT GETDATE(),
+    ultimoLogin DATETIME NOT NULL DEFAULT GETDATE()
+);
+
+-- TABLA: Administrador
+CREATE TABLE Administrador (
+    idAdmin INT IDENTITY(1,1) PRIMARY KEY,
+    idUsuario INT,
+    FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario) ON DELETE CASCADE
 );
 
 -- TABLA: Paciente
 CREATE TABLE Paciente (
     idPaciente INT IDENTITY(1,1) PRIMARY KEY,
+    idUsuario INT NOT NULL,
     alergia NVARCHAR(255),
     medicacion NVARCHAR(255),
     ultimaVisita DATE,
-    idUsuario INT NOT NULL,
     FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario) ON DELETE CASCADE
 );
 
@@ -33,9 +42,9 @@ CREATE TABLE EspecialidadMedico (
 -- TABLA: Medico
 CREATE TABLE Medico (
     idMedico INT IDENTITY(1,1) PRIMARY KEY,
-    numCedula NVARCHAR(50) UNIQUE NOT NULL,
-    idEspecialidad INT,
     idUsuario INT,
+    numCedula NVARCHAR(20) UNIQUE NOT NULL,
+    idEspecialidad INT,
     FOREIGN KEY (idEspecialidad) REFERENCES EspecialidadMedico(idEspecialidad),
     FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario) ON DELETE CASCADE
 );
@@ -44,18 +53,17 @@ CREATE TABLE Medico (
 -- TABLA: Consultorio
 CREATE TABLE Consultorio (
     idConsultorio INT IDENTITY(1,1) PRIMARY KEY,
-    nombre NVARCHAR(100) NOT NULL,
-    calle NVARCHAR(150),
-    numeroInterior NVARCHAR(50),
-    numeroExterior NVARCHAR(50),
-    colonia NVARCHAR(100),
-    codigoPostal NVARCHAR(10),
-    telefono NVARCHAR(20)
+    nombre NVARCHAR(60) NOT NULL,
+    telefono NVARCHAR(10) NOT NULL,
+    calle NVARCHAR(150) NOT NULL,
+    numeroInterior NVARCHAR(10),
+    numeroExterior NVARCHAR(10) NOT NULL,
+    colonia NVARCHAR(100) NOT NULL,
+    codigoPostal NVARCHAR(10)
 );
 
 
 -- TABLA: MedicoConsultorio 
-
 CREATE TABLE MedicoConsultorio (
     idMedicoConsultorio INT IDENTITY(1,1) PRIMARY KEY,
     idMedico INT NOT NULL,
@@ -64,60 +72,62 @@ CREATE TABLE MedicoConsultorio (
     FOREIGN KEY (idConsultorio) REFERENCES Consultorio(idConsultorio)
 );
 
+-- TABLA: Dia
+CREATE TABLE Dia(
+    idDia INT PRIMARY KEY,
+    nombreDia VARCHAR(10) NOT NULL,
+);
 
 -- TABLA: AgendaDisponibilidad
 CREATE TABLE AgendaDisponibilidad (
-    idAgenda INT IDENTITY(1,1) PRIMARY KEY,
-    idMedicoConsultorio INT NOT NULL,
-    trabajaLunes BIT NOT NULL DEFAULT 0,
-    trabajaMartes BIT NOT NULL DEFAULT 0,
-    trabajaMiercoles BIT NOT NULL DEFAULT 0,
-    trabajaJueves BIT NOT NULL DEFAULT 0,
-    trabajaViernes BIT NOT NULL DEFAULT 0,
-    trabajaSabado BIT NOT NULL DEFAULT 0,
-    trabajaDomingo BIT NOT NULL DEFAULT 0,
-    horaInicioJornada TIME NOT NULL,
-    horaFinJornada TIME NOT NULL,
-    horaInicioDescanso TIME NULL,
-    horaFinDescanso TIME NULL,
-    duracionSlotMinutos INT NOT NULL,
-    estado NVARCHAR(50) NOT NULL,
+    idAgendaDisponibilidad INT IDENTITY(1,1) PRIMARY KEY,
+    idMedico INT NOT NULL,
+    idConsultorio INT NOT NULL,
+    idDia INT NOT NULL,
+    horaInicioJornada TIME(0) NOT NULL,
+    horaFinJornada TIME(0) NOT NULL,
+    duracionSlotMinutos INT NOT NULL DEFAULT 30,
+    agendaActiva BIT NOT NULL DEFAULT 0,
     fechaCreacion DATETIME NOT NULL DEFAULT GETDATE(),
-    fechaActualizacion DATETIME NULL,
-    FOREIGN KEY (idMedicoConsultorio) REFERENCES MedicoConsultorio(idMedicoConsultorio)
+    fechaModificacion DATETIME NULL DEFAULT GETDATE(),
+    FOREIGN KEY (idMedico) REFERENCES Medico(idMedico),
+    FOREIGN KEY (idConsultorio) REFERENCES Consultorio(idConsultorio),
+    FOREIGN KEY (idDia) REFERENCES Dia(idDia)
 );
-
 
 -- TABLA: Turno
 CREATE TABLE Turno (
     idTurno INT IDENTITY(1,1) PRIMARY KEY,
-    idAgenda INT NOT NULL,
+    idAgendaDisponibilidad INT NOT NULL,
     fecha DATE NOT NULL,
-    horaInicio TIME NOT NULL,
-    horaFinal TIME NOT NULL,
-    estado NVARCHAR(20) NOT NULL,
-    FOREIGN KEY (idAgenda) REFERENCES AgendaDisponibilidad(idAgenda)
+    horaInicio TIME(0) NOT NULL,
+    horaFinal TIME(0) NOT NULL,
+    turnoOcupado BIT NOT NULL DEFAULT 0,
+    FOREIGN KEY (idAgendaDisponibilidad) REFERENCES AgendaDisponibilidad(idAgendaDisponibilidad)
 );
 
 
 -- TABLA: MotivoConsulta
 CREATE TABLE MotivoConsulta (
     idMotivo INT IDENTITY(1,1) PRIMARY KEY,
-    descripcion NVARCHAR(200) NOT NULL,
-    instruccion NVARCHAR(MAX)
+    descripcion NVARCHAR(255) NOT NULL,
+    instruccion NVARCHAR(255)
 );
 
 -- TABLA: Cita
 CREATE TABLE Cita (
     idCita INT IDENTITY(1,1) PRIMARY KEY,
+    idTurno INT NOT NULL,
     idPaciente INT NOT NULL,
     idMedico INT NOT NULL,
-    idTurno INT NOT NULL,
+    idConsultorio INT NOT NULL,
     idMotivo INT NOT NULL,
     estado NVARCHAR(20) NOT NULL,
     fechaCreacion DATETIME DEFAULT GETDATE(),
+    fechaModificacion DATETIME DEFAULT GETDATE(),
     FOREIGN KEY (idPaciente) REFERENCES Paciente(idPaciente),
     FOREIGN KEY (idMedico) REFERENCES Medico(idMedico),
+    FOREIGN KEY (idConsultorio) REFERENCES Consultorio(idConsultorio),
     FOREIGN KEY (idTurno) REFERENCES Turno(idTurno),
     FOREIGN KEY (idMotivo) REFERENCES MotivoConsulta(idMotivo)
 );
@@ -127,12 +137,16 @@ CREATE TABLE Cita (
 --insertar valores
 
 --Usuario
-INSERT INTO Usuario (nombre, apellPaterno, apellMaterno, correo, contrasenia, telefono, fechaNac, sexo, rol)
+INSERT INTO Usuario (nombre, apellPaterno, apellMaterno, correo, contrasenia, telefono, fechaNac, sexo, rol, fechaCreacion, ultimoLogin)
 VALUES
-('Carlos', 'Ramírez', 'López', 'carlos.ramirez@gmail.com', '12345abcde', '6871123422', '1988-05-10', 'Masculino', 'Medico'),
-('Laura', 'García', 'Mendoza', 'laura.garcia@hotmail.com', 'laurasexy123', '6673338494', '1992-11-22', 'Femenino', 'Paciente'),
-('Mario', 'Pérez', 'Juárez', 'mario.perez@gmail.com', 'mariobros7621', '6671458580', '1985-02-18', 'Masculino', 'Medico'),
-('Ana', 'Hernández', 'Díaz', 'ana.hernandez@gmail.com', 'anahernandez07', '6871320944', '2000-07-07', 'Femenino', 'Paciente');
+('ANGEL JOAQUIN', 'GARCIA', 'VELAZQUEZ', 'angelgarciavelazquez29@gmail.com', '29092006', '6871167363', '2006-09-29', 'M', 'ADMIN', GETDATE(), GETDATE()),
+('CARLOS', 'RAMIREZ', 'LÓPEZ', 'carlosramirez@gmail.com', '12345abcde', '6871123422', '1988-05-10', 'M', 'MEDICO', GETDATE(), GETDATE()),
+('MARIO', 'PEREZ', 'JUAREZ', 'marioperez@gmail.com', 'mariobros1234', '6671458580', '1985-02-18', 'M', 'MEDICO', GETDATE(), GETDATE()),
+('ANA', 'HERNANDEZ', 'DIAZ', 'anahernandez@gmail.com', 'anahernandez07', '6871320944', '2000-07-07', 'F', 'PACIENTE', GETDATE(), GETDATE());
+
+--Administrador
+INSERT INTO Administrador (idUsuario) Values 
+(1);
 
 --EspecialidadMedico
 INSERT INTO EspecialidadMedico (nombreEspecialidad)
@@ -145,43 +159,79 @@ VALUES
 --Asociamos los médicos con usuarios y especialidades
 INSERT INTO Medico (numCedula, idEspecialidad, idUsuario)
 VALUES
-('CED12345', 1, 1),   -- Carlos (Cardiólogo)
+('CED12345', 1, 2),   -- Carlos (Cardiólogo)
 ('CED67890', 3, 3);   -- Mario (Dermatólogo)
 
 
 --Paciente
 INSERT INTO Paciente (alergia, medicacion, ultimaVisita, idUsuario)
 VALUES
-('Penicilina', 'Paracetamol', '2025-09-01', 2),
-('Ninguna', 'Ibuprofeno', '2025-10-01', 4);
+('Penicilina', 'Paracetamol', '2025-09-01', 4);
 
 
 --Consultorio
 INSERT INTO Consultorio (nombre, calle, numeroInterior, numeroExterior, colonia, codigoPostal, telefono)
 VALUES
 ('Consultorio Central', 'Av. Reforma', '1', '101', 'Centro', '06000', '6873420941'),
-('Clínica del Sol', 'Calle Luna', '2', '202', 'Roma Norte', '06700', '6879983421');
+('Clínica del Sol', 'Calle Luna', null, '202', 'Roma Norte', '06700', '6879983421');
 
 
 --MedicoConsultorio
 INSERT INTO MedicoConsultorio (idMedico, idConsultorio)
 VALUES
 (1, 1),  -- Carlos en Consultorio Central
+(1, 2),  -- Carlos en Consultorio Clínica del Sol
 (2, 2);  -- Mario en Clínica del Sol
+
+--Dia
+INSERT INTO Dia (idDia, nombreDia)
+VALUES
+(1, 'Lunes'),
+(2, 'Martes'),
+(3, 'Miércoles'),
+(4, 'Jueves'),
+(5, 'Viernes'),
+(6, 'Sábado'),
+(7, 'Domingo');
 
 
 --AgendaDisponibilidad
-INSERT INTO AgendaDisponibilidad (
-    idMedicoConsultorio,
-    trabajaLunes, trabajaMartes, trabajaMiercoles, trabajaJueves, trabajaViernes,
-    horaInicioJornada, horaFinJornada,
-    duracionSlotMinutos, estado
-)
+INSERT INTO AgendaDisponibilidad (idMedico, idConsultorio, idDia, horaInicioJornada, horaFinJornada, duracionSlotMinutos, agendaActiva)
 VALUES
-(1, 1, 1, 1, 1, 0, '08:00', '14:00', 30, 'Activo'),
-(2, 1, 1, 1, 0, 0, '10:00', '16:00', 45, 'Activo');
+(1, 1, 1, '08:00', '12:00', 30, 1),
+(1, 1, 2, '08:00', '12:00', 30, 1),
+(1, 1, 3, '08:00', '12:00', 30, 1),
+(1, 1, 4, '08:00', '12:00', 30, 1),
+(1, 1, 5, '08:00', '12:00', 30, 1),
+(1, 1, 6, '08:00', '12:00', 15, 1),
+(1, 1, 6, '12:00', '18:00', 15, 1),
+(1, 1, 7, '09:00', '13:00', 30, 0),
+
+(1, 2, 1, '14:00', '18:00', 30, 1),
+(1, 2, 2, '14:00', '18:00', 30, 1),
+(1, 2, 3, '14:00', '18:00', 30, 1),
+(1, 2, 4, '14:00', '18:00', 30, 1),
+(1, 2, 5, '14:00', '18:00', 30, 1),
+(1, 2, 7, '15:00', '18:00', 15, 1),
+
+(2, 2, 1, '12:00', '17:00', 15, 0),
+(2, 2, 3, '12:00', '17:00', 15, 0),
+(2, 2, 4, '12:00', '17:00', 15, 0),
+(2, 2, 5, '12:00', '17:00', 15, 0),
+(2, 2, 6, '07:00', '12:00', 15, 1),
+(2, 2, 6, '13:00', '17:00', 15, 1),
+(2, 2, 7, '07:00', '12:00', 15, 1),
+(2, 2, 7, '13:00', '17:00', 15, 1);
 
 
+
+
+
+-- PRUEBAS AISLADAS
+/*
+select idAgendaDisponibilidad, idMedico, idConsultorio, idDia, 
+                horaInicioJornada, horaFinJornada, duracionSlotMinutos, agendaActiva from AgendaDisponibilidad
+                where idMedico = 1 and idConsultorio = 1
 --Turno
 INSERT INTO Turno (idAgenda, fecha, horaInicio, horaFinal, estado)
 VALUES
@@ -205,4 +255,6 @@ VALUES
 (2, 2, 3, 3, 'Pendiente');
 
 
-SELECT * FROM MotivoConsulta;
+SELECT * FROM AgendaDisponibilidad;
+*/
+

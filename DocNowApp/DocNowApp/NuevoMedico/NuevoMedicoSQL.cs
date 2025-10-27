@@ -35,7 +35,7 @@ namespace DocNowApp.NuevoMedico
         private string numCedula;
         private string especialidad;
 
-        //Constructor vacío utilizado para que el lonjeto pueda utilizar los métodos que devuelven los consultorios y especialidades disponibles
+        //Constructor vacío utilizado para que el objeto pueda utilizar los métodos que devuelven los consultorios y especialidades disponibles
         public NuevoMedicoSQL()
         {
             this.idUsuario = 0;

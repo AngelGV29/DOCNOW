@@ -1,63 +1,68 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
-    x:Class="DocNowApp.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:inicio="clr-namespace:DocNowApp.Inicio"
-    xmlns:login="clr-namespace:DocNowApp.Login"
-    xmlns:nuevoUsuario="clr-namespace:DocNowApp.NuevoUsuario"
-<<<<<<< HEAD
-    xmlns:nuevoConsultorio="clr-namespace:DocNowApp.NuevoConsultorio"
-    
-=======
-    xmlns:nuevoMedico="clr-namespace:DocNowApp.NuevoMedico"
-    xmlns:nuevoPaciente="clr-namespace:DocNowApp.NuevoPaciente"
-    xmlns:paciente="clr-namespace:DocNowApp.PacientePages"
-    xmlns:medico="clr-namespace:DocNowApp.MedicoPages"
-    xmlns:admin="clr-namespace:DocNowApp.AdminPages"
->>>>>>> origin/main
-    Shell.FlyoutBehavior="Disabled"
-    Title="DocNowApp">
+     x:Class="DocNowApp.AppShell"
+ xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+ xmlns:inicio="clr-namespace:DocNowApp.Inicio"
+ xmlns:login="clr-namespace:DocNowApp.Login"
+ xmlns:nuevoUsuario="clr-namespace:DocNowApp.NuevoUsuario"
+ xmlns:nuevoConsultorio="clr-namespace:DocNowApp.NuevoConsultorio"
+ xmlns:nuevoMedico="clr-namespace:DocNowApp.NuevoMedico"
+ xmlns:nuevoPaciente="clr-namespace:DocNowApp.NuevoPaciente"
+ xmlns:paciente="clr-namespace:DocNowApp.PacientePages"
+ xmlns:medico="clr-namespace:DocNowApp.MedicoPages"
+ xmlns:admin="clr-namespace:DocNowApp.AdminPages"
+ xmlns:agenda="clr-namespace:DocNowApp.AgendaDisponibilidad"
+ Shell.FlyoutBehavior="Disabled"
+ Title="DocNowApp">
 
     <!--En este archivo se define la estructura de navegación entre páginas.
-    Los shell content representan páginas, y configuran una ruta que se
-    utilizará cuando se desee mostrar dicha página-->
-    
+ Los shell content representan páginas, y configuran una ruta que se
+ utilizará cuando se desee mostrar dicha página-->
+
     <ShellContent
-        Title="Nuevo Consultorio"
-        ContentTemplate="{DataTemplate nuevoConsultorio:NuevoConsultorioPage}"
-        Route="InicioPage"/>
+     Title="Inicio"
+     ContentTemplate="{DataTemplate inicio:InicioPage}"
+     Route="InicioPage"/>
     <ShellContent
-        Title="Inicio"
-        ContentTemplate="{DataTemplate inicio:InicioPage}"
-        Route="InicioPage"/>
+     Title="Configurar AgendaDisponibilidad"
+     ContentTemplate="{DataTemplate agenda:ConfigurarAgendaDisponibilidadPage}"
+     Route="ConfigurarAgendaDisponibilidadPage"/>
     <ShellContent
-        Title="Registro"
-        ContentTemplate="{DataTemplate nuevoUsuario:NuevoUsuarioPage}"
-        Route="NuevoUsuarioPage"/>
+     Title="Nueva Franja"
+     ContentTemplate="{DataTemplate agenda:FranjaDto}"
+     Route="AgregarFranjaPage"/>
     <ShellContent
-        Title="Login"
-        ContentTemplate="{DataTemplate login:LoginPage}"
-        Route="LoginPage" />
+     Title="Registro"
+     ContentTemplate="{DataTemplate nuevoUsuario:NuevoUsuarioPage}"
+     Route="NuevoUsuarioPage"/>
     <ShellContent
-        Title="Nuevo Medico"
-        ContentTemplate="{DataTemplate nuevoMedico:NuevoMedicoPage}"
-        Route="NuevoMedicoPage"/>
+     Title="Login"
+     ContentTemplate="{DataTemplate login:LoginPage}"
+     Route="LoginPage" />
     <ShellContent
-        Title="Nuevo Paciente"
-        ContentTemplate="{DataTemplate nuevoPaciente:NuevoPacientePage}"
-        Route="NuevoPacientePage"/>
+     Title="Nuevo Medico"
+     ContentTemplate="{DataTemplate nuevoMedico:NuevoMedicoPage}"
+     Route="NuevoMedicoPage"/>
     <ShellContent
-        Title="Bienvenido Paciente"
-        ContentTemplate="{DataTemplate paciente:PrincipalPage}"
-        Route="PacientePrincipalPage"/>
+     Title="Nuevo Consultorio"
+     ContentTemplate="{DataTemplate nuevoConsultorio:NuevoConsultorioPage}"
+     Route="NuevoConsultorioPage"/>
     <ShellContent
-        Title="Bienvenido Medico"
-        ContentTemplate="{DataTemplate medico:PrincipalPage}"
-        Route="MedicoPrincipalPage"/>
+     Title="Nuevo Paciente"
+     ContentTemplate="{DataTemplate nuevoPaciente:NuevoPacientePage}"
+     Route="NuevoPacientePage"/>
     <ShellContent
-        Title="Bienvenido Admin"
-        ContentTemplate="{DataTemplate admin:PrincipalPage}"
-        Route="AdminPrincipalPage"/>
+     Title="Bienvenido Paciente"
+     ContentTemplate="{DataTemplate paciente:PacientePrincipalPage}"
+     Route="PacientePrincipalPage"/>
+    <ShellContent
+     Title="Bienvenido Medico"
+     ContentTemplate="{DataTemplate medico:MedicoPrincipalPage}"
+     Route="MedicoPrincipalPage"/>
+    <ShellContent
+     Title="Bienvenido Admin"
+     ContentTemplate="{DataTemplate admin:AdminPrincipalPage}"
+     Route="AdminPrincipalPage"/>
 
 </Shell>

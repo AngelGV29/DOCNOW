@@ -1,4 +1,5 @@
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace DocNowApp.NuevoMedico;
 
@@ -42,33 +43,33 @@ public partial class NuevoMedicoPage : ContentPage
         }
     }
 
-    
+   
 
     private async void btnContinuar_Clicked(object sender, EventArgs e)
     {
-        //Obtiene la lista de consultorios seleccionados en el CollectionView
-        var consultoriosSeleccionados = this.CollectionConsultorios.SelectedItems.Cast<Consultorio>().ToList();
-        //Si la cedula profesional está vacía, el usuario no podrá continuar
-        if (string.IsNullOrWhiteSpace(this.txtNumCedula.Text))
-        {
-            await DisplayAlert("Advertencia", "Debe ingresar la cédula profesional", "Aceptar");
-            return;
-        }
-        //Si no se selecciono una especialidad en el picker, el usuario no podrá continuar
-        if(this.pickerEspecialidad.SelectedItem == null)
-        {
-            await DisplayAlert("Advertencia", "Debe seleccionar una especialidad para continuar", "Aceptar");
-            return;
-        }
-        //Si no se selecciono al menos un consultorio, el usuario no podrá continuar
-        if (consultoriosSeleccionados.Count == 0)
-        {
-            await DisplayAlert("Advertencia", "Debe seleccionar al menos un consultorio para continuar", "Aceptar");
-            return;
-        }
-
         try
         {
+            //Obtiene la lista de consultorios seleccionados en el CollectionView
+            var consultoriosSeleccionados = this.CollectionConsultorios.SelectedItems.Cast<Consultorio>().ToList();
+            //Si la cedula profesional está vacía, el usuario no podrá continuar
+            if (string.IsNullOrWhiteSpace(this.txtNumCedula.Text))
+            {
+                await DisplayAlert("Advertencia", "Debe ingresar la cédula profesional", "Aceptar");
+                return;
+            }
+            //Si no se selecciono una especialidad en el picker, el usuario no podrá continuar
+            if (this.pickerEspecialidad.SelectedItem == null)
+            {
+                await DisplayAlert("Advertencia", "Debe seleccionar una especialidad para continuar", "Aceptar");
+                return;
+            }
+            //Si no se selecciono al menos un consultorio, el usuario no podrá continuar
+            if (consultoriosSeleccionados.Count == 0)
+            {
+                await DisplayAlert("Advertencia", "Debe seleccionar al menos un consultorio para continuar", "Aceptar");
+                return;
+            }
+
             //Crea el objeto para la creación del nuevo médico
             NuevoMedico.NuevoMedicoSQL crear = new NuevoMedico.NuevoMedicoSQL(this.txtNumCedula.Text, this.pickerEspecialidad.SelectedItem.ToString());
             //Método para crear el médico, si se afecto más de una fila la creación fue exitosa
@@ -106,4 +107,5 @@ public partial class NuevoMedicoPage : ContentPage
             await DisplayAlert("Excepción", $"Error: {ex.Message}", "Aceptar");
         }
     }
+    
 }
