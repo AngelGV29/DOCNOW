@@ -19,6 +19,7 @@ public partial class ConfigurarAgendaDisponibilidadPage : ContentPage
         base.OnAppearing();
         try
         {
+            this.CargarAgendaDisponibilidad();
             AgendaDisponibilidadSQL loader = new AgendaDisponibilidadSQL(Globales.AdministradorDeSesion.idMedico);
             List<Consultorio> listaConsultorios = await loader.ObtenerConsultorios();
             this.pickerConsultorio.ItemsSource = listaConsultorios;
