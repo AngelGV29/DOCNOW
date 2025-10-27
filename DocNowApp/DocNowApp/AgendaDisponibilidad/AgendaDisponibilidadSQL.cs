@@ -1,122 +1,204 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.Maui.Controls;
 using System;
-using System.Collections.Generic;
 using System.Data;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
+using Microsoft.Maui.ApplicationModel.DataTransfer;
 
 namespace DocNowApp.AgendaDisponibilidad
 {
-    internal class AgendaDisponibilidadSQL
+
+    public class Consultorio
+    {
+        public int idConsultorio { get; set; }
+        public string nombre { get; set; }
+        public string telefono { get; set; }
+        public string direccion { get; set; }
+    }
+
+    class AgendaDisponibilidadSQL
     {
         private string sentencia; //Recibirá la instrucción SQL
         private SqlConnection conexion; //Abre y cierrra la conexión
         private SqlCommand comando; //Es el comando SQL
 
         //Atributos
+        private int idAgendaDisponibilidad;
         private int idMedico;
         private int idConsultorio;
-        private int idMedicoConsultorio;
-        private bool trabajaLunes;
-        private bool trabajaMartes;
-        private bool trabajaMiercoles;
-        private bool trabajaJueves;
-        private bool trabajaViernes;
-        private bool trabajaSabado;
-        private bool trabajaDomingo;
+        private int idDia;
         private TimeSpan horaInicioJornada;
         private TimeSpan horaFinJornada;
-        private TimeSpan horaInicioDescanso;
-        private TimeSpan horaFinDescanso;
-        private int duracionSlot;
-        private string estado;
+        public int duracionSlotMinutos;
+        public bool agendaActiva;
 
-        //Constructor vacío utilizado para que el objeto pueda utilizar los métodos que devuelven los consultorios y especialidades disponibles
-        /*public NuevoMedicoSQL()
+        public AgendaDisponibilidadSQL(FranjaDto _franjaDto)
         {
-            this.idUsuario = 0;
-            this.numCedula = "";
-            this.especialidad = "";
-        }*/
-        //Constructor utilizado para crear el médico
-        public AgendaDisponibilidadSQL(bool trabajaLunes, bool trabajaMartes, bool trabajaMiercoles, bool trabajaJueves, bool trabajaViernes,
-            bool trabajaSabado, bool trabajaDomingo, TimeSpan horaInicioJornada, TimeSpan horaFinJornada, TimeSpan horaInicioDescanso,
-            TimeSpan horaFinDescanso, int duracionSLot, string estado)
-        {
-            this.trabajaLunes = trabajaLunes;
-            this.trabajaMartes = trabajaMartes;
-            this.trabajaMiercoles = trabajaMiercoles;
-            this.trabajaJueves = trabajaJueves;
-            this.trabajaViernes = trabajaViernes;
-            this.trabajaSabado = trabajaSabado;
-            this.trabajaDomingo = trabajaDomingo;
-            this.horaInicioJornada = horaInicioJornada;
-            this.horaFinJornada = horaFinJornada;
-            this.horaInicioDescanso = horaInicioDescanso;
-            this.horaFinDescanso = horaFinDescanso;
-            this.duracionSlot = duracionSLot;
-            this.estado = estado.Trim();
+            this.idAgendaDisponibilidad = _franjaDto.IdAgendaDisponibilidad;
+            this.idMedico = _franjaDto.IdMedico;
+            this.idConsultorio = _franjaDto.IdConsultorio;
+            this.idDia = _franjaDto.IdDia;
+            this.horaInicioJornada = _franjaDto.HoraInicioJornada;
+            this.horaFinJornada = _franjaDto.HoraFinJornada;
+            this.duracionSlotMinutos = _franjaDto.DuracionSlotMinutos;
+            this.agendaActiva = _franjaDto.AgendaActiva;
         }
 
-        public async Task<DataSet> ValidarExistenciaAgenda()
+        public AgendaDisponibilidadSQL(int idMedico)
         {
-            //Instrucción SQL
-            sentencia = "select * from AgendaDisponibilidad where idMedicoConsultorio = @idMedicoConsultorio";
+            this.idMedico = idMedico;
+        }
 
+        public AgendaDisponibilidadSQL(int idMedico, int idConsultorio)
+        {
+            this.idMedico = idMedico;
+            this.idConsultorio = idConsultorio;
+        }
+
+        public async Task<List<Consultorio>> ObtenerConsultorios()
+        {
+            sentencia = @"select c.idConsultorio, c.nombre, c.telefono, c.calle, c.numeroInterior, c.numeroExterior, c.colonia, c.codigoPostal from Consultorio c inner join MedicoConsultorio mc" +
+                " on c.idConsultorio = mc.idConsultorio where mc.idMedico = @idMedico";
+            List<Consultorio> consultorios = new List<Consultorio>();
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
             using (comando = new SqlCommand(sentencia, conexion))
             {
-                comando.Parameters.AddWithValue("@idMedicoConsultorio", this.idMedicoConsultorio);
+                comando.Parameters.AddWithValue("@idMedico", this.idMedico);
                 try
                 {
                     if (conexion.State != System.Data.ConnectionState.Open)
                     {
                         conexion.Open();
                     }
-                    DataSet datos = new DataSet();
-                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                    adaptador.Fill(datos, "Tabla");
-                    return datos;
+                    using (SqlDataReader lector = await comando.ExecuteReaderAsync())
+                    {
+                        while (await lector.ReadAsync())
+                        {
+                            //Crea instancias de la clase Consultorio y las almacena en una lista que es retornada
+                            consultorios.Add(new Consultorio
+                            {
+                                idConsultorio = lector.GetInt32(0),
+                                nombre = lector.IsDBNull(1) ? "" : lector.GetString(1),
+                                telefono = lector.IsDBNull(2) ? "" : lector.GetString(2),
+                                //Dirección es un campo compuesto por calle, número interior, número exterior, colonia y código postal
+                                direccion = lector.IsDBNull(3) ? "" : lector.GetString(3) + ", " +
+                                            (lector.IsDBNull(4) ? "" : lector.GetString(4) + ", #") +
+                                            (lector.IsDBNull(5) ? "" : lector.GetString(5) + ", ") +
+                                            (lector.IsDBNull(6) ? "" : lector.GetString(6) + ", C.P. ") +
+                                            (lector.IsDBNull(7) ? "" : lector.GetString(7))
+                            });
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
                     //Si surge una excepción, muestra un mensaje de error
                     await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
-                    return new DataSet();
                 }
+                return consultorios;
             }
         }
 
-        public async Task<int> Creacion()
+        public async Task<List<FranjaDto>> ObtenerAgendaDisponibilidad()
         {
-            //Instrucción SQL
-            sentencia = "insert into AgendaDisponibilidad (idMedicoConsultorio, trabajaLunes, trabajaMartes, trabajaMiercoles, trabajaJueves, " +
-                "trabajaViernes, trabajaSabado, trabajaDomingo, horaInicioJornada, horaFinJornada, horaInicioDescanso, horaFinDescanso, duracionSlot, estado) " +
-                "values (@idMedicoConsultorio, @trabajaLunes, @trabajaMartes, @trabajaMiercoles, @trabajaJueves, @trabajaViernes, @trabajaSabado, @trabajaDomingo, " +
-                "@horaInicioJornada, @horaFinJornada, @horaInicioDescanso, @horaFinDescanso, @duracionSlot, @estado)";
+            sentencia = "select idAgendaDisponibilidad, idMedico, idConsultorio, idDia," +
+                " horaInicioJornada, horaFinJornada, duracionSlotMinutos, agendaActiva from AgendaDisponibilidad" +
+                " where idMedico = @idMedico and idConsultorio = @idConsultorio order by idDia, horaInicioJornada";
+            List<FranjaDto> agendasDisponibilidad = new List<FranjaDto>();
+            using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
+            using (comando = new SqlCommand(sentencia, conexion))
+            {
+                comando.Parameters.AddWithValue("@idMedico", this.idMedico);
+                comando.Parameters.AddWithValue("idConsultorio", this.idConsultorio);
+                try
+                {
+                    if (conexion.State != System.Data.ConnectionState.Open)
+                    {
+                        conexion.Open();
+                    }
+                    using (SqlDataReader lector = await comando.ExecuteReaderAsync())
+                    {
+                        while (await lector.ReadAsync())
+                        {
+                            //Crea instancias de la clase FranjaDto y las almacena en una lista que es retornada
+                            agendasDisponibilidad.Add(new FranjaDto
+                            {
+                                IdAgendaDisponibilidad = lector.GetInt32(0),
+                                IdMedico = lector.GetInt32(1),
+                                IdConsultorio = lector.GetInt32(2),
+                                IdDia = lector.GetInt32(3),
+                                HoraInicioJornada = lector.GetTimeSpan(4),
+                                HoraFinJornada = lector.GetTimeSpan(5),
+                                DuracionSlotMinutos = lector.GetInt32(6),
+                                AgendaActiva = lector.GetBoolean(7)
+                            });
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    //Si surge una excepción, muestra un mensaje de error
+                    await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
+                }
+                return agendasDisponibilidad;
+            }
+        }
+
+        public async Task<bool> ExisteChoque()
+        {
+            sentencia = "select count(*) from AgendaDisponibilidad where idMedico = @idMedico " +
+                "and idDia = @idDia and idAgendaDisponibilidad <> @idAgendaIgnorar " +
+                "and (horaInicioJornada < @horaFinJornada and horaFinJornada > @horaInicioJornada)";
 
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
             using (comando = new SqlCommand(sentencia, conexion))
             {
-                comando.Parameters.AddWithValue("@idMedicoConsultorio", this.idMedicoConsultorio);
-                comando.Parameters.AddWithValue("@trabajaLunes", this.trabajaLunes);
-                comando.Parameters.AddWithValue("@trabajaMartes", this.trabajaMartes);
-                comando.Parameters.AddWithValue("@trabajaMiercoles", this.trabajaMiercoles);
-                comando.Parameters.AddWithValue("@trabajaJueves", this.trabajaJueves);
-                comando.Parameters.AddWithValue("@trabajaViernes", this.trabajaViernes);
-                comando.Parameters.AddWithValue("@trabajaSabado", this.trabajaSabado);
-                comando.Parameters.AddWithValue("@trabajaDomingo", this.trabajaDomingo);
+                comando.Parameters.AddWithValue("@idMedico", this.idMedico);
+                comando.Parameters.AddWithValue("@idConsultorio", this.idConsultorio);
+                comando.Parameters.AddWithValue("@idDia", this.idDia);
                 comando.Parameters.AddWithValue("@horaInicioJornada", this.horaInicioJornada);
                 comando.Parameters.AddWithValue("@horaFinJornada", this.horaFinJornada);
-                comando.Parameters.AddWithValue("@horaInicioDescanso", this.horaInicioDescanso);
-                comando.Parameters.AddWithValue("@horaFinDescanso", this.horaFinDescanso);
-                comando.Parameters.AddWithValue("@duracionSlot", this.duracionSlot);
-                comando.Parameters.AddWithValue("@estado", this.estado);
+                comando.Parameters.AddWithValue("@idAgendaIgnorar", this.idAgendaDisponibilidad);
+                try
+                {
+                    if (conexion.State != System.Data.ConnectionState.Open)
+                    {
+                        conexion.Open();
+                    }
+                    int? count = (int?)await comando.ExecuteScalarAsync();
+                    if (count == null) { count = 0; }
+                    return count > 0;
+                }
+                catch (Exception ex)
+                {
+                    await Shell.Current.DisplayAlert("Error", $"Error verificando choque de horarios: {ex.Message}", "Aceptar");
+                    return true;
+                }
+            }
+        }
+
+        public async Task<int> AgregarNuevaAgendaDisponibilidad()
+        {
+            sentencia = "insert into AgendaDisponibilidad (idMedico, idConsultorio, idDia, horaInicioJornada, horaFinJornada, duracionSlotMinutos, agendaActiva) " +
+                "values (@idMedico, @idConsultorio, @idDia, @horaInicioJornada, @horaFinJornada, @duracionSlotMinutos, @agendaActiva)";
+
+            using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
+            using (comando = new SqlCommand(sentencia, conexion))
+            {
+                comando.Parameters.AddWithValue("@idMedico", this.idMedico);
+                comando.Parameters.AddWithValue("@idConsultorio", this.idConsultorio);
+                comando.Parameters.AddWithValue("@idDia", this.idDia);
+                comando.Parameters.AddWithValue("@horaInicioJornada", this.horaInicioJornada);
+                comando.Parameters.AddWithValue("@horaFinJornada", this.horaFinJornada);
+                comando.Parameters.AddWithValue("@duracionSlotMinutos", this.duracionSlotMinutos);
+                comando.Parameters.AddWithValue("@agendaActiva", this.agendaActiva);
 
                 try
                 {
-                    //Si la conexión con la BD está cerrada, se abre
                     if (conexion.State != System.Data.ConnectionState.Open)
                     {
                         conexion.Open();
@@ -125,11 +207,42 @@ namespace DocNowApp.AgendaDisponibilidad
                 }
                 catch (Exception ex)
                 {
-                    //Si surge una excepción, muestra un mensaje de error
-                    await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
+                    await Shell.Current.DisplayAlert("Error", $"Error al insertar: {ex.Message}", "Aceptar");
                     return -1;
                 }
             }
         }
-    }
+
+        public async Task<int> ModificarAgendaDisponibilidad()
+        {
+            sentencia = "update AgendaDisponibilidad set idDia = @idDia, horaInicioJornada = @horaInicioJornada, horaFinJornada = @horaFinJornada, " +
+                "duracionSlotMinutos = @duracionSlotMinutos, agendaActiva = @agendaActiva, fechaModificacion = @fechaModificacion where idAgendaDisponibilidad = @idAgendaDisponibilidad";
+
+            using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
+            using (comando = new SqlCommand(sentencia, conexion))
+            {
+                comando.Parameters.AddWithValue("@IdAgendaDisponibilidad", this.idAgendaDisponibilidad);
+                comando.Parameters.AddWithValue("@idDia", this.idDia);
+                comando.Parameters.AddWithValue("@horaInicioJornada", this.horaInicioJornada);
+                comando.Parameters.AddWithValue("@horaFinJornada", this.horaFinJornada);
+                comando.Parameters.AddWithValue("@duracionSlotMinutos", this.duracionSlotMinutos);
+                comando.Parameters.AddWithValue("@agendaActiva", this.agendaActiva);
+                comando.Parameters.AddWithValue("@fechaModificacion", DateTime.Now);
+
+                try
+                {
+                    if (conexion.State != System.Data.ConnectionState.Open)
+                    {
+                        conexion.Open();
+                    }
+                    return comando.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    await Shell.Current.DisplayAlert("Error", $"Error al insertar: {ex.Message}", "Aceptar");
+                    return -1;
+                }
+            }
+        }
+    }    
 }
