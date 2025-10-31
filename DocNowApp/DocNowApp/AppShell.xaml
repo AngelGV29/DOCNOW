@@ -7,6 +7,7 @@
     xmlns:login="clr-namespace:DocNowApp.Login"
     xmlns:principal="clr-namespace:DocNowApp.Pantalla_principal"
     xmlns:nuevoUsuario="clr-namespace:DocNowApp.NuevoUsuario"
+    xmlns:agendarCita="clr-namespace:DocNowApp.AgendarCita"
 <<<<<<< HEAD
     xmlns:AgendaDisponibilidad="clr-namespace:DocNowApp.AgendaDisponibilidad"
     
@@ -20,6 +21,10 @@
     <!--En este archivo se define la estructura de navegación entre páginas.
     Los shell content representan páginas, y configuran una ruta que se
     utilizará cuando se desee mostrar dicha página-->
+    <ShellContent
+          Title="Agendar Cita"
+          ContentTemplate="{DataTemplate AgendarCita:ElegirTurnoPage}"
+          Route="ElegirTurnoPage"/>
     <ShellContent
         Title="Agenda Medico"
         ContentTemplate="{DataTemplate AgendaDisponibilidad:AgendaDisponibilidadPage}"
