@@ -31,13 +31,11 @@ CREATE TABLE Paciente (
     FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario) ON DELETE CASCADE
 );
 
-
 -- TABLA: EspecialidadMedico
 CREATE TABLE EspecialidadMedico (
     idEspecialidad INT IDENTITY(1,1) PRIMARY KEY,
     nombreEspecialidad NVARCHAR(100) NOT NULL
 );
-
 
 -- TABLA: Medico
 CREATE TABLE Medico (
@@ -48,7 +46,6 @@ CREATE TABLE Medico (
     FOREIGN KEY (idEspecialidad) REFERENCES EspecialidadMedico(idEspecialidad),
     FOREIGN KEY (idUsuario) REFERENCES Usuario(idUsuario) ON DELETE CASCADE
 );
-
 
 -- TABLA: Consultorio
 CREATE TABLE Consultorio (
@@ -62,7 +59,6 @@ CREATE TABLE Consultorio (
     codigoPostal NVARCHAR(10)
 );
 
-
 -- TABLA: MedicoConsultorio 
 CREATE TABLE MedicoConsultorio (
     idMedicoConsultorio INT IDENTITY(1,1) PRIMARY KEY,
@@ -75,7 +71,7 @@ CREATE TABLE MedicoConsultorio (
 -- TABLA: Dia
 CREATE TABLE Dia(
     idDia INT PRIMARY KEY,
-    nombreDia VARCHAR(10) NOT NULL,
+    nombreDia VARCHAR(10) NOT NULL
 );
 
 -- TABLA: AgendaDisponibilidad
@@ -95,18 +91,6 @@ CREATE TABLE AgendaDisponibilidad (
     FOREIGN KEY (idDia) REFERENCES Dia(idDia)
 );
 
--- TABLA: Turno
-CREATE TABLE Turno (
-    idTurno INT IDENTITY(1,1) PRIMARY KEY,
-    idAgendaDisponibilidad INT NOT NULL,
-    fecha DATE NOT NULL,
-    horaInicio TIME(0) NOT NULL,
-    horaFinal TIME(0) NOT NULL,
-    turnoOcupado BIT NOT NULL DEFAULT 0,
-    FOREIGN KEY (idAgendaDisponibilidad) REFERENCES AgendaDisponibilidad(idAgendaDisponibilidad)
-);
-
-
 -- TABLA: MotivoConsulta
 CREATE TABLE MotivoConsulta (
     idMotivo INT IDENTITY(1,1) PRIMARY KEY,
@@ -114,29 +98,39 @@ CREATE TABLE MotivoConsulta (
     instruccion NVARCHAR(255)
 );
 
--- TABLA: Cita
+-- ============================================================
+-- TABLA MODIFICADA: Cita (actualizada para usar AgendaDisponibilidad)
+-- ============================================================
 CREATE TABLE Cita (
     idCita INT IDENTITY(1,1) PRIMARY KEY,
-    idTurno INT NOT NULL,
+    idAgendaDisponibilidad INT NOT NULL,
     idPaciente INT NOT NULL,
     idMedico INT NOT NULL,
     idConsultorio INT NOT NULL,
     idMotivo INT NOT NULL,
+    fecha DATE NOT NULL,
+    horaInicio TIME(0) NOT NULL,
+    horaFinal TIME(0) NOT NULL,
     estado NVARCHAR(20) NOT NULL,
     fechaCreacion DATETIME DEFAULT GETDATE(),
     fechaModificacion DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (idAgendaDisponibilidad) REFERENCES AgendaDisponibilidad(idAgendaDisponibilidad),
     FOREIGN KEY (idPaciente) REFERENCES Paciente(idPaciente),
     FOREIGN KEY (idMedico) REFERENCES Medico(idMedico),
     FOREIGN KEY (idConsultorio) REFERENCES Consultorio(idConsultorio),
-    FOREIGN KEY (idTurno) REFERENCES Turno(idTurno),
     FOREIGN KEY (idMotivo) REFERENCES MotivoConsulta(idMotivo)
 );
 
+-- ============================================================
+-- ELIMINADA: TABLA Turno (ya no existe)
+-- ============================================================
 
 
---insertar valores
+-- ============================================================
+-- INSERTS ORIGINALES (NO MODIFICADOS)
+-- ============================================================
 
---Usuario
+-- Usuario
 INSERT INTO Usuario (nombre, apellPaterno, apellMaterno, correo, contrasenia, telefono, fechaNac, sexo, rol, fechaCreacion, ultimoLogin)
 VALUES
 ('ANGEL JOAQUIN', 'GARCIA', 'VELAZQUEZ', 'angelgarciavelazquez29@gmail.com', '29092006', '6871167363', '2006-09-29', 'M', 'ADMIN', GETDATE(), GETDATE()),
@@ -144,58 +138,38 @@ VALUES
 ('MARIO', 'PEREZ', 'JUAREZ', 'marioperez@gmail.com', 'mariobros1234', '6671458580', '1985-02-18', 'M', 'MEDICO', GETDATE(), GETDATE()),
 ('ANA', 'HERNANDEZ', 'DIAZ', 'anahernandez@gmail.com', 'anahernandez07', '6871320944', '2000-07-07', 'F', 'PACIENTE', GETDATE(), GETDATE());
 
---Administrador
-INSERT INTO Administrador (idUsuario) Values 
-(1);
+-- Administrador
+INSERT INTO Administrador (idUsuario) Values (1);
 
---EspecialidadMedico
+-- EspecialidadMedico
 INSERT INTO EspecialidadMedico (nombreEspecialidad)
-VALUES
-('Cardiología'),
-('Pediatría'),
-('Dermatología');
+VALUES ('Cardiología'), ('Pediatría'), ('Dermatología');
 
---Medico
---Asociamos los médicos con usuarios y especialidades
+-- Medico
 INSERT INTO Medico (numCedula, idEspecialidad, idUsuario)
-VALUES
-('CED12345', 1, 2),   -- Carlos (Cardiólogo)
-('CED67890', 3, 3);   -- Mario (Dermatólogo)
+VALUES ('CED12345', 1, 2), ('CED67890', 3, 3);
 
-
---Paciente
+-- Paciente
 INSERT INTO Paciente (alergia, medicacion, ultimaVisita, idUsuario)
-VALUES
-('Penicilina', 'Paracetamol', '2025-09-01', 4);
+VALUES ('Penicilina', 'Paracetamol', '2025-09-01', 4);
 
-
---Consultorio
+-- Consultorio
 INSERT INTO Consultorio (nombre, calle, numeroInterior, numeroExterior, colonia, codigoPostal, telefono)
 VALUES
 ('Consultorio Central', 'Av. Reforma', '1', '101', 'Centro', '06000', '6873420941'),
 ('Clínica del Sol', 'Calle Luna', null, '202', 'Roma Norte', '06700', '6879983421');
 
-
---MedicoConsultorio
+-- MedicoConsultorio
 INSERT INTO MedicoConsultorio (idMedico, idConsultorio)
-VALUES
-(1, 1),  -- Carlos en Consultorio Central
-(1, 2),  -- Carlos en Consultorio Clínica del Sol
-(2, 2);  -- Mario en Clínica del Sol
+VALUES (1, 1), (1, 2), (2, 2);
 
---Dia
+-- Dia
 INSERT INTO Dia (idDia, nombreDia)
 VALUES
-(1, 'Lunes'),
-(2, 'Martes'),
-(3, 'Miércoles'),
-(4, 'Jueves'),
-(5, 'Viernes'),
-(6, 'Sábado'),
-(7, 'Domingo');
+(1, 'Lunes'), (2, 'Martes'), (3, 'Miércoles'),
+(4, 'Jueves'), (5, 'Viernes'), (6, 'Sábado'), (7, 'Domingo');
 
-
---AgendaDisponibilidad
+-- AgendaDisponibilidad
 INSERT INTO AgendaDisponibilidad (idMedico, idConsultorio, idDia, horaInicioJornada, horaFinJornada, duracionSlotMinutos, agendaActiva)
 VALUES
 (1, 1, 1, '08:00', '12:00', 30, 1),
@@ -206,14 +180,12 @@ VALUES
 (1, 1, 6, '08:00', '12:00', 15, 1),
 (1, 1, 6, '12:00', '18:00', 15, 1),
 (1, 1, 7, '09:00', '13:00', 30, 0),
-
 (1, 2, 1, '14:00', '18:00', 30, 1),
 (1, 2, 2, '14:00', '18:00', 30, 1),
 (1, 2, 3, '14:00', '18:00', 30, 1),
 (1, 2, 4, '14:00', '18:00', 30, 1),
 (1, 2, 5, '14:00', '18:00', 30, 1),
 (1, 2, 7, '15:00', '18:00', 15, 1),
-
 (2, 2, 1, '12:00', '17:00', 15, 0),
 (2, 2, 3, '12:00', '17:00', 15, 0),
 (2, 2, 4, '12:00', '17:00', 15, 0),
@@ -222,6 +194,7 @@ VALUES
 (2, 2, 6, '13:00', '17:00', 15, 1),
 (2, 2, 7, '07:00', '12:00', 15, 1),
 (2, 2, 7, '13:00', '17:00', 15, 1);
+
 
 
 
