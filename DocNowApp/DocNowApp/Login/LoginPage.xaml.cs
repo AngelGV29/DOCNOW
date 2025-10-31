@@ -1,3 +1,4 @@
+using DocNowApp.Globales;
 using System.Data;
 
 namespace DocNowApp.Login;
@@ -33,7 +34,6 @@ public partial class LoginPage : ContentPage
 			case LoginSQL.estadoLogin.Exito:
                 //Si el login fue exitoso, la aplicación obtendrá el ID del usuario y el rol que posee
                 DataSet datos = await acceso.ObtenerIdUsuario();
-
                 //El ID y el rol del usuario son pasados al administrador de sesión
                 Globales.AdministradorDeSesion.idUsuario = Convert.ToInt32(datos.Tables["Tabla"].Rows[0]["idUsuario"].ToString());
                 Globales.AdministradorDeSesion.Rol = datos.Tables["Tabla"].Rows[0]["rol"].ToString();
@@ -47,21 +47,28 @@ public partial class LoginPage : ContentPage
                 switch (Globales.AdministradorDeSesion.Rol)
                 {
                     case "PACIENTE":
+                        AdministradorDeSesion.idPaciente = await acceso.ObtenerIdPaciente();
+                        if (AdministradorDeSesion.idPaciente == 0) { return; }
                         await Shell.Current.GoToAsync("//PacientePrincipalPage");
                         break;
                     case "MEDICO":
+                        AdministradorDeSesion.idMedico = await acceso.ObtenerIdMedico();
+                        if (AdministradorDeSesion.idMedico == 0) { return; }
                         await Shell.Current.GoToAsync("//MedicoPrincipalPage");
                         break;
                     case "ADMIN":
+                        AdministradorDeSesion.idAdmin = await acceso.ObtenerIdAdmin();
+                        if (AdministradorDeSesion.idAdmin == 0) { return; }
                         await Shell.Current.GoToAsync("//AdminPrincipalPage");
                         break;
                     default:
-                        await Shell.Current.GoToAsync("//NuevoPacientePage");
+                        await DisplayAlert("Error", "Ha ocurrido un error, vuelva a intentarlo más tarde.", "Aceptar");
+                        await Shell.Current.GoToAsync("//InicioPage");
                         break;
                 }
                 break;
 			case LoginSQL.estadoLogin.CredencialesIncorrectas:
-				await DisplayAlert("Error", "Correo o contraseña incorrectos", "Aceptar");
+				await DisplayAlert("Error", "Correo o contraseña incorrectos.", "Aceptar");
 				break;
 			case LoginSQL.estadoLogin.Error:
 				break;

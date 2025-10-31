@@ -7,12 +7,14 @@ public partial class NuevoPacientePage : ContentPage
 	public NuevoPacientePage()
 	{
 		InitializeComponent();
-        //Ajusta la fecha máxima del DatePicker a la fecha actual
-        this.dateUltimaVisita.MaximumDate = DateTime.Today;
+        
     }
 
     protected override async void OnAppearing()
     {
+        base.OnAppearing();
+        //Ajusta la fecha máxima del DatePicker a la fecha actual
+        this.dateUltimaVisita.MaximumDate = DateTime.Today;
         //Reinicia los controles de la página
         this.txtAlergia.Text = "";
         this.txtMedicacion.Text = "";

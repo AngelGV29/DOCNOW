@@ -113,15 +113,15 @@ namespace DocNowApp.NuevoUsuario
         public async Task<int> Creacion()
         {
             //Instrucción SQL
-            sentencia = "insert into Usuario (nombre, apellidoPaterno, apellidoMaterno, correo, contrasenia, telefono, fechaNac, sexo, rol, fechaCreacion, ultimaModSesion) " +
-                "values (@nombre, @apellidoPaterno, @apellidoMaterno, @correo, @contrasenia, @telefono, @fechaNac, @sexo, @rol, @fechaCreacion, @ultimaModSesion)";
+            sentencia = "insert into Usuario (nombre, apellPaterno, apellMaterno, correo, contrasenia, telefono, fechaNac, sexo, rol, fechaCreacion, ultimoLogin) " +
+                "values (@nombre, @apellPaterno, @apellMaterno, @correo, @contrasenia, @telefono, @fechaNac, @sexo, @rol, @fechaCreacion, @ultimaModSesion)";
 
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
             using (comando = new SqlCommand(sentencia, conexion))
             {
                 comando.Parameters.AddWithValue("@nombre", this.nombre);
-                comando.Parameters.AddWithValue("@apellidoPaterno", this.apellidoPaterno);
-                comando.Parameters.AddWithValue("@apellidoMaterno", this.apellidoMaterno);
+                comando.Parameters.AddWithValue("@apellPaterno", this.apellidoPaterno);
+                comando.Parameters.AddWithValue("@apellMaterno", this.apellidoMaterno);
                 comando.Parameters.AddWithValue("@correo", this.correo);
                 comando.Parameters.AddWithValue("@contrasenia", this.contrasenia);
                 comando.Parameters.AddWithValue("@telefono", this.telefono);

@@ -11,7 +11,13 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
-    <MauiXaml Update="AdminPages\PrincipalPage.xaml">
+    <MauiXaml Update="AdminPages\AdminPrincipalPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="AgendaDisponibilidad\AgregarFranjaPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="AgendaDisponibilidad\ConfigurarAgendaDisponibilidadPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Inicio\InicioPage.xaml">
@@ -20,13 +26,13 @@
     <MauiXaml Update="Login\LoginPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="MedicoPages\PrincipalPage.xaml">
+    <MauiXaml Update="MedicoPages\MedicoPrincipalPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Navegacion\BotonRegresar.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="PacientePages\PrincipalPage.xaml">
+    <MauiXaml Update="PacientePages\PacientePrincipalPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
   </ItemGroup>

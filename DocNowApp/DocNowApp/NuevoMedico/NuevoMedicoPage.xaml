@@ -5,8 +5,9 @@
              Title="">
 
     <VerticalStackLayout>
+
         <Label 
-            Text="Ingrese sus datos de profesión"
+            Text="Ingrese los de profesión"
             Margin="0,50,0,50"
             FontSize="25"
             VerticalOptions="Center" 

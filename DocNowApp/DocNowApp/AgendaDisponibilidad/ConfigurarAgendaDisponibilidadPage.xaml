@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DocNowApp.AgendaDisponibilidad.ConfigurarAgendaDisponibilidadPage"
+             Title="ControlHorarioMedicoPage"
+             xmlns:navegacion="clr-namespace:DocNowApp.Navegacion"
+             xmlns:inicio="clr-namespace:DocNowApp.MedicoPages">
+
+    <StackLayout Padding="12" Spacing="8">
+        <navegacion:BotonRegresar Ruta="MedicoPrincipalPage" />
+        <Label
+            x:Name="lblConsultorio"
+            Text="Seleccione su consultorio:"
+            FontSize="18"
+            FontAttributes="Bold"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="10,0,0,0"
+            InputTransparent="True"/>
+        <Picker
+            x:Name="pickerConsultorio"
+            FontSize="12"
+            WidthRequest="230"
+            SelectedIndexChanged="pickerConsultorio_SelectedIndexChanged"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
+
+        <Button x:Name="btnAniadir" Text="+ Añadir franja" Clicked="btnAniadir_Clicked" HorizontalOptions="Center" Margin="0,10,0,10" />
+
+        <CollectionView x:Name="collectionFranjas"
+                        SelectionMode="None"
+                        HeightRequest="350"
+                        WidthRequest="600">
+            <!-- ItemsSource lo llenamos desde code-behind -->
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="8" Margin="4" HasShadow="False" BorderColor="#DDD">
+                        <Grid ColumnDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="0" RowDefinitions="Auto,Auto">
+                            <!-- Línea superior: Día y Horario -->
+                            <Label Grid.Row="0" Grid.Column="0"
+                                   Text="{Binding NombreDia}" FontAttributes="Bold" />
+                            <Label Grid.Row="0" Grid.Column="1"
+                                   Text="{Binding RangoHorario}" HorizontalOptions="End" />
+                            <Label Grid.Row="0" Grid.Column="2"
+                                   Text="{Binding TextoDuracion}" HorizontalOptions="End" />
+                            <Label Grid.Row="0" Grid.Column="3"
+                                   Text="{Binding AgendaActiva, Converter={StaticResource BoolToActivoConversor}}"
+                                   HorizontalOptions="End" />
+
+                            <!-- Línea inferior: botones -->
+                            <StackLayout Grid.Row="1" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalOptions="Start" Margin="0,10,0,0">
+                                <Button x:Name="btnEditar" Text="Editar" Clicked="btnEditar_Clicked" CommandParameter="{Binding .}" />
+                                <Button Text="btnEliminar" Clicked="btnEliminar_Clicked" CommandParameter="{Binding .}" Margin="8,0,0,0" />
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Botones externos como alternativa (usa SelectedItem)
+        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+            <Button Text="Editar seleccionado" Clicked="OnEditarSeleccionadoClicked" />
+            <Button Text="Eliminar seleccionado" Clicked="OnEliminarSeleccionadoClicked" Margin="8,0,0,0" />
+        </StackLayout>-->
+    </StackLayout>
+</ContentPage>
