@@ -1,3 +1,6 @@
+using DocNowApp.Globales;
+using System.Data;
+
 namespace DocNowApp.Login;
 
 public partial class LoginPage : ContentPage
@@ -7,19 +10,65 @@ public partial class LoginPage : ContentPage
 		InitializeComponent();
 	}
 
+    //Método que se ejecuta al cargar la página
+    protected override void OnAppearing()
+    {
+        /*La llamada a base.OnAppearing() es necesaria para asegurar que la clase
+        base realice cualquier inicialización necesaria y funcionalidad definida,
+        es decir, su comportamiento original*/
+        base.OnAppearing();
+        //Reinicia los valores de los controles
+        this.txtCorreo.Text = "";
+        this.txtContrasenia.Text = "";
+        this.txtCorreo.Focus();
+    }
+
     private async void btnLogin_Clicked(object sender, EventArgs e)
     {
-		Login.LoginSQL acceso = new Login.LoginSQL(this.txtCorreo.Text, this.txtContrasenia.Text);
+        //Crea una instancia de la clase LoginSQL con los datos ingresados en los cuadros de texto
+        Login.LoginSQL acceso = new Login.LoginSQL(this.txtCorreo.Text, this.txtContrasenia.Text);
 
         //Validación por medio de un estadoLogin
         switch (await acceso.Validacion())
 		{
 			case LoginSQL.estadoLogin.Exito:
-                //Si el login fue exitoso la aplicación avanzará a la página principal
-                await Shell.Current.GoToAsync("//PrincipalPage");
-				break;
+                //Si el login fue exitoso, la aplicación obtendrá el ID del usuario y el rol que posee
+                DataSet datos = await acceso.ObtenerIdUsuario();
+                //El ID y el rol del usuario son pasados al administrador de sesión
+                Globales.AdministradorDeSesion.idUsuario = Convert.ToInt32(datos.Tables["Tabla"].Rows[0]["idUsuario"].ToString());
+                Globales.AdministradorDeSesion.Rol = datos.Tables["Tabla"].Rows[0]["rol"].ToString();
+
+                //Método que actualiza la última fecha de login del usuario
+                await acceso.ModificarUltimoLogin();
+
+                //En función del rol, la aplicación navegará a la página principal correspondiente
+                /*Si por algún motivo, el rolo no pertenece a ninguno, navegará a la página de nuevo paciente
+                en el entendido de que el registron del nuevo usuario se quedó a medias*/
+                switch (Globales.AdministradorDeSesion.Rol)
+                {
+                    case "PACIENTE":
+                        AdministradorDeSesion.idPaciente = await acceso.ObtenerIdPaciente();
+                        if (AdministradorDeSesion.idPaciente == 0) { return; }
+                        await Shell.Current.GoToAsync("//PacientePrincipalPage");
+                        break;
+                    case "MEDICO":
+                        AdministradorDeSesion.idMedico = await acceso.ObtenerIdMedico();
+                        if (AdministradorDeSesion.idMedico == 0) { return; }
+                        await Shell.Current.GoToAsync("//MedicoPrincipalPage");
+                        break;
+                    case "ADMIN":
+                        AdministradorDeSesion.idAdmin = await acceso.ObtenerIdAdmin();
+                        if (AdministradorDeSesion.idAdmin == 0) { return; }
+                        await Shell.Current.GoToAsync("//AdminPrincipalPage");
+                        break;
+                    default:
+                        await DisplayAlert("Error", "Ha ocurrido un error, vuelva a intentarlo más tarde.", "Aceptar");
+                        await Shell.Current.GoToAsync("//InicioPage");
+                        break;
+                }
+                break;
 			case LoginSQL.estadoLogin.CredencialesIncorrectas:
-				await DisplayAlert("Error", "Correo o contraseña incorrectos", "Aceptar");
+				await DisplayAlert("Error", "Correo o contraseña incorrectos.", "Aceptar");
 				break;
 			case LoginSQL.estadoLogin.Error:
 				break;
@@ -27,7 +76,7 @@ public partial class LoginPage : ContentPage
     }
 
     //Sí alguno de los cuadros de texto se queda vacío, la aplicación no permitirá continuar con el login
-    private void txtCorreo_TextChanged(object sender, TextChangedEventArgs e)
+    private void Entry_TextChanged(object sender, TextChangedEventArgs e)
     {
         if (string.IsNullOrWhiteSpace(this.txtCorreo.Text) || string.IsNullOrWhiteSpace(this.txtContrasenia.Text))
         {
@@ -37,18 +86,25 @@ public partial class LoginPage : ContentPage
         {
             this.btnLogin.IsEnabled = true;
         }
-    }
 
-    //Sí alguno de los cuadros de texto se queda vacío, la aplicación no permitirá continuar con el login
-    private void txtContrasenia_TextChanged(object sender, TextChangedEventArgs e)
-    {
-        if (string.IsNullOrWhiteSpace(this.txtCorreo.Text) || string.IsNullOrWhiteSpace(this.txtContrasenia.Text))
+        //Dependiendo del ClassId de la entrada, se aplican diferentes filtros al texto introducido
+        var entry = (Entry)sender;
+        switch (entry.ClassId)
         {
-            this.btnLogin.IsEnabled = false;
-        }
-        else
-        {
-            this.btnLogin.IsEnabled = true;
+            //Convierte el texto de entradas de correo en minúsculas
+            case "lowercase":
+                if (!string.IsNullOrEmpty(entry.Text) && entry.Text != entry.Text.ToLower())
+                {
+                    int cursor = entry.CursorPosition;
+                    entry.Text = entry.Text.ToLower();
+                    entry.CursorPosition = cursor;
+                }
+                break;
+            //Permite todos los caracteres
+            case "contrasenia":
+            default:
+                //No hacee nada
+                break;
         }
     }
 

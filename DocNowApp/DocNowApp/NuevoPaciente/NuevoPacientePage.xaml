@@ -2,42 +2,68 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DocNowApp.NuevoPaciente.NuevoPacientePage"
-             Title="NuevoPacientePage">
+             Title="">
     <VerticalStackLayout>
         <Label 
-            Text="Interfaz de Paciente"
+            Text="Cuentanos un poco sobre ti"
             Margin="0,40,0,50"
             FontSize="28"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <Entry
+        <Editor
             x:Name="txtAlergia"
-            FontSize="14"
-            Placeholder="Alergia:"
-            MaxLength="100"
-            WidthRequest="400"
+            FontSize="12"
+            Placeholder="Especifique si cuenta con alguna alergia"
+            MaxLength="255"
+            WidthRequest="500"
+            HeightRequest="80"
             VerticalOptions="Center"
             HorizontalOptions="Center"
             Margin="0,15,0,0"/>
-        <Entry
+        <Editor
              x:Name="txtMedicacion"
-             FontSize="14"
-             Placeholder="Medicacion:"
-             MaxLength="100"
-             WidthRequest="400"
+             FontSize="12"
+             Placeholder="Especifique si actualmente se encuentra bajo alguna medicación"
+             MaxLength="255"
+             WidthRequest="500"
+             HeightRequest="80"
              VerticalOptions="Center"
              HorizontalOptions="Center"
-             Margin="0,15,0,0"/>
-        <DatePicker
-            x:Name="dpUltimaVisita"
-            WidthRequest="400"
-            FontSize="14"
-            Format="dddd, MMMM d, yyyy"  HorizontalOptions="Center"
-            Margin="0,15,0,0"/>
-        <Label
-            Text="Última Visita Médica"
+             Margin="0,40,0,0"/>
+
+        <Grid WidthRequest="500"
+              HorizontalOptions="Center"
+              Margin="0,40,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="180"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+            <Label
+                Text="Última visita al médico:"
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                WidthRequest="180"
+                Margin="0,10,0,0"
+                FontSize="15"
+                Grid.Column="0"/>
+            <DatePicker
+                x:Name="dateUltimaVisita"
+                WidthRequest="310"
+                FontSize="12"
+                Format="dd/mm/yyyy"
+                Grid.Column="1"
+                HorizontalOptions="End"
+                VerticalOptions="Center"
+                Margin="0,0,0,0"/>
+        </Grid>
+        <Button
+            x:Name="btnContinuar"
+            Text="Continuar"
+            Clicked="btnContinuar_Clicked"
+            VerticalOptions="Center" 
             HorizontalOptions="Center"
-            Margin="0,5,0,0"
-            FontSize="12"/>
+            Margin="0,50,0,0"/>
+
     </VerticalStackLayout>
 </ContentPage>

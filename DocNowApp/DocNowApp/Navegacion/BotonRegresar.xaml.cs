@@ -12,7 +12,10 @@ public partial class BotonRegresar : ContentView
     {
         try
         {
-            // Con Shell, esto regresa a la página anterior en la pila de navegación
+            //Esto permitirá navegar hacia una página especidicada gracias al atributo ruta
+            //BotónRegresar es una plantilla que puede ser utilizada en cualquier página, y
+            //al cual se le deb asignar un valor para el atributo ruta que defina hacia que
+            //página debe regresar (o navegar) la apliación
             await Shell.Current.GoToAsync($"//{Ruta}");
         }
         catch (Exception ex)

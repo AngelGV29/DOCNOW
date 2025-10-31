@@ -64,7 +64,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="AgendaDisponibilidad\AgendaDisponibilidadPage.xaml">
+	  <Compile Update="AgendaDisponibilidad\ConfigurarAgendaDisponibilidadPage.xaml.cs">
+	    <DependentUpon>ConfigurarAgendaDisponibilidadPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="AdminPages\AdminPrincipalPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="AgendaDisponibilidad\AgregarFranjaPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="AgendaDisponibilidad\ConfigurarAgendaDisponibilidadPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="AgendarCita\ElegirTurnoPage.xaml">
@@ -76,7 +88,15 @@
 	  <MauiXaml Update="Login\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="MedicoPages\MedicoPrincipalPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+
+          <MauiXaml Update="NuevoConsultorio\NuevoConsultorioPage.xaml">
+            <Generator>MSBuild:Compile</Generator>
+          </MauiXaml>
 	  <MauiXaml Update="Navegacion\BotonRegresar.xaml">
+
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="NuevoMedico\NuevoMedicoPage.xaml">
@@ -85,7 +105,7 @@
 	  <MauiXaml Update="NuevoUsuario\NuevoUsuarioPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pantalla principal\PrincipalPage.xaml">
+	  <MauiXaml Update="PacientePages\PacientePrincipalPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

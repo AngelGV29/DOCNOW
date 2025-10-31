@@ -2,9 +2,11 @@
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:DocNowApp"
+             xmlns:globales="clr-namespace:DocNowApp.Globales"
              x:Class="DocNowApp.App">
     <Application.Resources>
         <ResourceDictionary>
+            <globales:BoolToActivoConversor x:Key="BoolToActivoConversor"/>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />

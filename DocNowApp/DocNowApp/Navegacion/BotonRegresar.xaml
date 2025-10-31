@@ -6,6 +6,7 @@
         <ImageButton
             x:Name="btnRegresar"
             Source="flecha_regresar.png"
+            BackgroundColor="Transparent"
             WidthRequest="30"
             HeightRequest="30"
             Margin="10,0,0,0"

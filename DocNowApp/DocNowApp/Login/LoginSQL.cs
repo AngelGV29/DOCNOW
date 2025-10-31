@@ -56,18 +56,10 @@ namespace DocNowApp.Login
         //Método con el que se valida que el correo y contrasenña introducidos son correctos
         public async Task<estadoLogin> Validacion()
         {
-<<<<<<< HEAD
+            //Unstruccion SQL
+            sentencia = "select correo, contrasenia from Usuario where correo = @correo and contrasenia = @contrasenia";
 
-
-
-            sentencia = "select * from Usuario where correo = @correo and contrasenia = @contrasenia";
-
-
-=======
-            sentencia = "select * from Usuario where correo = @correo and contrasenia = @contrasenia";
-
->>>>>>> origin/main
-            using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
+            using (conexion = new SqlConnection(CadenaConexion.miConexion))
             using (comando = new SqlCommand(sentencia, conexion))
             {
                 comando.Parameters.AddWithValue("@correo", this.correo);
@@ -92,6 +84,142 @@ namespace DocNowApp.Login
                     //Si surge una excepción, se devolverá un estadoLogin de Error
                     await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
                     return estadoLogin.Error;
+                }
+            }
+        }
+
+        //Método que devuelve la información del ususario para que el administrador de sesión tenga su ID de usuario y Rol
+        public async Task<DataSet> ObtenerIdUsuario()
+        {
+            sentencia = "select idUsuario, rol from Usuario where correo = @correo";
+            using (conexion = new SqlConnection(CadenaConexion.miConexion))
+            using (comando = new SqlCommand(sentencia, conexion))
+            {
+                comando.Parameters.AddWithValue("@correo", this.correo);
+                try
+                {
+                    if (conexion.State != System.Data.ConnectionState.Open)
+                    {
+                        conexion.Open();
+                    }
+                    DataSet datos = new DataSet();
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    adaptador.Fill(datos, "Tabla");
+                    return datos;
+                }
+                catch (Exception ex)
+                {
+                    //Si surge una excepción, muestra un mensaje de error
+                    await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
+                    return new DataSet();
+                }
+            }
+        }
+
+        //Método que asigna el idPaciente al administrador de sesión
+        public async Task<int> ObtenerIdPaciente()
+        {
+            sentencia = "select idPaciente from Paciente where idUsuario = @idUsuario";
+            using (conexion = new SqlConnection(CadenaConexion.miConexion))
+            using (comando = new SqlCommand(sentencia, conexion))
+            {
+                comando.Parameters.AddWithValue("@idUsuario", AdministradorDeSesion.idUsuario);
+                try
+                {
+                    if (conexion.State != System.Data.ConnectionState.Open)
+                    {
+                        conexion.Open();
+                    }
+                    int idPaciente = Convert.ToInt32(comando.ExecuteScalar());
+                    return idPaciente;
+                }
+                catch (Exception ex)
+                {
+                    //Si surge una excepción, muestra un mensaje de error
+                    await Shell.Current.DisplayAlert("Error", $"Error al verificar su status de Paciente: {ex.Message}", "Aceptar");
+                    return 0;
+                }
+            }
+        }
+
+        //Método que asigna el idMedico al administrador de sesión
+        public async Task<int> ObtenerIdMedico()
+        {
+            sentencia = "select idMedico from Medico where idUsuario = @idUsuario";
+            using (conexion = new SqlConnection(CadenaConexion.miConexion))
+            using (comando = new SqlCommand(sentencia, conexion))
+            {
+                comando.Parameters.AddWithValue("@idUsuario", AdministradorDeSesion.idUsuario);
+                try
+                {
+                    if (conexion.State != System.Data.ConnectionState.Open)
+                    {
+                        conexion.Open();
+                    }
+                    int idMedico = Convert.ToInt32(comando.ExecuteScalar());
+                    return idMedico;
+                }
+                catch (Exception ex)
+                {
+                    //Si surge una excepción, muestra un mensaje de error
+                    await Shell.Current.DisplayAlert("Error", $"Error al verificar su status de Médico: {ex.Message}", "Aceptar");
+                    return 0;
+                }
+            }
+        }
+
+        //Método que asigna el idAdmin al administrador de sesión
+        public async Task<int> ObtenerIdAdmin()
+        {
+            sentencia = "select idAdmin from Administrador where idUsuario = @idUsuario";
+            using (conexion = new SqlConnection(CadenaConexion.miConexion))
+            using (comando = new SqlCommand(sentencia, conexion))
+            {
+                comando.Parameters.AddWithValue("@idUsuario", AdministradorDeSesion.idUsuario);
+                try
+                {
+                    if (conexion.State != System.Data.ConnectionState.Open)
+                    {
+                        conexion.Open();
+                    }
+                    int idAdmin = Convert.ToInt32(comando.ExecuteScalar());
+                    return idAdmin;
+                }
+                catch (Exception ex)
+                {
+                    //Si surge una excepción, muestra un mensaje de error
+                    await Shell.Current.DisplayAlert("Error", $"Error al verificar su status de Administrador: {ex.Message}", "Aceptar");
+                    return 0;
+                }
+            }
+        }
+
+        //Actualiza la última decha de inicio de sesión del usuario
+        public async Task<int> ModificarUltimoLogin()
+        {
+            sentencia = "update Usuario set ultimoLogin=@ultimoLogin where idUsuario=@idUsuario";
+
+            using (conexion = new SqlConnection(CadenaConexion.miConexion))
+            using (comando = new SqlCommand(sentencia, conexion))
+            {
+                comando.Parameters.AddWithValue("@idUsuario", AdministradorDeSesion.idUsuario);
+                comando.Parameters.AddWithValue("@ultimoLogin", DateTime.Now);
+
+                try
+                {
+                    //Si la conexión con la BD está cerrada, se abre
+                    if (conexion.State != System.Data.ConnectionState.Open)
+                    {
+                        conexion.Open();
+                    }
+                    //Se ejecuta la instrucción SQL y retorna el número de filas afectadas
+                    return comando.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    //Si surge una excepción, muestra un mensaje de error
+                    await Shell.Current.DisplayAlert("Error", $"Error: {ex.Message}", "Aceptar");
+                    return -1;
                 }
             }
         }

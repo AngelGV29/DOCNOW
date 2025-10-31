@@ -8,9 +8,9 @@ namespace DocNowApp.Globales
 {
     internal class CadenaConexion
     {
-        static public string dbNombre = "dbDocNow";
-        static public string server = @"JANDOS_LAPTOP\SQLSERVER01";
-        static public string contrasenia = "1234";
+        static public string dbNombre = "bdDocNowPro";
+        static public string server = @"ANGELGV29\SQLEXPRESS";
+        static public string contrasenia = "2909";
         static public string seguridad = "Integrated Security=True";
         static public string usuario = "sa";
 
