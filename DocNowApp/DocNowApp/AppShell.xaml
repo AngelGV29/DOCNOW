@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
-     x:Class="DocNowApp.AppShell"
+ x:Class="DocNowApp.AppShell"
  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
  xmlns:inicio="clr-namespace:DocNowApp.Inicio"
@@ -13,6 +13,7 @@
  xmlns:medico="clr-namespace:DocNowApp.MedicoPages"
  xmlns:admin="clr-namespace:DocNowApp.AdminPages"
  xmlns:agenda="clr-namespace:DocNowApp.AgendaDisponibilidad"
+ xmlns:agendarcita="clr-namespace:DocNowApp.AgendarCita"
  Shell.FlyoutBehavior="Disabled"
  Title="DocNowApp">
 
@@ -20,6 +21,10 @@
  Los shell content representan páginas, y configuran una ruta que se
  utilizará cuando se desee mostrar dicha página-->
 
+    <ShellContent
+      Title="Elegir Turno"
+      ContentTemplate="{DataTemplate agendarcita:ElegirTurnoPage}"
+      Route="ElegirTurnoPage"/>
     <ShellContent
      Title="Inicio"
      ContentTemplate="{DataTemplate inicio:InicioPage}"
