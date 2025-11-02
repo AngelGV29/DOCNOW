@@ -2,25 +2,52 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DocNowApp.AgendarCita.ElegirTurnoPage"
-             Title="ElegirTurnoPage">
+             Title="Elegir Turno">
+
     <VerticalStackLayout>
-        <Label 
-            Text="Selecciona tu Horario"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <RadioButton Margin="0,10,0,0"/>
-        <Label Text="8:00 - 8:30" FontSize="18" Margin="0,2,0,0" />
-        <Label Text="Disponible" FontSize="18" Margin="0,2,0,12" TextColor="Green" />
+        <Label
+            Text="Selecciona un Turno"
+            FontSize="23"
+            HorizontalOptions="Center"
+            Margin="0,20,0,10" />
 
-        <!-- Horario 2 (vertical) -->
-        <RadioButton Margin="0,10,0,0"/>
-        <Label Text="8:30 - 9:00" FontSize="18" Margin="0,2,0,0"/>
-        <Label Text="Ocupado" FontSize="18" Margin="0,2,0,12" TextColor="Red" />
+        <CollectionView>
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>8:00 - 9:00</x:String>
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                        <RadioButton GroupName="Horarios" VerticalOptions="Center"/>
+                        <Label Text="{Binding}" FontSize="18" Margin="10,0" VerticalOptions="Center"/>
+                        <Label Text="Disponible" FontSize="18" Margin="10,0" VerticalOptions="Center"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
-        <!-- Horario 3 (vertical) -->
-        <RadioButton Margin="0,10,0,0"/>
-        <Label Text="9:00 - 9:30" FontSize="18" Margin="0,2,0,0"/>
-        <Label Text="Disponible" FontSize="18" Margin="0,2,0,12" TextColor="Green" />
+        <!-- Más espacio visual -->
+        <BoxView HeightRequest="300" Color="Transparent"/>
 
+        <!-- Botones juntos horizontalmente, uno a la izquierda y uno a la derecha -->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button
+                x:Name="btnAceptar"
+                Text="Aceptar"
+                Margin="50,0,20,0"
+                WidthRequest="120"
+                FontSize="18"/>
+            <Button
+                x:Name="btnCancelar"
+                Text="Cancelar"
+                Margin="50,0,0,0"
+                WidthRequest="120"
+                FontSize="18"/>
+        </StackLayout>
     </VerticalStackLayout>
 </ContentPage>
+
+
+

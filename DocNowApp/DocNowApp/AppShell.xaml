@@ -21,10 +21,7 @@
  Los shell content representan páginas, y configuran una ruta que se
  utilizará cuando se desee mostrar dicha página-->
 
-    <ShellContent
-      Title="Elegir Turno"
-      ContentTemplate="{DataTemplate agendarcita:ElegirTurnoPage}"
-      Route="ElegirTurnoPage"/>
+   
     <ShellContent
      Title="Inicio"
      ContentTemplate="{DataTemplate inicio:InicioPage}"
@@ -69,5 +66,9 @@
      Title="Bienvenido Admin"
      ContentTemplate="{DataTemplate admin:AdminPrincipalPage}"
      Route="AdminPrincipalPage"/>
+    <ShellContent
+     Title="Elegir Turno"
+     ContentTemplate="{DataTemplate agendarcita:ElegirTurnoPage}"
+     Route="ElegirTurnoPage"/>
 
 </Shell>
