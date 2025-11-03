@@ -79,6 +79,9 @@
 	  <MauiXaml Update="AgendaDisponibilidad\ConfigurarAgendaDisponibilidadPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="AgendarCita\ElegirTurnoPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Inicio\InicioPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
