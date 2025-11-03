@@ -67,7 +67,7 @@ namespace DocNowApp.NuevoPaciente
         public async Task<int> AsignacionRol()
         {
             //Instrucción SQL
-            sentencia = "update Usuario set rol=@rol where idUsuario=@idUsuario";
+            sentencia = "update Usuario set rol = @rol where idUsuario = @idUsuario";
 
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
             using (comando = new SqlCommand(sentencia, conexion))
@@ -98,7 +98,7 @@ namespace DocNowApp.NuevoPaciente
         public async Task<DataSet> ObtenerIdPaciente()
         {
             //Instrucción SQL
-            sentencia = "select * from Paciente where idUsuario = @idUsuario";
+            sentencia = "select idPaciente from Paciente where idUsuario = @idUsuario";
 
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
             using (comando = new SqlCommand(sentencia, conexion))

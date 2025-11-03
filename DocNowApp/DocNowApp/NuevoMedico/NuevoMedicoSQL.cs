@@ -54,7 +54,7 @@ namespace DocNowApp.NuevoMedico
         //Método que devuelve las especialidades disponibles
         public async Task<List<Especialidad>> ObtenerEspecialidades()
         {
-            sentencia = "select * from EspecialidadMedico";
+            sentencia = "select idEspecialidad, nombreEspecialidad from EspecialidadMedico";
             List<Especialidad> EspecialidadesDisponibles = new List<Especialidad>();
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
             using (comando = new SqlCommand(sentencia, conexion))
@@ -90,7 +90,7 @@ namespace DocNowApp.NuevoMedico
         //Método que devuelve los consultorios disponibles
         public async Task<List<Consultorio>> ObtenerConsultorios()
         {
-            sentencia = "select * from Consultorio";
+            sentencia = "select idConsultorio, nombre, telefono, calle, numeroInterior, numeroExterior, colonia, codigoPostal from Consultorio";
             List<Consultorio> consultoriosDisponibles = new List<Consultorio>();
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
             using (comando = new SqlCommand(sentencia, conexion))
@@ -167,7 +167,7 @@ namespace DocNowApp.NuevoMedico
         public async Task<int> AsignacionRol()
         {
             //Instrucción SQL
-            sentencia = "update Usuario set rol=@rol where idUsuario=@idUsuario";
+            sentencia = "update Usuario set rol = @rol where idUsuario=@idUsuario";
 
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
             using (comando = new SqlCommand(sentencia, conexion))
@@ -198,7 +198,7 @@ namespace DocNowApp.NuevoMedico
         public async Task<DataSet> ObtenerIdMedico()
         {
             //Instrucción SQL
-            sentencia = "select * from Medico where idUsuario = @idUsuario";
+            sentencia = "select idMedico from Medico where idUsuario = @idUsuario";
 
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
             using (comando = new SqlCommand(sentencia, conexion))
