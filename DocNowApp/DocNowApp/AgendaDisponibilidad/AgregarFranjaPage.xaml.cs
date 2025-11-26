@@ -134,6 +134,22 @@ public partial class AgregarFranjaPage : ContentPage
         await Navigation.PopModalAsync();
     }
 
+    private async void btnCancelar_Clicked(object sender, EventArgs e)
+    {
+        this.tareaModal.TrySetResult(null); // null indica que se canceló
+        await Navigation.PopModalAsync();
+    }
+
+    // En caso de back hardware (Android), devolver null si no completó
+    protected override void OnDisappearing()
+    {
+        if (!this.tareaModal.Task.IsCompleted)
+        {
+            this.tareaModal.TrySetResult(null);
+        }
+        base.OnDisappearing();
+    }
+
     //Cuando se elige una duración para los turnos, los TimePicker se activan
     private void pickerDuracionSlot_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -182,21 +198,7 @@ public partial class AgregarFranjaPage : ContentPage
         return TimeSpan.FromMinutes(minutosAjustados);
     }
 
-    private async void btnCancelar_Clicked(object sender, EventArgs e)
-    {
-        this.tareaModal.TrySetResult(null); // null indica que se canceló
-        await Navigation.PopModalAsync();
-    }
-
-    // En caso de back hardware (Android), devolver null si no completó
-    protected override void OnDisappearing()
-    {
-        if (!this.tareaModal.Task.IsCompleted)
-        {
-            this.tareaModal.TrySetResult(null);
-        }
-        base.OnDisappearing();
-    }
+    
 
    //Método no funcional para ajustar la hora instantaneamente (el programa se congelaba)
    /*private bool eventoEnEjecucion = true;

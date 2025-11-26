@@ -18,7 +18,7 @@ namespace DocNowApp.Globales
 
             return "Desconocido";
         }
-        // No lo usarás, pero es obligatorio implementarlo
+        // No se usa pero es obligatorio implementarlo
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is string texto)

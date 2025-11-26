@@ -108,7 +108,7 @@ public partial class ConfigurarAgendaDisponibilidadPage : ContentPage
         try
         {
             var btn = (Button)sender;
-            FranjaDto franja = btn.CommandParameter as FranjaDto;
+            FranjaDto? franja = btn.CommandParameter as FranjaDto;
             if (franja == null)
             {
                 return;
@@ -141,8 +141,47 @@ public partial class ConfigurarAgendaDisponibilidadPage : ContentPage
         }
     }
 
-    private void btnEliminar_Clicked(object sender, EventArgs e)
+    private async void btnEliminar_Clicked(object sender, EventArgs e)
     {
+        try
+        {
+            var btn = (Button)sender;
+            FranjaDto? franja = btn.CommandParameter as FranjaDto;
+            if (franja == null)
+            {
+                return;
+            }
+            int resultadoOperacion;
+            bool continuar = await DisplayAlert("Advertencia", "¿Está seguro de que desea eliminar esta franja de disponibilidad?\n" +
+                "Recuerde que también puede desactivarla en el modo edición.", "Aceptar", "Cancelar");
 
+            if (continuar)
+            {
+                AgendaDisponibilidadSQL eliminarFranja = new AgendaDisponibilidadSQL(franja);
+                resultadoOperacion = await eliminarFranja.EliminarAgendaDisponibilidad();
+            }
+            else
+            {
+                //El médico decidio cancelar la eliminación
+                return;
+            }
+
+            AgendaDisponibilidadSQL modificarFranja = new AgendaDisponibilidadSQL(franja);
+            int resultado = await modificarFranja.ModificarAgendaDisponibilidad();
+            if (resultado > 0)
+            {
+                await DisplayAlert("Éxito", "La franja se eliminó correctamente.", "Aceptar");
+                this.CargarAgendaDisponibilidad();
+            }
+            else
+            {
+                await DisplayAlert("Error", "No se pudo eliminar la franja.", "Aceptar");
+            }
+
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Error", $"Ocurrió un error al editar la franja: {ex.Message}", "Aceptar");
+        }
     }
 }

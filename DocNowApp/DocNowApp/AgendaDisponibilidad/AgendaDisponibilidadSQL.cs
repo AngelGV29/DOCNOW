@@ -61,7 +61,7 @@ namespace DocNowApp.AgendaDisponibilidad
 
         public async Task<List<Consultorio>> ObtenerConsultorios()
         {
-            sentencia = @"select c.idConsultorio, c.nombre, c.telefono, c.calle, c.numeroInterior, c.numeroExterior, c.colonia, c.codigoPostal from Consultorio c inner join MedicoConsultorio mc" +
+            sentencia = "select c.idConsultorio, c.nombre, c.telefono, c.calle, c.numeroInterior, c.numeroExterior, c.colonia, c.codigoPostal from Consultorio c inner join MedicoConsultorio mc" +
                 " on c.idConsultorio = mc.idConsultorio where mc.idMedico = @idMedico";
             List<Consultorio> consultorios = new List<Consultorio>();
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
@@ -258,7 +258,31 @@ namespace DocNowApp.AgendaDisponibilidad
                 }
                 catch (Exception ex)
                 {
-                    await Shell.Current.DisplayAlert("Error", $"Error al insertar: {ex.Message}", "Aceptar");
+                    await Shell.Current.DisplayAlert("Error", $"Error al modificar: {ex.Message}", "Aceptar");
+                    return -1;
+                }
+            }
+        }
+
+        public async Task<int> EliminarAgendaDisponibilidad()
+        {
+            sentencia = "delete from AgendaDisponibilidad where idAgendaDisponibilidad = @idAgendaDisponibilidad";
+            using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
+            using (comando = new SqlCommand(sentencia, conexion))
+            {
+                comando.Parameters.AddWithValue("@IdAgendaDisponibilidad", this.idAgendaDisponibilidad);
+
+                try
+                {
+                    if (conexion.State != System.Data.ConnectionState.Open)
+                    {
+                        conexion.Open();
+                    }
+                    return comando.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    await Shell.Current.DisplayAlert("Error", $"Error al eliminar: {ex.Message}", "Aceptar");
                     return -1;
                 }
             }
