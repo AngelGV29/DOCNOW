@@ -53,7 +53,7 @@ namespace DocNowApp.NuevoUsuario
         public async Task<DataSet> ValidarCorreo()
         {
             //Instrucción SQL
-            sentencia = "select * from Usuario where correo = @correo";
+            sentencia = "select correo from Usuario where correo = @correo";
 
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
             using (comando = new SqlCommand(sentencia, conexion))
@@ -83,7 +83,7 @@ namespace DocNowApp.NuevoUsuario
         public async Task<DataSet> ObtenerIdUsuario()
         {
             //Instrucción SQL
-            sentencia = "select * from Usuario where correo = @correo";
+            sentencia = "select idUsuario from Usuario where correo = @correo";
 
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
             using (comando = new SqlCommand(sentencia, conexion))

@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DocNowApp.PacientePages.PacientePrincipalPage"
-             Title="PacientePrincipalPage"
+             Title=""
              xmlns:navegacion="clr-namespace:DocNowApp.Navegacion"
              xmlns:inicio="clr-namespace:DocNowApp.Inicio">
     <VerticalStackLayout>
@@ -11,5 +11,55 @@
             Text="Pantalla principal para pacientes"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        
+        <Label Text="Citas agendadas" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center" Margin="0,20,0,10"/>
+
+        <CollectionView x:Name="collectionCitas"
+                        SelectionMode="None"
+                        HeightRequest="350"
+                        WidthRequest="500">
+            
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="4" Padding="10" CornerRadius="8" BorderColor="Aqua" HasShadow="True">
+                        <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto">
+                            <StackLayout Grid.Column="0">
+                                <Label Text="{Binding FechaCita, StringFormat='{0:dddd, dd MMM yyyy}'}" FontAttributes="Bold"/>
+                                <Label Text="{Binding HoraInicio, StringFormat='{0:hh\\:mm}'}">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <FormattedString.Spans>
+                                                <Span Text="{Binding HoraInicio, StringFormat='{0:hh\\:mm}'}"/>
+                                                <Span Text=" - "/>
+                                                <Span Text="{Binding HoraFin, StringFormat='{0:hh\\:mm}'}"/>
+                                                <Span Text=" • "/>
+                                                <Span Text="{Binding NombreMedico}"/>
+                                            </FormattedString.Spans>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label Text="{Binding NombreConsultorio}" FontSize="Small" TextColor="Gray"/>
+                                <Label Text="{Binding DescripcionMotivo}" FontSize="Small" TextColor="Gray"/>
+                                <Label Text="{Binding InstruccionMotivo}" FontSize="Small" TextColor="Gray"/>
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="1" HorizontalOptions="End" VerticalOptions="Start" Spacing="6">
+                                <Button x:Name="btnReagendar" Text="Reagendar cita" FontSize="Micro" Clicked="btnReagendar_Clicked" CommandParameter="{Binding .}" />
+                                <Button x:Name="btnCancelar"  Text="Cancelar cita" FontSize="Micro" Clicked="btnCancelar_Clicked" CommandParameter="{Binding .}" />
+                                <Label Text="{Binding EstadoCita}" FontAttributes="Italic" HorizontalOptions="End" FontSize="Micro" Margin="0,0,10,0" />
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+        <Button
+            x:Name="btnAgendarCita"
+            Text="Nueva cita"
+            Clicked="btnAgendarCita_Clicked"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Margin="0,40,0,0"/>
     </VerticalStackLayout>
 </ContentPage>

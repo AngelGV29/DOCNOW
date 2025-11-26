@@ -11,6 +11,7 @@ namespace DocNowApp.AgendaDisponibilidad
         public int IdAgendaDisponibilidad { get; set; }
         public int IdMedico { get; set; }
         public int IdConsultorio { get; set; }
+        public string NombreConsultorio { get; set; }
         public int IdDia { get; set; }
         public TimeSpan HoraInicioJornada { get; set; }
         public TimeSpan HoraFinJornada { get; set; }

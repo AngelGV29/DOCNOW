@@ -11,7 +11,7 @@ using Microsoft.Maui.ApplicationModel.DataTransfer;
 
 namespace DocNowApp.AgendaDisponibilidad
 {
-
+    //Mediante esta clase se almacenan los datos de los consultorios
     public class Consultorio
     {
         public int idConsultorio { get; set; }
@@ -61,7 +61,7 @@ namespace DocNowApp.AgendaDisponibilidad
 
         public async Task<List<Consultorio>> ObtenerConsultorios()
         {
-            sentencia = @"select c.idConsultorio, c.nombre, c.telefono, c.calle, c.numeroInterior, c.numeroExterior, c.colonia, c.codigoPostal from Consultorio c inner join MedicoConsultorio mc" +
+            sentencia = "select c.idConsultorio, c.nombre, c.telefono, c.calle, c.numeroInterior, c.numeroExterior, c.colonia, c.codigoPostal from Consultorio c inner join MedicoConsultorio mc" +
                 " on c.idConsultorio = mc.idConsultorio where mc.idMedico = @idMedico";
             List<Consultorio> consultorios = new List<Consultorio>();
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
@@ -148,11 +148,12 @@ namespace DocNowApp.AgendaDisponibilidad
             }
         }
 
-        public async Task<bool> ExisteChoque()
+        //Método que valida que un medico no pueda tener agendas con días y horas que choquen con una ya existente
+        //Esto incluye no permmitir a un mismo médico trabajar al mismo tiempo en dos consultorios simultaneamente
+        public async Task<FranjaDto?> ExisteChoque()
         {
-            sentencia = "select count(*) from AgendaDisponibilidad where idMedico = @idMedico " +
-                "and idDia = @idDia and idAgendaDisponibilidad <> @idAgendaIgnorar " +
-                "and (horaInicioJornada < @horaFinJornada and horaFinJornada > @horaInicioJornada)";
+            string sentencia = "select ad.idAgendaDisponibilidad, ad.idMedico, ad.idConsultorio, c.nombre, ad.idDia, ad.horaInicioJornada, ad.horaFinJornada, ad.duracionSlotMinutos, ad.agendaActiva from AgendaDisponibilidad ad " +
+                "inner join Consultorio c on ad.idConsultorio = c.idConsultorio where ad.idMedico = @idMedico and ad.idDia = @idDia and ad.idAgendaDisponibilidad <> @idAgendaIgnorar and (ad.horaInicioJornada < @horaFinJornada AND ad.horaFinJornada > @horaInicioJornada)";
 
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
             using (comando = new SqlCommand(sentencia, conexion))
@@ -163,20 +164,38 @@ namespace DocNowApp.AgendaDisponibilidad
                 comando.Parameters.AddWithValue("@horaInicioJornada", this.horaInicioJornada);
                 comando.Parameters.AddWithValue("@horaFinJornada", this.horaFinJornada);
                 comando.Parameters.AddWithValue("@idAgendaIgnorar", this.idAgendaDisponibilidad);
+
                 try
                 {
                     if (conexion.State != System.Data.ConnectionState.Open)
                     {
                         conexion.Open();
                     }
-                    int? count = (int?)await comando.ExecuteScalarAsync();
-                    if (count == null) { count = 0; }
-                    return count > 0;
+                    using (SqlDataReader reader = await comando.ExecuteReaderAsync())
+                    {
+                        if (await reader.ReadAsync())
+                        {
+                            //Si encuentra una coincidencia (choque) retornara un objeto FranjaDto con los datos del conflicto para mostrar en el DisplayAlert
+                            return new FranjaDto
+                            {
+                                IdAgendaDisponibilidad = reader.GetInt32(0),
+                                IdMedico = reader.GetInt32(1),
+                                IdConsultorio = reader.GetInt32(2),
+                                NombreConsultorio = reader.GetString(3),
+                                IdDia = reader.GetInt32(4),
+                                HoraInicioJornada = reader.GetTimeSpan(5),
+                                HoraFinJornada = reader.GetTimeSpan(6),
+                                DuracionSlotMinutos = reader.GetInt32(7),
+                                AgendaActiva = reader.GetBoolean(8)
+                            };
+                        }
+                    }
+                    return null; //Si no hubo choque retorna un null
                 }
                 catch (Exception ex)
                 {
                     await Shell.Current.DisplayAlert("Error", $"Error verificando choque de horarios: {ex.Message}", "Aceptar");
-                    return true;
+                    return null;
                 }
             }
         }
@@ -239,7 +258,31 @@ namespace DocNowApp.AgendaDisponibilidad
                 }
                 catch (Exception ex)
                 {
-                    await Shell.Current.DisplayAlert("Error", $"Error al insertar: {ex.Message}", "Aceptar");
+                    await Shell.Current.DisplayAlert("Error", $"Error al modificar: {ex.Message}", "Aceptar");
+                    return -1;
+                }
+            }
+        }
+
+        public async Task<int> EliminarAgendaDisponibilidad()
+        {
+            sentencia = "delete from AgendaDisponibilidad where idAgendaDisponibilidad = @idAgendaDisponibilidad";
+            using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
+            using (comando = new SqlCommand(sentencia, conexion))
+            {
+                comando.Parameters.AddWithValue("@IdAgendaDisponibilidad", this.idAgendaDisponibilidad);
+
+                try
+                {
+                    if (conexion.State != System.Data.ConnectionState.Open)
+                    {
+                        conexion.Open();
+                    }
+                    return comando.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    await Shell.Current.DisplayAlert("Error", $"Error al eliminar: {ex.Message}", "Aceptar");
                     return -1;
                 }
             }

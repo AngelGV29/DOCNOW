@@ -6,14 +6,8 @@
     <ScrollView>
         <VerticalStackLayout MaximumWidthRequest="500">
             <Label Text="Configure su franja de tiempo laboral" FontAttributes="Bold" />
-            <Picker x:Name="pickerDia" Title="Selecciona un día" Margin="0,20,0,0">
+            <Picker x:Name="pickerDia" Title="Selecciona un día" Margin="0,20,0,20">
             </Picker>
-
-            <Label Text="Hora inicio" FontAttributes="Bold" Margin="0,20,0,5"/>
-            <TimePicker x:Name="tpInicio" Time="08:00" />
-
-            <Label Text="Hora fin" FontAttributes="Bold" Margin="0,20,0,5"/>
-            <TimePicker x:Name="tpFin" Time="16:00" />
 
             <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
                 <Label Text="Duración de las citas para generar los turnos:" FontSize="14" HorizontalOptions="End" VerticalOptions="Center" />
@@ -21,11 +15,17 @@
                      x:Name="pickerDuracionSlot"
                      FontSize="12"
                      WidthRequest="80"
-    
+                     SelectedIndexChanged="pickerDuracionSlot_SelectedIndexChanged"
                      VerticalOptions="Center"
                      HorizontalOptions="Center"/>
                 <Label Text="Minutos" FontSize="14" HorizontalOptions="End" VerticalOptions="Center" />
             </HorizontalStackLayout>
+
+            <Label Text="Hora inicio" FontAttributes="Bold" Margin="0,20,0,5"/>
+            <TimePicker x:Name="tpInicio" Time="08:00" IsEnabled="False" Unfocused="tpInicio_Unfocused"/>
+
+            <Label Text="Hora fin" FontAttributes="Bold" Margin="0,20,0,5"/>
+            <TimePicker x:Name="tpFin" Time="16:00" IsEnabled="False" Unfocused="tpFin_Unfocused"/>
 
             <StackLayout Orientation="Horizontal" VerticalOptions="Center" Margin="0,20,0,5">
                 <Label Text="Activar franja de tiempo" VerticalOptions="Center" />

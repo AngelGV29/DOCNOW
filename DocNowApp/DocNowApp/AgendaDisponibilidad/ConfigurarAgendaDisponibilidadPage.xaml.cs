@@ -8,7 +8,7 @@ public partial class ConfigurarAgendaDisponibilidadPage : ContentPage
     private List<Consultorio> listaConsultorios;
 
 
-    private int idHorarioMedico; // asigna según el horario que estés editando
+   // private int idHorarioMedico; // asigna según el horario que estés editando
     public ConfigurarAgendaDisponibilidadPage()
 	{
 		InitializeComponent();
@@ -19,9 +19,12 @@ public partial class ConfigurarAgendaDisponibilidadPage : ContentPage
         base.OnAppearing();
         try
         {
+            //Llama al método para cargar las agendas de disponibilidad del médico
             this.CargarAgendaDisponibilidad();
+            //Crea el objeto que ejecutará el método para guardar los consultorios con los que el médico está vinculado en una lista
             AgendaDisponibilidadSQL loader = new AgendaDisponibilidadSQL(Globales.AdministradorDeSesion.idMedico);
             List<Consultorio> listaConsultorios = await loader.ObtenerConsultorios();
+            //La lista se utiliza como fuente de datos para el picker de consultorios (solo muestra el nombre del consultorio)
             this.pickerConsultorio.ItemsSource = listaConsultorios;
             this.pickerConsultorio.ItemDisplayBinding = new Binding("nombre");
             this.pickerConsultorio.SelectedIndex = 0;
@@ -32,6 +35,7 @@ public partial class ConfigurarAgendaDisponibilidadPage : ContentPage
         }
     }
 
+    //Cada vez que se seleeciona un consultorio, se recargan las agendas disponibilidad
     private void pickerConsultorio_SelectedIndexChanged(object sender, EventArgs e)
     {
         this.CargarAgendaDisponibilidad();
@@ -81,13 +85,6 @@ public partial class ConfigurarAgendaDisponibilidadPage : ContentPage
             }
 
             AgendaDisponibilidadSQL agregarFranja = new AgendaDisponibilidadSQL(nuevaFranja);
-            bool existeChoque = await agregarFranja.ExisteChoque();
-            if (existeChoque)
-            {
-                await DisplayAlert("Error", "La franja de horario que intenta agregar choca con una ya existente.", "Aceptar");
-                return;
-            }
-
             int resultado = await agregarFranja.AgregarNuevaAgendaDisponibilidad();
             if (resultado > 0)
             {
@@ -111,7 +108,7 @@ public partial class ConfigurarAgendaDisponibilidadPage : ContentPage
         try
         {
             var btn = (Button)sender;
-            FranjaDto franja = btn.CommandParameter as FranjaDto;
+            FranjaDto? franja = btn.CommandParameter as FranjaDto;
             if (franja == null)
             {
                 return;
@@ -126,12 +123,6 @@ public partial class ConfigurarAgendaDisponibilidadPage : ContentPage
             }
             
             AgendaDisponibilidadSQL modificarFranja = new AgendaDisponibilidadSQL(franja);
-            bool existeChoque = await modificarFranja.ExisteChoque();
-            if (existeChoque)
-            {
-                await DisplayAlert("Error", "La franja de horario que intenta modificar choca con una ya existente.", "Aceptar");
-                return;
-            }
             int resultado = await modificarFranja.ModificarAgendaDisponibilidad();
             if (resultado > 0)
             {
@@ -150,8 +141,47 @@ public partial class ConfigurarAgendaDisponibilidadPage : ContentPage
         }
     }
 
-    private void btnEliminar_Clicked(object sender, EventArgs e)
+    private async void btnEliminar_Clicked(object sender, EventArgs e)
     {
+        try
+        {
+            var btn = (Button)sender;
+            FranjaDto? franja = btn.CommandParameter as FranjaDto;
+            if (franja == null)
+            {
+                return;
+            }
+            int resultadoOperacion;
+            bool continuar = await DisplayAlert("Advertencia", "¿Está seguro de que desea eliminar esta franja de disponibilidad?\n" +
+                "Recuerde que también puede desactivarla en el modo edición.", "Aceptar", "Cancelar");
 
+            if (continuar)
+            {
+                AgendaDisponibilidadSQL eliminarFranja = new AgendaDisponibilidadSQL(franja);
+                resultadoOperacion = await eliminarFranja.EliminarAgendaDisponibilidad();
+            }
+            else
+            {
+                //El médico decidio cancelar la eliminación
+                return;
+            }
+
+            AgendaDisponibilidadSQL modificarFranja = new AgendaDisponibilidadSQL(franja);
+            int resultado = await modificarFranja.ModificarAgendaDisponibilidad();
+            if (resultado > 0)
+            {
+                await DisplayAlert("Éxito", "La franja se eliminó correctamente.", "Aceptar");
+                this.CargarAgendaDisponibilidad();
+            }
+            else
+            {
+                await DisplayAlert("Error", "No se pudo eliminar la franja.", "Aceptar");
+            }
+
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Error", $"Ocurrió un error al editar la franja: {ex.Message}", "Aceptar");
+        }
     }
 }

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DocNowApp.MedicoPages.AdministrarCitasPage"
+             Title="AdministrarCitasPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Citas Agendadas"
+            FontAttributes="Bold"
+            FontSize="30"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <SearchBar x:Name="sbBuscarPaciente"
+                   Placeholder="Buscar por nombre de paciente..."
+                   WidthRequest="750"
+                   HorizontalOptions="Center"
+                   Margin="0,20,0,20"
+                   TextChanged="sbBuscarPaciente_TextChanged"/>
+
+        <HorizontalStackLayout Spacing="80" HorizontalOptions="Center" Margin="0,0,0,30">
+            <Picker x:Name="pickerConsultorio" Title="Consultorio" SelectedIndexChanged="Pickers_SelectedIndexChanged" />
+            <Picker x:Name="pickerEstadoCita" Title="Estado de la cita" SelectedIndexChanged="Pickers_SelectedIndexChanged" />
+            <Picker x:Name="pickerMotivoConsulta" Title="Motivo de consulta" SelectedIndexChanged="Pickers_SelectedIndexChanged" />
+        </HorizontalStackLayout>
+
+        <CollectionView x:Name="collectionCitas"
+                SelectionMode="None"
+                HeightRequest="350"
+                WidthRequest="500">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="4" Padding="10" CornerRadius="8" BorderColor="Aqua" HasShadow="True">
+                        <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto">
+                            <StackLayout Grid.Column="0">
+                                <Label Text="{Binding NombrePaciente}" FontAttributes="Bold" FontSize="16"/>
+                                <Label Text="{Binding NombreConsultorio}" FontSize="16"/>
+                                <Label Text="{Binding FechaCita, StringFormat='{0:dddd, dd MMM yyyy}'}" FontAttributes="Bold,Italic"/>
+                                <Label Text="{Binding HoraInicio, StringFormat='{0:hh\\:mm}'}" FontAttributes="Bold">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <FormattedString.Spans>
+                                                <Span Text="{Binding HoraInicio, StringFormat='{0:hh\\:mm}'}" FontSize="16"/>
+                                                <Span Text=" - " FontSize="16"/>
+                                                <Span Text="{Binding HoraFin, StringFormat='{0:hh\\:mm}'}" FontSize="16"/>
+                                            </FormattedString.Spans>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label Text="{Binding DescripcionMotivo}" FontSize="Small" TextColor="Gray"/>
+                                <Button x:Name="btnMostrarNotas" Text="Ver notas" WidthRequest="120" Margin="0,10,0,0" FontSize="Micro" Clicked="btnMostrarNotas_Clicked" CommandParameter="{Binding .}" />
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="1" HorizontalOptions="End" VerticalOptions="Start" Spacing="6">
+                                <Button x:Name="btnReagendar" Text="Reagendar cita" FontSize="Micro" Clicked="btnReagendar_Clicked" CommandParameter="{Binding .}" />
+                                <Button x:Name="btnCancelar"  Text="Cancelar cita" FontSize="Micro" Clicked="btnCancelar_Clicked" CommandParameter="{Binding .}" />
+                                <Button x:Name="btnCompletar"  Text="Completar cita" FontSize="Micro" Clicked="btnCompletar_Clicked" CommandParameter="{Binding .}" />
+                                <Label Text="{Binding EstadoCita}" FontAttributes="Italic" HorizontalOptions="End" FontSize="Micro" Margin="0,0,10,0" />
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

@@ -11,4 +11,10 @@ public partial class MedicoPrincipalPage : ContentPage
     {
         await Shell.Current.GoToAsync("//ConfigurarAgendaDisponibilidadPage");
     }
+
+    private async void btnAdministrarCitas_Clicked(object sender, EventArgs e)
+    {
+        AdministrarCitasPage administrarCitas = new AdministrarCitasPage();
+        await Navigation.PushAsync(administrarCitas);
+    }
 }

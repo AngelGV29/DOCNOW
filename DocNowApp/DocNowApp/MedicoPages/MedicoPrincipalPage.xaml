@@ -12,11 +12,18 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Button
+            x:Name="btnAdministrarCitas"
+            Text="Administrar todas las citas"
+            Clicked="btnAdministrarCitas_Clicked"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Margin="0,80,0,0"/>
+        <Button
             x:Name="btnConfigurarAgenda"
             Text="Configurar agenda"
             Clicked="btnConfigurarAgenda_Clicked"
             VerticalOptions="Center" 
             HorizontalOptions="Center"
             Margin="0,80,0,0"/>
-            </VerticalStackLayout>
+    </VerticalStackLayout>
 </ContentPage>

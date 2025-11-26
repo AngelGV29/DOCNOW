@@ -50,7 +50,7 @@
                             <!-- Línea inferior: botones -->
                             <StackLayout Grid.Row="1" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalOptions="Start" Margin="0,10,0,0">
                                 <Button x:Name="btnEditar" Text="Editar" Clicked="btnEditar_Clicked" CommandParameter="{Binding .}" />
-                                <Button Text="btnEliminar" Clicked="btnEliminar_Clicked" CommandParameter="{Binding .}" Margin="8,0,0,0" />
+                                <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_Clicked" CommandParameter="{Binding .}" Margin="8,0,0,0" />
                             </StackLayout>
                         </Grid>
                     </Frame>
