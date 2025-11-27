@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DocNowApp.MedicoPages.AdministrarCitasPage"
-             Title="AdministrarCitasPage">
+             Title="">
     <VerticalStackLayout>
         <Label 
             Text="Citas Agendadas"
@@ -53,9 +53,9 @@
                             </StackLayout>
 
                             <StackLayout Grid.Column="1" HorizontalOptions="End" VerticalOptions="Start" Spacing="6">
+                                <Button x:Name="btnCompletar"  Text="Completar cita" FontSize="Micro" Clicked="btnCompletar_Clicked" CommandParameter="{Binding .}" />
                                 <Button x:Name="btnReagendar" Text="Reagendar cita" FontSize="Micro" Clicked="btnReagendar_Clicked" CommandParameter="{Binding .}" />
                                 <Button x:Name="btnCancelar"  Text="Cancelar cita" FontSize="Micro" Clicked="btnCancelar_Clicked" CommandParameter="{Binding .}" />
-                                <Button x:Name="btnCompletar"  Text="Completar cita" FontSize="Micro" Clicked="btnCompletar_Clicked" CommandParameter="{Binding .}" />
                                 <Label Text="{Binding EstadoCita}" FontAttributes="Italic" HorizontalOptions="End" FontSize="Micro" Margin="0,0,10,0" />
                             </StackLayout>
                         </Grid>

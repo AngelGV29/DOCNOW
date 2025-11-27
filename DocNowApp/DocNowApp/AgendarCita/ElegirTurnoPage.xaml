@@ -2,14 +2,14 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DocNowApp.AgendarCita.ElegirTurnoPage"
-             Title="Elegir Turno">
+             Title="">
 
     <VerticalStackLayout>
         <Label
             Text="Seleccione un Turno"
             FontSize="23"
             HorizontalOptions="Center"
-            Margin="0,20,0,10" />
+            Margin="0,20,0,20" />
 
         <CollectionView x:Name="collectionTurnos"
                         HeightRequest="300"
@@ -20,7 +20,6 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Orientation="Horizontal" Margin="0,10,0,0" Padding="6">
-                        <!--<RadioButton GroupName="Horarios" VerticalOptions="Center"/>-->
                         <Label Text="{Binding RangoHorario}" FontSize="18" Margin="10,0,0,0" VerticalOptions="Center"/>
                         <Label Text="Disponible" FontSize="18" Margin="10,0,0,0" VerticalOptions="Center"/>
                     </StackLayout>
@@ -31,15 +30,7 @@
         <!-- Más espacio visual -->
         <BoxView HeightRequest="50" Color="Transparent"/>
 
-        <!-- Botones juntos horizontalmente, uno a la izquierda y uno a la derecha -->
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-            <!--<Button
-                x:Name="btnAceptar"
-                Text="Aceptar"
-                Clicked="btnAceptar_Clicked"
-                Margin="50,0,20,0"
-                WidthRequest="120"
-                FontSize="18"/>-->
             <Button
                 x:Name="btnCancelar"
                 Text="Cancelar"

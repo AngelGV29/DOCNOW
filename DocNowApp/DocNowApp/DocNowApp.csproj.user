@@ -11,6 +11,9 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
+    <MauiXaml Update="AdministrarCitas\AgregarNotasPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="AdminPages\AdminPrincipalPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

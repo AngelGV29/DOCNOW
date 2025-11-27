@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DocNowApp.AdministrarCitas.AgregarNotasPage"
+             Title="">
+    <VerticalStackLayout>
+        <Label 
+            Text="Editor de notas"
+            FontAttributes="Bold"
+            FontSize="30"
+            Margin="0,50,0,0"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Editor
+            x:Name="txtNotas"
+            Placeholder="Escriba las notas de la cita aquí..."
+            MaxLength="500"
+            WidthRequest="750"
+            HeightRequest="300"
+            HorizontalOptions="Center"
+            Margin="0,20,0,40"/>
+
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Button x:Name="btnGuardar"
+                    Text="Guardar"
+                    IsEnabled="True"
+                    Clicked="btnGuardar_Clicked"
+                    HeightRequest="50"
+                    WidthRequest="130" />
+
+            <Button x:Name="btnCancelar"
+                    Text="Cancelar"
+                    IsEnabled="True"
+                    Clicked="btnCancelar_Clicked"
+                    Margin="30,0,0,0"
+                    HeightRequest="50"
+                    WidthRequest="130" />
+
+        </HorizontalStackLayout>
+        
+        
+    </VerticalStackLayout>
+</ContentPage>

@@ -2,12 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DocNowApp.NuevoUsuario.NuevoUsuarioPage"
-             Title=""
-             xmlns:navegacion="clr-namespace:DocNowApp.Navegacion"
-             xmlns:inicio="clr-namespace:DocNowApp.Inicio">
+             Title="">
 
-    <VerticalStackLayout>
-        <navegacion:BotonRegresar Ruta="InicioPage"/>
+<VerticalStackLayout>
         <Label 
             Margin="0,0,0,0"
             Text="Registrate en DocNow"

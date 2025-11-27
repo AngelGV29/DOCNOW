@@ -1,4 +1,5 @@
 using DocNowApp.AgendaDisponibilidad;
+using DocNowApp.Globales;
 using System.Collections.ObjectModel;
 
 namespace DocNowApp.AgendarCita;
@@ -237,6 +238,7 @@ public partial class AgendarCitaPage : ContentPage
     private async void btnAgendarCita_Clicked(object sender, EventArgs e)
     {
         int resultadoOperacion;
+        string mensaje;
         if (esNuevaCita)
         {
             citaAgendada = new CitaDto
@@ -249,9 +251,12 @@ public partial class AgendarCitaPage : ContentPage
                 HoraInicio = this.turnoSeleccionado.HoraInicio,
                 HoraFin = this.turnoSeleccionado.HoraFin,
                 EstadoCita = "AGENDADA",
+                InstruccionMotivo = ((CitaDto)this.pickerMotivoConsulta.SelectedItem).InstruccionMotivo,
+                Notas = "La cita fue reagendada por el paciente."
             };
             AgendarCitaSQL agendarCita = new AgendarCitaSQL(citaAgendada);
             resultadoOperacion = await agendarCita.AgendarNuevaCita();
+            mensaje = "La cita se agendó correctamente.";
         }
         else
         {
@@ -259,14 +264,31 @@ public partial class AgendarCitaPage : ContentPage
             citaAgendada.HoraInicio = this.turnoSeleccionado.HoraInicio;
             citaAgendada.HoraFin = this.turnoSeleccionado.HoraFin;
             citaAgendada.EstadoCita = "REAGENDADA";
+            string notas;
+            if (AdministradorDeSesion.Rol == "MEDICO")
+            {
+                notas = "La cita fue reagendada por el médico.";
+            }
+            else
+            {
+                notas = "La cita fue reagendada por el paciente.";
+            }
+            citaAgendada.Notas = notas;
             AgendarCitaSQL agendarCita = new AgendarCitaSQL(citaAgendada);
             resultadoOperacion = await agendarCita.ReagendarCita();
+            mensaje = "La cita se reagendó correctamente.";
         }
         
         if (resultadoOperacion > 0)
         {
-            await DisplayAlert("Éxito", $"La cita se agendó correctamente.\n ATENCIÓN: {citaAgendada.InstruccionMotivo}", "Aceptar");
-            //await Shell.Current.GoToAsync("//PacientePrincipalPage");
+            if (AdministradorDeSesion.Rol == "MEDICO")
+            {
+                await DisplayAlert("Éxito", $"{mensaje}", "Aceptar");
+            }
+            else
+            {
+                await DisplayAlert("Éxito", $"{mensaje}\nATENCIÓN: {citaAgendada.InstruccionMotivo}", "Aceptar");
+            }
             await Navigation.PopAsync();
         }
         else

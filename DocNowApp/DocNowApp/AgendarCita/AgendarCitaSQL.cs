@@ -41,6 +41,7 @@ namespace DocNowApp.AgendarCita
         private TimeSpan horaInicio;
         private TimeSpan horaFin;
         private string estadoCita;
+        private string notas;
         private DateTime fechaCreacion;
         private DateTime fechaModificacion;
 
@@ -56,6 +57,7 @@ namespace DocNowApp.AgendarCita
             this.horaInicio = _citaDto.HoraInicio;
             this.horaFin = _citaDto.HoraFin;
             this.estadoCita = _citaDto.EstadoCita;
+            this.notas = _citaDto.Notas;
         }
 
         public AgendarCitaSQL(int idPaciente)
@@ -226,6 +228,7 @@ namespace DocNowApp.AgendarCita
                             {
                                 IdMotivo = lector.GetInt32(0),
                                 DescripcionMotivo = lector.GetString(1),
+                                InstruccionMotivo = lector.GetString(2)
                             });
                         }
                     }
@@ -262,7 +265,7 @@ namespace DocNowApp.AgendarCita
                     {
                         while (await lector.ReadAsync())
                         {
-                            //Crea instancias de la clase citaDto para guardar únicamente los valores del motivo de consulta y mostrarlos posteriormente en el picker
+                            //Crea instancias de la clase FranjaDto para saber los turnos disponibles
                             listaFranjas.Add(new FranjaDto
                             {
                                 HoraInicioJornada = lector.GetTimeSpan(0),
@@ -322,8 +325,8 @@ namespace DocNowApp.AgendarCita
 
         public async Task<int> AgendarNuevaCita()
         {
-            sentencia = "insert into Cita (idPaciente, idMedico, idConsultorio, idMotivo, fechaCita, horaInicio, horaFin, estadoCita) " +
-                "values (@idPaciente, @idMedico, @idConsultorio, @idMotivo, @fechaCita, @horaInicio, @horaFin, @estadoCita)";
+            sentencia = "insert into Cita (idPaciente, idMedico, idConsultorio, idMotivo, fechaCita, horaInicio, horaFin, estadoCita, notas) " +
+                "values (@idPaciente, @idMedico, @idConsultorio, @idMotivo, @fechaCita, @horaInicio, @horaFin, @estadoCita, @notas)";
 
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
             using (comando = new SqlCommand(sentencia, conexion))
@@ -336,6 +339,7 @@ namespace DocNowApp.AgendarCita
                 comando.Parameters.AddWithValue("@horaInicio", this.horaInicio);
                 comando.Parameters.AddWithValue("@horaFin", this.horaFin);
                 comando.Parameters.AddWithValue("@estadoCita", this.estadoCita);
+                comando.Parameters.AddWithValue("@notas", "La cita fue agagendada por el paciente.");
 
                 try
                 {
@@ -355,7 +359,7 @@ namespace DocNowApp.AgendarCita
 
         public async Task<int> ReagendarCita()
         {
-            sentencia = "update Cita set fechaCita = @fechaCita, horaInicio = @horaInicio, horaFin = @horaFin, estadoCita = @estadoCita, " +
+            sentencia = "update Cita set fechaCita = @fechaCita, horaInicio = @horaInicio, horaFin = @horaFin, estadoCita = @estadoCita, notas = @notas, " +
                 "fechaModificacion = @fechaModificacion where idCita = @idCita";
 
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
@@ -366,6 +370,7 @@ namespace DocNowApp.AgendarCita
                 comando.Parameters.AddWithValue("@horaInicio", this.horaInicio);
                 comando.Parameters.AddWithValue("@horaFin", this.horaFin);
                 comando.Parameters.AddWithValue("@estadoCita", this.estadoCita);
+                comando.Parameters.AddWithValue("@notas", this.notas);
                 comando.Parameters.AddWithValue("@fechaModificacion", DateTime.Now);
 
                 try
@@ -386,7 +391,7 @@ namespace DocNowApp.AgendarCita
 
         public async Task<int> CancelarCita()
         {
-            sentencia = "update Cita set estadoCita = @estadoCita, notas = @notas " +
+            sentencia = "update Cita set estadoCita = @estadoCita, notas = @notas, " +
                 "fechaModificacion = @fechaModificacion where idCita = @idCita";
 
             using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))

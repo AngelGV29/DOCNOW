@@ -176,12 +176,13 @@ public partial class NuevoUsuarioPage : ContentPage
                     Un usuario normal será dirigido a la pantalla para llenar los datos del paciente*/
                     if (Globales.AdministradorDeSesion.Rol == "ADMIN")
                     {
+                        //await Navigation.PopModalAsync();
                         await Shell.Current.GoToAsync("//NuevoMedicoPage");
                     }
                     else
                     {
+                        //await Navigation.PopModalAsync();
                         await Shell.Current.GoToAsync("//NuevoPacientePage");
-
                     }
                 }
                 else if (resultado == 0)

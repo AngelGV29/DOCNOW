@@ -1,3 +1,5 @@
+using DocNowApp.NuevoUsuario;
+
 namespace DocNowApp.Inicio;
 
 public partial class InicioPage : ContentPage
@@ -25,7 +27,8 @@ public partial class InicioPage : ContentPage
     //Botón para registrarse
     private async void btnNuevo_Clicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//NuevoUsuarioPage");
+        NuevoUsuarioPage nuevoPaciente = new NuevoUsuarioPage();
+        await Navigation.PushAsync(nuevoPaciente);
     }
 
     //Botón para iniciar sesión
