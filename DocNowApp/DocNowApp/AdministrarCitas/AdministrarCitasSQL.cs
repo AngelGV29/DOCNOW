@@ -181,5 +181,63 @@ namespace DocNowApp.AdministrarCitas
                 return motivosConsulta;
             }
         }
+
+        public async Task<int> CancelarCita()
+        {
+            sentencia = "update Cita set estadoCita = @estadoCita, notas = @notas, " +
+                "fechaModificacion = @fechaModificacion where idCita = @idCita";
+
+            using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
+            using (comando = new SqlCommand(sentencia, conexion))
+            {
+                comando.Parameters.AddWithValue("idCita", this.idCita);
+                comando.Parameters.AddWithValue("@estadoCita", "CANCELADA");
+                comando.Parameters.AddWithValue("@notas", this.notas);
+                comando.Parameters.AddWithValue("@fechaModificacion", DateTime.Now);
+
+                try
+                {
+                    if (conexion.State != System.Data.ConnectionState.Open)
+                    {
+                        conexion.Open();
+                    }
+                    return comando.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    await Shell.Current.DisplayAlert("Error", $"Error al modificar: {ex.Message}", "Aceptar");
+                    return -1;
+                }
+            }
+        }
+
+        public async Task<int> CompletarCita()
+        {
+            sentencia = "update Cita set estadoCita = @estadoCita, notas = @notas, " +
+                "fechaModificacion = @fechaModificacion where idCita = @idCita";
+
+            using (conexion = new SqlConnection(Globales.CadenaConexion.miConexion))
+            using (comando = new SqlCommand(sentencia, conexion))
+            {
+                comando.Parameters.AddWithValue("idCita", this.idCita);
+                comando.Parameters.AddWithValue("@estadoCita", "COMPLETADA");
+                comando.Parameters.AddWithValue("@notas", this.notas);
+                comando.Parameters.AddWithValue("@fechaModificacion", DateTime.Now);
+
+                try
+                {
+                    if (conexion.State != System.Data.ConnectionState.Open)
+                    {
+                        conexion.Open();
+                    }
+                    return comando.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    await Shell.Current.DisplayAlert("Error", $"Error al modificar: {ex.Message}", "Aceptar");
+                    return -1;
+                }
+            }
+        }
     }
 }

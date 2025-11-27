@@ -58,8 +58,8 @@ public partial class PacientePrincipalPage : ContentPage
             {
                 return;
             }
-            AgendarCitaPage modalReagendarCita = new AgendarCitaPage(citaSeleccionada);
-            await Navigation.PushAsync(modalReagendarCita);
+            AgendarCitaPage ReagendarCita = new AgendarCitaPage(citaSeleccionada);
+            await Navigation.PushAsync(ReagendarCita);
 
         }
         catch (Exception ex)

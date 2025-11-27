@@ -18,6 +18,7 @@ namespace DocNowApp.AgendaDisponibilidad
         public int DuracionSlotMinutos { get; set; }
         public bool AgendaActiva { get; set; } = true;
 
+        //Automaticamente toma el valor númerico del día y lo transforma a texto
         public string NombreDia =>
            IdDia switch
            {
@@ -30,6 +31,8 @@ namespace DocNowApp.AgendaDisponibilidad
                7 => "Domingo",
                _ => "Desconocido"
            };
+
+        //Convierten automaticamente los valore sde hora inicio y fin a formato hh:mm
         public string RangoHorario =>
         $" | {HoraInicioJornada:hh\\:mm} - {HoraFinJornada:hh\\:mm} | ";
 

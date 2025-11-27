@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DocNowApp.AgendaDisponibilidad.ConfigurarAgendaDisponibilidadPage"
-             Title="ControlHorarioMedicoPage"
+             Title=""
              xmlns:navegacion="clr-namespace:DocNowApp.Navegacion"
              xmlns:inicio="clr-namespace:DocNowApp.MedicoPages">
 
@@ -15,7 +15,7 @@
             FontAttributes="Bold"
             VerticalOptions="Center"
             HorizontalOptions="Center"
-            Margin="10,0,0,0"
+            Margin="0,20,0,20"
             InputTransparent="True"/>
         <Picker
             x:Name="pickerConsultorio"
@@ -57,11 +57,5 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
-        <!-- Botones externos como alternativa (usa SelectedItem)
-        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-            <Button Text="Editar seleccionado" Clicked="OnEditarSeleccionadoClicked" />
-            <Button Text="Eliminar seleccionado" Clicked="OnEliminarSeleccionadoClicked" Margin="8,0,0,0" />
-        </StackLayout>-->
     </StackLayout>
 </ContentPage>

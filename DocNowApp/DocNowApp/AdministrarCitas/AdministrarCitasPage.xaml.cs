@@ -74,6 +74,164 @@ public partial class AdministrarCitasPage : ContentPage
         return;
     }
 
+    private async void btnCompletar_Clicked(object sender, EventArgs e)
+    {
+        try
+        {
+            var btn = (Button)sender;
+            CitaDto? citaSeleccionada = btn.CommandParameter as CitaDto;
+            if (citaSeleccionada == null)
+            {
+                return;
+            }
+            if (citaSeleccionada.EstadoCita == "CANCELADA" || citaSeleccionada.EstadoCita == "COMPLETADA")
+            {
+                await DisplayAlert("Advertencia", "No se puede cancelar una cita que ya ha sido completada o cancelada.", "Aceptar");
+                return;
+            }
+
+            bool continuar = await DisplayAlert("Advertencia", $"Está por marcar como completada la cita del paciente {citaSeleccionada.NombrePaciente} agendada el día {citaSeleccionada.FechaCita:dd/MM/yyyy} a las {citaSeleccionada.HoraInicio:hh\\:mm} " +
+                $"con usted en el consultorio {citaSeleccionada.NombreConsultorio}.\n¿Desea continuar?", "Aceptar", "Regresar");
+            if (!continuar)
+            {
+                return;
+            }
+            int opcion = 1; //Representa la acción que se cometerá con la cita: 1 para completar y 2 para cancelar
+            AgregarNotasPage modalAgregarNotas = new AgregarNotasPage(opcion);
+            await Navigation.PushModalAsync(modalAgregarNotas);
+
+            string notas = await modalAgregarNotas.Resultado;
+            if (notas == null)
+            {
+                //El médico canceló el agregar notas y por tanto el proceso de eliminación
+                await DisplayAlert("Advertencia", "Se canceló el proceso para marcar la cita como completada.", "Aceptar");
+                return;
+            }
+            citaSeleccionada.Notas = notas;
+            AdministrarCitasSQL cancelarCita = new AdministrarCitasSQL(citaSeleccionada);
+            int resultadoOperacion;
+            resultadoOperacion = await cancelarCita.CompletarCita();
+
+            if (resultadoOperacion > 0)
+            {
+                await DisplayAlert("Éxito", "La cita se marco como completada correctamente.", "Aceptar");
+                this.CargarCitasAgendadas();
+            }
+            else
+            {
+                await DisplayAlert("Error", "No se pudo marcar como completada la cita.", "Aceptar");
+            }
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Error", $"Ocurrió un error al intentar marcar la cita como completada: {ex.Message}", "Aceptar");
+        }
+    }
+
+    private async void btnReagendar_Clicked(object sender, EventArgs e)
+    {
+        try
+        {
+            var btn = (Button)sender;
+            CitaDto? citaSeleccionada = btn.CommandParameter as CitaDto;
+            if (citaSeleccionada == null)
+            {
+                return;
+            }
+            if (citaSeleccionada.EstadoCita == "CANCELADA" || citaSeleccionada.EstadoCita == "COMPLETADA")
+            {
+                await DisplayAlert("Advertencia", "No se puede reagendar una cita que ya ha sido completada o cancelada.", "Aceptar");
+                return;
+            }
+
+            bool continuar = await DisplayAlert("Advertencia", $"Está por reagendar la cita del paciente {citaSeleccionada.NombrePaciente} agendada el día {citaSeleccionada.FechaCita:dd/MM/yyyy} a las {citaSeleccionada.HoraInicio:hh\\:mm} " +
+                $"con usted en el consultorio {citaSeleccionada.NombreConsultorio}.\n¿Desea continuar?", "Aceptar", "Regresar");
+            if (!continuar)
+            {
+                return;
+            }
+            int opcion = 1; //Representa la acción que se cometerá con la cita: 1 para completar y 2 para cancelar
+            AgendarCitaPage reagendarCita = new AgendarCitaPage(citaSeleccionada);
+            await Navigation.PushAsync(reagendarCita);
+
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Error", $"Ocurrió un error al intentar reagendar la cita: {ex.Message}", "Aceptar");
+        }
+    }
+
+    private async void btnCancelar_Clicked(object sender, EventArgs e)
+    {
+        try
+        {
+            var btn = (Button)sender;
+            CitaDto? citaSeleccionada = btn.CommandParameter as CitaDto;
+            if (citaSeleccionada == null)
+            {
+                return;
+            }
+            if (citaSeleccionada.EstadoCita == "CANCELADA" || citaSeleccionada.EstadoCita == "COMPLETADA")
+            {
+                await DisplayAlert("Advertencia", "No se puede cancelar una cita que ya ha sido completada o cancelada.", "Aceptar");
+                return;
+            }
+
+            bool continuar = await DisplayAlert("Advertencia", $"Está por cancelar la cita del paciente {citaSeleccionada.NombrePaciente} agendada el día {citaSeleccionada.FechaCita:dd/MM/yyyy} a las {citaSeleccionada.HoraInicio:hh\\:mm} " +
+                $"con usted en el consultorio {citaSeleccionada.NombreConsultorio}.\n¿Desea continuar?", "Aceptar", "Regresar");
+            if (!continuar)
+            {
+                return;
+            }
+            int opcion = 2; //Representa la acción que se cometerá con la cita: 1 para completar y 2 para cancelar
+            AgregarNotasPage modalAgregarNotas = new AgregarNotasPage(opcion);
+            await Navigation.PushModalAsync(modalAgregarNotas);
+
+            string notas = await modalAgregarNotas.Resultado;
+            if (notas == null)
+            {
+                //El médico canceló el agregar notas y por tanto el proceso de eliminación
+                await DisplayAlert("Advertencia", "Se canceló el proceso de cancelación de la cita.", "Aceptar");
+                return;
+            }
+            citaSeleccionada.Notas = notas;
+            AdministrarCitasSQL cancelarCita = new AdministrarCitasSQL(citaSeleccionada);
+            int resultadoOperacion;
+            resultadoOperacion = await cancelarCita.CancelarCita();
+
+            if (resultadoOperacion > 0)
+            {
+                await DisplayAlert("Éxito", "La cita se canceló correctamente.", "Aceptar");
+                this.CargarCitasAgendadas();
+            }
+            else
+            {
+                await DisplayAlert("Error", "No se pudo cancelar la cita.", "Aceptar");
+            }
+
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Error", $"Ocurrió un error al intentar cancelar la cita: {ex.Message}", "Aceptar");
+        }
+    }
+
+    private async void btnMostrarNotas_Clicked(object sender, EventArgs e)
+    {
+        var btn = (Button)sender;
+        CitaDto? citaSeleccionada = btn.CommandParameter as CitaDto;
+        if (citaSeleccionada == null)
+        {
+            return;
+        }
+        
+        await DisplayAlert("Notas de la cita", $"Paciente: {citaSeleccionada.NombrePaciente}\n" +
+            $"Fecha de la cita: {citaSeleccionada.FechaCita}\n" +
+            $"Hora de la cita: {citaSeleccionada.HoraInicio:hh\\:mm} - {citaSeleccionada.HoraFin:hh\\:mm}" +
+            $"\n\nNotas de la cita:\n" +
+            $"{citaSeleccionada.Notas}", "Aceptar");
+    }
+
     private async void sbBuscarPaciente_TextChanged(object sender, TextChangedEventArgs e)
     {
         _cts?.Cancel();
@@ -137,25 +295,5 @@ public partial class AdministrarCitasPage : ContentPage
         listaFiltrada.Clear();
         foreach (var it in resultado)
             listaFiltrada.Add(it);
-    }
-
-    private void btnReagendar_Clicked(object sender, EventArgs e)
-    {
-
-    }
-
-    private void btnCancelar_Clicked(object sender, EventArgs e)
-    {
-
-    }
-
-    private void btnCompletar_Clicked(object sender, EventArgs e)
-    {
-
-    }
-
-    private void btnMostrarNotas_Clicked(object sender, EventArgs e)
-    {
-
     }
 }

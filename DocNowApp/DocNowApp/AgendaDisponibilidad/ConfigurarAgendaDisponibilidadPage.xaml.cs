@@ -7,8 +7,6 @@ public partial class ConfigurarAgendaDisponibilidadPage : ContentPage
 {
     private List<Consultorio> listaConsultorios;
 
-
-   // private int idHorarioMedico; // asigna según el horario que estés editando
     public ConfigurarAgendaDisponibilidadPage()
 	{
 		InitializeComponent();
@@ -166,9 +164,7 @@ public partial class ConfigurarAgendaDisponibilidadPage : ContentPage
                 return;
             }
 
-            AgendaDisponibilidadSQL modificarFranja = new AgendaDisponibilidadSQL(franja);
-            int resultado = await modificarFranja.ModificarAgendaDisponibilidad();
-            if (resultado > 0)
+            if (resultadoOperacion > 0)
             {
                 await DisplayAlert("Éxito", "La franja se eliminó correctamente.", "Aceptar");
                 this.CargarAgendaDisponibilidad();

@@ -6,6 +6,8 @@
              x:Class="DocNowApp.App">
     <Application.Resources>
         <ResourceDictionary>
+            <!--Es una clase IValueConverter que convierte un tipo de dato bool a un texto específico,
+            de manera que un objeto puede bindear (binding) su valor desde el propio .xaml-->
             <globales:BoolToActivoConversor x:Key="BoolToActivoConversor"/>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
