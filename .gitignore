@@ -8,6 +8,9 @@ DocNowApp/DocNowApp/obj/
 DocNowApp/DocNowApp/bin/
 DocNowApp/.vs/
 
+DocNowApp/DocNowApp/.env
+.env
+
 DocNowApp/obj/
 DocNowApp/bin/
 .vs/

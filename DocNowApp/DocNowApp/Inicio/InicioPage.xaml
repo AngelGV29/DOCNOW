@@ -39,7 +39,7 @@
                 Margin="0,0,0,0"/>
             <Button
                 x:Name="btnLogin"
-                Text="Inciar sesión"
+                Text="Iniciar sesión"
                 Grid.Column="1"
                 WidthRequest="150"
                 Clicked="btnLogin_Clicked"
