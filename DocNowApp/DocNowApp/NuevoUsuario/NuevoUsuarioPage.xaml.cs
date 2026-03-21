@@ -107,10 +107,12 @@ public partial class NuevoUsuarioPage : ContentPage
         }
     }
 
-    //Valida que el nombre del correo solo contenga los caracteres permitidos
+    /*Valida que el nombre del correo solo contenga los caracteres permitidos
+    Si la validación se tarda más de 250ms, se considera que el nombre no es válido
+    para evitar que la aplicación se congele por una validación muy larga*/
     bool EsNombreCorreoValido(string nombre)
     {
-        return Regex.IsMatch(nombre, @"^[a-zA-Z0-9._-]+$");
+        return Regex.IsMatch(nombre, @"^[a-zA-Z0-9._-]+$", RegexOptions.None, TimeSpan.FromMilliseconds(250));
     }
 
     private async void btnRegistrarse_Clicked(object sender, EventArgs e)

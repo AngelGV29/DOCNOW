@@ -5,10 +5,16 @@
              Title="">
     <VerticalStackLayout>
         <Label 
-            Margin="0,100,0,0"
+            Margin="0,80,0,25"
             Text="Bienvenido a DocNow"
             FontSize="60"
             FontFamily="Arial"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Image
+            Source="imagenlogodocnow.png"
+            WidthRequest="200"
+            HeightRequest="200"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Label 
