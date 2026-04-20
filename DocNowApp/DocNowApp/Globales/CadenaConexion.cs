@@ -18,7 +18,7 @@ namespace DocNowApp.Globales
         // Constructor estático: se ejecuta una sola vez
         static CadenaConexion()
         {
-            try
+            /*try
             {
                 // Busca .env empezando en el directorio de la app y subiendo carpetas si hace falta
                 DotNetEnv.Env.TraversePath().Load(); // recomendado para .NET apps de escritorio[web:75][web:106]
@@ -28,6 +28,23 @@ namespace DocNowApp.Globales
                 System.Diagnostics.Debug.WriteLine("Error cargando .env: " + ex.Message);
             }
 
+            dbNombre = Environment.GetEnvironmentVariable("DOCNOW_DB_NAME");
+            server = Environment.GetEnvironmentVariable("DOCNOW_DB_SERVER");
+            usuario = Environment.GetEnvironmentVariable("DOCNOW_DB_USER");
+            contrasenia = Environment.GetEnvironmentVariable("DOCNOW_DB_PASSWORD");
+
+            var integrated = Environment.GetEnvironmentVariable("DOCNOW_DB_INTEGRATED_SECURITY");
+
+            string seguridad;
+            if (integrated.Equals("True", StringComparison.OrdinalIgnoreCase))
+                seguridad = "Integrated Security=True";
+            else
+                seguridad = $"User Id={usuario};Password={contrasenia}";
+
+            miConexion = $"Data Source={server};Initial Catalog={dbNombre};{seguridad};Encrypt=True;TrustServerCertificate=True";
+            */
+
+            /*VERSIÓN CORRECTA*/
             dbNombre = Environment.GetEnvironmentVariable("DOCNOW_DB_NAME") ?? "bdDocNow";
             server = Environment.GetEnvironmentVariable("DOCNOW_DB_SERVER") ?? @"ANGELGV29\SQLEXPRESS";
             usuario = Environment.GetEnvironmentVariable("DOCNOW_DB_USER") ?? "sa";
@@ -42,6 +59,7 @@ namespace DocNowApp.Globales
                 seguridad = $"User Id={usuario};Password={contrasenia}";
 
             miConexion = $"Data Source={server};Initial Catalog={dbNombre};{seguridad};Encrypt=True;TrustServerCertificate=True";
+            
         }
 
 
