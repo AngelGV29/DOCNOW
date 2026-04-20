@@ -28,24 +28,7 @@ namespace DocNowApp.Globales
                 System.Diagnostics.Debug.WriteLine("Error cargando .env: " + ex.Message);
             }
 
-            dbNombre = Environment.GetEnvironmentVariable("DOCNOW_DB_NAME");
-            server = Environment.GetEnvironmentVariable("DOCNOW_DB_SERVER");
-            usuario = Environment.GetEnvironmentVariable("DOCNOW_DB_USER");
-            contrasenia = Environment.GetEnvironmentVariable("DOCNOW_DB_PASSWORD");
-
-            var integrated = Environment.GetEnvironmentVariable("DOCNOW_DB_INTEGRATED_SECURITY");
-
-            string seguridad;
-            if (integrated.Equals("True", StringComparison.OrdinalIgnoreCase))
-                seguridad = "Integrated Security=True";
-            else
-                seguridad = $"User Id={usuario};Password={contrasenia}";
-
-            miConexion = $"Data Source={server};Initial Catalog={dbNombre};{seguridad};Encrypt=True;TrustServerCertificate=True";
-            
-
-            /*VERSIÓN CORRECTA*/
-            /*dbNombre = Environment.GetEnvironmentVariable("DOCNOW_DB_NAME") ?? "bdDocNow";
+            dbNombre = Environment.GetEnvironmentVariable("DOCNOW_DB_NAME") ?? "bdDocNow";
             server = Environment.GetEnvironmentVariable("DOCNOW_DB_SERVER") ?? @"ANGELGV29\SQLEXPRESS";
             usuario = Environment.GetEnvironmentVariable("DOCNOW_DB_USER") ?? "sa";
             contrasenia = Environment.GetEnvironmentVariable("DOCNOW_DB_PASSWORD") ?? "2909";
@@ -59,7 +42,7 @@ namespace DocNowApp.Globales
                 seguridad = $"User Id={usuario};Password={contrasenia}";
 
             miConexion = $"Data Source={server};Initial Catalog={dbNombre};{seguridad};Encrypt=True;TrustServerCertificate=True";
-            */
+
         }
 
 
