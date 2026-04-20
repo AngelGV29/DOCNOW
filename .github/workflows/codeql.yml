@@ -8,7 +8,7 @@ on:
 jobs:
   analyze:
     name: Analyze (csharp)
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     permissions:
       actions: read
@@ -34,6 +34,9 @@ jobs:
           dotnet --version
           dotnet --list-sdks
 
+      - name: Install MAUI workload
+        run: dotnet workload install maui
+
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v4
         with:
@@ -41,10 +44,10 @@ jobs:
           queries: security-extended
 
       - name: Restore dependencies
-        run: dotnet restore ./DocNowApp/DocNowApp.sln
+        run: dotnet restore .\DocNowApp\DocNowApp.sln
 
       - name: Build
-        run: dotnet build ./DocNowApp/DocNowApp.sln --no-restore
+        run: dotnet build .\DocNowApp\DocNowApp.sln --no-restore
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v4
