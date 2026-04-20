@@ -14,9 +14,9 @@ namespace DocNowApp.PruebasSeguridad
         {
             // EJEMPLO INTENCIONALMENTE INSEGURO PARA PROBAR CODEQL
             // No lo uses en código real.
-            var query = "SELECT * FROM Usuarios WHERE Nombre = '" + userInput + "'";
+            var consulta = "SELECT * FROM Usuarios WHERE Nombre = '" + userInput + "'";
 
-            using var command = new SqlCommand(query, connection);
+            using var command = new SqlCommand(consulta, connection);
             // No se ejecuta la consulta: es suficiente para que CodeQL detecte el patrón.
         }
     }
