@@ -40,9 +40,6 @@ jobs:
           languages: ${{ matrix.language }}
           queries: security-extended
 
-      - name: Restore workloads
-        run: dotnet workload restore ./DocNowApp/DocNowApp.sln
-
       - name: Restore dependencies
         run: dotnet restore ./DocNowApp/DocNowApp.sln
 
