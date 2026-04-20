@@ -18,7 +18,7 @@ namespace DocNowApp.Globales
         // Constructor estático: se ejecuta una sola vez
         static CadenaConexion()
         {
-            /*try
+            try
             {
                 // Busca .env empezando en el directorio de la app y subiendo carpetas si hace falta
                 DotNetEnv.Env.TraversePath().Load(); // recomendado para .NET apps de escritorio[web:75][web:106]
@@ -42,10 +42,10 @@ namespace DocNowApp.Globales
                 seguridad = $"User Id={usuario};Password={contrasenia}";
 
             miConexion = $"Data Source={server};Initial Catalog={dbNombre};{seguridad};Encrypt=True;TrustServerCertificate=True";
-            */
+            
 
             /*VERSIÓN CORRECTA*/
-            dbNombre = Environment.GetEnvironmentVariable("DOCNOW_DB_NAME") ?? "bdDocNow";
+            /*dbNombre = Environment.GetEnvironmentVariable("DOCNOW_DB_NAME") ?? "bdDocNow";
             server = Environment.GetEnvironmentVariable("DOCNOW_DB_SERVER") ?? @"ANGELGV29\SQLEXPRESS";
             usuario = Environment.GetEnvironmentVariable("DOCNOW_DB_USER") ?? "sa";
             contrasenia = Environment.GetEnvironmentVariable("DOCNOW_DB_PASSWORD") ?? "2909";
@@ -59,7 +59,7 @@ namespace DocNowApp.Globales
                 seguridad = $"User Id={usuario};Password={contrasenia}";
 
             miConexion = $"Data Source={server};Initial Catalog={dbNombre};{seguridad};Encrypt=True;TrustServerCertificate=True";
-            
+            */
         }
 
 
